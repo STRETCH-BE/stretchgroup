@@ -1,0 +1,493 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "close": "Close",
+    "menu": "Menu",
+    "languageLabel": "Language",
+    "external": "Opens in a new tab",
+    "nav": {
+      "primary": "Primary",
+      "home": "Home",
+      "companies": "Companies",
+      "about": "About",
+      "careers": "Careers",
+      "contact": "Contact",
+      "companySites": "Company websites"
+    },
+    "cta": {
+      "contactGroup": "Contact the group"
+    }
+  },
+  "header": {
+    "strip": "STRETCH Group · Beveren-Waas, Belgium",
+    "homeAria": "STRETCH Group — home"
+  },
+  "meta": {
+    "homeTitle": "STRETCH Group — ceilings, walls and acoustics from Belgium and Poland",
+    "homeDescription": "STRETCH Group unites three companies: STRETCH (stretch ceilings and walls, Belgium), Stretch Sufit / Alto Design (PVC stretch-ceiling factory, Poland) and Re-Sound (circular acoustic panels, Belgium). Find the right company in one click.",
+    "companiesTitle": "The companies | STRETCH Group",
+    "companiesDescription": "Three companies, one group: STRETCH, Stretch Sufit / Alto Design and Re-Sound. What each one does and where to go for ceilings, a quote in Poland or acoustic panels.",
+    "stretchTitle": "STRETCH — stretch ceilings and walls, Belgium | STRETCH Group",
+    "stretchDescription": "Stretch Productions BV, founded 2018 in Beveren-Waas: seamless polyester stretch ceilings and walls, cold-mounted and installed in one day. Visit stretchplafond.be or stretch.mt.",
+    "stretchSufitTitle": "Stretch Sufit / Alto Design — PVC stretch-ceiling factory, Poland | STRETCH Group",
+    "stretchSufitDescription": "Alto Design Sp. z o.o. in Częstochowa: PVC stretch-ceiling factory since 2016, seamless up to 6.50 m, part of STRETCH Group since 2024. Consumer brand Stretch Sufit in 17 Polish cities. Visit altodesign.pl.",
+    "reSoundTitle": "Re-Sound — circular acoustic panels, Belgium | STRETCH Group",
+    "reSoundDescription": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials, with a full take-back policy. Visit re-sound.be.",
+    "aboutTitle": "About STRETCH Group — story, timeline and offices",
+    "aboutDescription": "How STRETCH Group grew: a PVC factory in Poland in 2016, Stretch Productions BV in Belgium in 2018, Re-Sound, and Alto Design joining the group in 2024. Offices in Belgium, the US, Poland and Austria.",
+    "careersTitle": "Careers at STRETCH Group",
+    "careersDescription": "Work at STRETCH Group or one of its companies in Belgium and Poland. Send an open application to the group — we read every one.",
+    "contactTitle": "Contact STRETCH Group — Beveren-Waas, Belgium",
+    "contactDescription": "Reach STRETCH Group by phone, email or WhatsApp, or contact STRETCH, Stretch Sufit / Alto Design and Re-Sound directly. Headquarters in Beveren-Waas, Belgium.",
+    "privacyTitle": "Privacy policy | STRETCH Group",
+    "privacyDescription": "How STRETCH Group collects, uses and protects personal data submitted through stretchgroup.be, under the EU GDPR.",
+    "termsTitle": "Terms of use | STRETCH Group",
+    "termsDescription": "The terms governing use of stretchgroup.be, the corporate website of STRETCH Group.",
+    "notFoundTitle": "Page not found | STRETCH Group",
+    "notFoundDescription": "The page you are looking for could not be found."
+  },
+  "cookies": {
+    "title": "We value your privacy",
+    "body": "We use cookies to run this site, measure how it is used and — with your permission — improve our marketing. Choose which categories you allow.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "customize": "Customize",
+    "save": "Save choices",
+    "manage": "Manage cookies",
+    "necessary": "Necessary",
+    "necessaryDesc": "Required for the site to work. Always on.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Helps us understand how the site is used, anonymously.",
+    "marketing": "Marketing",
+    "marketingDesc": "Lets us measure campaigns and show relevant ads.",
+    "always": "Always on",
+    "privacyLink": "Privacy policy"
+  },
+  "security": {
+    "captchaFailed": "The security check failed. Please try again.",
+    "captchaLoadFailed": "The security check could not load. Please refresh the page or email us at {email}.",
+    "tooManyRequests": "Too many requests. Please wait a few minutes and try again."
+  },
+  "forms": {
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "about": "Which company is this about?",
+      "message": "Your message"
+    },
+    "placeholders": {
+      "name": "First and last name",
+      "email": "you@company.com",
+      "company": "Your company (optional)",
+      "message": "Tell us what you need and which country you are in."
+    },
+    "aboutOptions": {
+      "group": "STRETCH Group in general",
+      "stretch": "STRETCH — stretch ceilings and walls",
+      "stretchSufit": "Stretch Sufit / Alto Design — Poland",
+      "reSound": "Re-Sound — acoustic panels",
+      "careers": "Careers / open application"
+    },
+    "required": "*",
+    "consentPrefix": "I agree to STRETCH Group processing my details to respond to my request, as described in the",
+    "consentPrivacy": "privacy policy",
+    "reassurance": "We reply within two working days and route your message to the right company.",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message received",
+    "successMessage": "Thank you. We will forward your message to the right company and reply within two working days.",
+    "errorMessage": "We could not send your message. Please try again, or email us directly at info@stretchgroup.be.",
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "consent": "Please accept the privacy policy to continue"
+    }
+  },
+  "footer": {
+    "tagline": "The group behind STRETCH, Stretch Sufit / Alto Design and Re-Sound: ceilings, walls and acoustics, made in Belgium and Poland.",
+    "companiesHeading": "Companies",
+    "groupHeading": "Group",
+    "officesHeading": "Offices",
+    "rights": "STRETCH Group",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "links": {
+      "overview": "All companies",
+      "stretch": "STRETCH",
+      "stretchSufit": "Stretch Sufit / Alto Design",
+      "reSound": "Re-Sound",
+      "about": "About the group",
+      "careers": "Careers",
+      "contact": "Contact"
+    }
+  },
+  "router": {
+    "eyebrow": "Where do you need to be?",
+    "title": "Find the right company.",
+    "intro": "This site presents the group. Products, quotes and projects live on the company websites — pick yours.",
+    "footerTitle": "Find the right company",
+    "items": {
+      "ceiling": {
+        "q": "Looking for a stretch ceiling?",
+        "a": "STRETCH designs, makes and installs seamless stretch ceilings and walls in Belgium — a new ceiling in one day.",
+        "cta": "Go to stretchplafond.be",
+        "altCta": "International site: stretch.mt"
+      },
+      "acoustic": {
+        "q": "Looking for acoustic panels?",
+        "a": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials.",
+        "cta": "Go to re-sound.be"
+      },
+      "poland": {
+        "q": "Need a quote in Poland?",
+        "a": "Alto Design runs the group's PVC stretch-ceiling factory in Częstochowa; Stretch Sufit installs in 17 Polish cities.",
+        "cta": "Go to altodesign.pl"
+      }
+    }
+  },
+  "companies": {
+    "eyebrow": "The companies",
+    "title": "Three companies. One group.",
+    "intro": "Each company runs its own brand, factory and website. The group connects them: shared know-how, shared markets, one standard.",
+    "stretch": {
+      "name": "STRETCH",
+      "kicker": "Stretch ceilings and walls · Belgium",
+      "oneLiner": "Belgian manufacturer of seamless polyester stretch ceilings and walls, cold-mounted and installed in one day.",
+      "whatTitle": "A new ceiling in one day.",
+      "description": "STRETCH designs and makes seamless stretch ceilings and walls in Beveren-Waas, Belgium. The polyester membrane is mounted cold and installed in a single day, with acoustic, lighting and printed options. The company trades as Stretch Productions BV, founded in 2018, and serves Belgium from stretchplafond.be and international markets from stretch.mt.",
+      "bullets": [
+        "Seamless polyester stretch ceilings and walls",
+        "Cold-mounted, installed in one day",
+        "Acoustic, lighting and printed options",
+        "Belgium: stretchplafond.be · international: stretch.mt"
+      ],
+      "ctaBody": "Products, projects, prices and quotes live on the STRETCH website."
+    },
+    "stretch-sufit": {
+      "name": "Stretch Sufit",
+      "kicker": "PVC stretch-ceiling factory · Poland",
+      "oneLiner": "Alto Design’s PVC stretch-ceiling factory in Częstochowa, Poland, since 2016 — part of STRETCH Group since 2024.",
+      "whatTitle": "The group’s PVC factory.",
+      "description": "Alto Design Sp. z o.o. has produced PVC stretch ceilings in Częstochowa since 2016, seamless up to 6.50 m. The company joined STRETCH Group in 2024. Its consumer installation brand, Stretch Sufit, is active in 17 Polish cities and has completed more than 4,000 projects.",
+      "bullets": [
+        "PVC stretch-ceiling factory in Częstochowa since 2016",
+        "Seamless PVC up to 6.50 m",
+        "Stretch Sufit: installation in 17 Polish cities",
+        "More than 4,000 completed projects"
+      ],
+      "ctaBody": "Quotes, installations and the factory range live on altodesign.pl."
+    },
+    "re-sound": {
+      "name": "Re-Sound",
+      "kicker": "Circular acoustics · Belgium",
+      "oneLiner": "Belgian maker of circular acoustic panels and screens from recycled and sustainable materials, with a full take-back policy.",
+      "whatTitle": "Acoustics that close the loop.",
+      "description": "Re-Sound makes acoustic panels and screens in Belgium from recycled and sustainable materials. It started in 2020 with yarn spun from recycled jeans. Every product can be returned at the end of its life and made into new panels. The range includes Interior panels and the Divide freestanding screen. Re-Sound was founded by Aaron Thierens.",
+      "bullets": [
+        "Acoustic panels and screens made in Belgium",
+        "Recycled and sustainable materials — origin: recycled jeans yarn, 2020",
+        "Full take-back policy: close the loop",
+        "Interior panels and the Divide freestanding screen"
+      ],
+      "ctaBody": "The range, projects and contact for acoustic solutions live on re-sound.be."
+    }
+  },
+  "companyPage": {
+    "readMore": "About the company",
+    "visit": "Visit {site}",
+    "visitAlt": "International site: {site}",
+    "logoSlot": "{name} logo",
+    "imageSlot": "{name} — photography",
+    "whatHeading": "What they do",
+    "contactHeading": "Contact {name}",
+    "membership": "Group membership",
+    "partOf": "Part of STRETCH Group",
+    "partOfSince": "Part of STRETCH Group since {year}",
+    "legal": "Legal entity",
+    "founder": "Founder",
+    "website": "Website",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "otherCompanies": "The other companies",
+    "ctaTitle": "Looking for {name}?",
+    "facts": {
+      "founded": "Founded",
+      "origin": "Home base",
+      "install": "Ceiling installed in",
+      "factorySince": "Factory since",
+      "seamless": "Seamless PVC up to",
+      "cities": "Polish cities",
+      "projects": "Completed projects",
+      "madeIn": "Made in",
+      "takeBack": "Take-back policy"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "One group. Three companies.",
+      "title1": "STRETCH",
+      "title2": "Group",
+      "statement": "Stretch ceilings, walls and acoustics — made in Belgium and Poland, sold across Europe and the US.",
+      "hint": "Choose a company",
+      "indexAria": "The companies of STRETCH Group",
+      "slotLabel": "{name} — logo / photo"
+    },
+    "numbers": {
+      "eyebrow": "The group in numbers",
+      "items": {
+        "companies": "Companies",
+        "offices": "Offices",
+        "markets": "Live market websites",
+        "factory": "First factory opened"
+      },
+      "note": "Counts are taken from this site’s own data: the three companies, the four offices and the market websites that are live today."
+    },
+    "markets": {
+      "eyebrow": "Markets",
+      "title": "One standard, many domains.",
+      "intro": "{count} live websites serve the group’s markets in their own language. Each one is a company site — this is where the products are.",
+      "byCompany": "{name} websites"
+    },
+    "timeline": {
+      "eyebrow": "Timeline",
+      "title": "How the group grew.",
+      "cta": "Read the full story"
+    },
+    "contactBand": {
+      "title": "Talk to the group.",
+      "body": "Partnerships, press, careers or a question about which company you need — one message reaches the right people.",
+      "cta": "Contact us",
+      "or": "Prefer to call?"
+    }
+  },
+  "timeline": {
+    "altoFactory": {
+      "title": "Alto Design opens a PVC stretch-ceiling factory in Częstochowa, Poland.",
+      "body": "The factory produces seamless PVC stretch ceilings up to 6.50 m wide and later becomes the group’s PVC production base."
+    },
+    "stretchFounded": {
+      "title": "Stretch Productions BV is founded in Beveren-Waas, Belgium.",
+      "body": "STRETCH starts making seamless polyester stretch ceilings and walls — cold-mounted, installed in one day."
+    },
+    "reSoundOrigin": {
+      "title": "Re-Sound’s origin: acoustic panels from recycled jeans yarn.",
+      "body": "The circular acoustics company starts from a yarn spun out of recycled jeans and builds a take-back policy into every product."
+    },
+    "altoJoins": {
+      "title": "Alto Design joins STRETCH Group.",
+      "body": "The Polish factory and its Stretch Sufit installation brand become part of the group."
+    },
+    "rollout": {
+      "title": "International domain rollout across twelve-plus markets.",
+      "body": "STRETCH launches a country website per market, from stretch.mt for international visitors to stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is and more."
+    }
+  },
+  "countries": {
+    "INT": "International",
+    "BE": "Belgium",
+    "NL": "Netherlands",
+    "FR": "France",
+    "PL": "Poland",
+    "DE": "Germany",
+    "ES": "Spain",
+    "GB": "United Kingdom",
+    "US": "United States",
+    "DK": "Denmark",
+    "SE": "Sweden",
+    "IS": "Iceland",
+    "AT": "Austria",
+    "MT": "Malta",
+    "PT": "Portugal",
+    "NO": "Norway"
+  },
+  "offices": {
+    "roles": {
+      "headquarters": "Headquarters",
+      "sales": "Sales",
+      "branch": "Branch"
+    }
+  },
+  "aboutPage": {
+    "crumb": "About",
+    "hero": {
+      "eyebrow": "About STRETCH Group",
+      "titleA": "One group,",
+      "titleB": "three companies.",
+      "lead": "STRETCH Group brings together a Belgian stretch-ceiling manufacturer, a Polish PVC factory and a Belgian circular-acoustics company. Each keeps its own name and website; the group connects them.",
+      "imageLabel": "Group — photography"
+    },
+    "story": {
+      "eyebrow": "Our story",
+      "title": "Built from the workshop up.",
+      "p1": "The group’s story starts on the factory floor. In 2016 Alto Design opened a PVC stretch-ceiling factory in Częstochowa, Poland. In 2018 Stretch Productions BV was founded in Beveren-Waas, Belgium, to design and install seamless polyester stretch ceilings and walls — cold-mounted, finished in a day.",
+      "p2": "Re-Sound added acoustics with a circular twist: panels and screens made in Belgium from recycled and sustainable materials, starting from a yarn spun out of recycled jeans, with a take-back policy so every product can close the loop.",
+      "p3": "In 2024 Alto Design joined STRETCH Group, bringing the factory and the Stretch Sufit installation brand into the group. Today the companies share know-how and markets while each runs its own brand and website:"
+    },
+    "offices": {
+      "eyebrow": "Where we are",
+      "title": "Four offices, two factories’ worth of know-how."
+    },
+    "cta": {
+      "title": "Working with the group?",
+      "button": "Contact us"
+    }
+  },
+  "careersPage": {
+    "crumb": "Careers",
+    "eyebrow": "Careers",
+    "titleA": "Work with",
+    "titleB": "the group.",
+    "lead": "Three companies, two countries, one standard. Whether you install ceilings, run a production line, design acoustics or keep the books, there is a place where your work is visible.",
+    "body1": "STRETCH Group is a manufacturing group: ceilings and walls are made in Belgium, PVC membranes in Poland, acoustic panels in Belgium. Most roles are hands-on — production, installation, project management, sales and support — across Belgium and Poland.",
+    "body2": "Open positions are published here and on the company websites. If nothing fits today, send an open application; we keep it on file and pass it to the right company.",
+    "imageLabel": "Careers — photography",
+    "rolesTitle": "Open roles",
+    "rolesEmptyTitle": "No advertised roles right now.",
+    "rolesEmpty": "We read every open application and forward it to the company where it fits best. Tell us what you do and where you would like to work.",
+    "applyTitle": "Open application",
+    "applyHeading": "Send us your profile.",
+    "applyBody": "Email a short introduction and your CV to info@stretchgroup.be, or use the contact form and choose “Careers”. We reply within two working days.",
+    "applyCta": "Send an open application",
+    "mailSubject": "Open application — STRETCH Group",
+    "formCta": "Use the contact form",
+    "companiesTitle": "Or apply at a company",
+    "companiesBody": "Each company also lists its own vacancies and contact details on its website."
+  },
+  "contactPage": {
+    "crumb": "Contact",
+    "eyebrow": "Contact",
+    "titleA": "Talk to",
+    "titleB": "the group.",
+    "cards": {
+      "call": { "label": "Call us" },
+      "email": { "label": "Email us", "sub": "Reply within two working days" },
+      "chat": { "label": "WhatsApp", "value": "Chat with us", "sub": "Quick questions, fast answers" }
+    },
+    "chatNote": "Also on",
+    "formTitle": "Send us a message",
+    "formLead": "Tell us what you need and which company it concerns. We route it to the right people and reply within two working days.",
+    "hqKicker": "Headquarters",
+    "mapLabel": "Headquarters — photo / map",
+    "routingEyebrow": "Go direct",
+    "routingTitle": "Contact a company directly.",
+    "routingBody": "For quotes, projects and product questions the company itself is the fastest route.",
+    "officesEyebrow": "Our offices"
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "updated": "Last updated: {date}",
+    "updatedDate": "September 2026",
+    "contactHeading": "Contact",
+    "contactBody": "For questions about this document or to exercise your rights, contact STRETCH Group at",
+    "belgium": "Belgium",
+    "reviewNote": "This document is a draft prepared for launch and must be reviewed by a qualified legal advisor before publication, so that it reflects the group’s actual legal entity and data-processing practices.",
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "This privacy policy explains how STRETCH Group (“we”, “us”) collects and uses personal data when you visit stretchgroup.be or contact us through it. We are the data controller for that processing.",
+      "sections": [
+        {
+          "h": "What we collect",
+          "p": [
+            "We only collect what we need. When you use the contact form or send an open application, we collect the details you provide: your name, email address, company, which company your message concerns, and the contents of your message.",
+            "When you browse the site we may also collect standard technical and usage data — such as device, browser and pages viewed — through cookies and similar technologies, but only to the extent you have consented. You can review and change your choices at any time via “Manage cookies” in the footer."
+          ]
+        },
+        {
+          "h": "Why we use it",
+          "p": [
+            "We use the details you submit to answer your enquiry and to forward it to the group company that can help you (STRETCH, Stretch Sufit / Alto Design or Re-Sound). This processing is based on your request and our legitimate interest in responding to it.",
+            "Where you have given consent, we use analytics technologies to understand how the site is used and to improve it. You may withdraw consent at any time."
+          ]
+        },
+        {
+          "h": "Cookies and analytics",
+          "p": [
+            "Non-essential cookies and analytics — including Google Analytics and Microsoft Clarity — are only loaded after you accept them. Until then they remain disabled through consent mode. Essential cookies needed to operate the site and remember your cookie choice do not require consent."
+          ]
+        },
+        {
+          "h": "Spam protection",
+          "p": [
+            "To protect our forms against automated abuse we may use Cloudflare Turnstile, a privacy-preserving verification service provided by Cloudflare, Inc. It evaluates technical signals from your browser to tell people apart from bots and does not track you across sites. We also record technical details of form submissions, such as IP address and browser type, for the same purpose. This processing is based on our legitimate interest in keeping the site secure."
+          ]
+        },
+        {
+          "h": "Who we share it with",
+          "p": [
+            "We do not sell your personal data. We share it with the group company your enquiry concerns, and with service providers who help us operate the site and deliver messages — our hosting provider, our email provider and, where consented, our analytics providers — only as needed to perform those services. Some providers may process data outside the European Economic Area; in that case appropriate safeguards apply."
+          ]
+        },
+        {
+          "h": "How long we keep it",
+          "p": [
+            "We keep enquiry data for as long as needed to handle your request and for our legitimate business and legal record-keeping, after which it is deleted or anonymised. Open applications are kept for a limited period unless you ask us to delete them earlier."
+          ]
+        },
+        {
+          "h": "Your rights",
+          "p": [
+            "Subject to applicable law, you have the right to access, correct, delete or restrict the processing of your personal data, to object to processing, to data portability, and to withdraw consent at any time. You also have the right to lodge a complaint with your local data protection authority. In Belgium this is the Data Protection Authority (Gegevensbeschermingsautoriteit)."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "intro": "These terms govern your use of stretchgroup.be (the “site”), the corporate website of STRETCH Group (“we”, “us”). By using the site you agree to these terms. If you do not agree, please do not use the site.",
+      "sections": [
+        {
+          "h": "Use of the site",
+          "p": [
+            "You may use this site for lawful purposes only — to learn about the group and its companies and to contact us. You agree not to misuse the site, interfere with its operation, attempt to gain unauthorised access, or use it in any way that breaches applicable law."
+          ]
+        },
+        {
+          "h": "Information on the site",
+          "p": [
+            "This site presents the group and its companies for general information only. It sells nothing and publishes no prices. Product information, specifications, quotations and orders are provided by the individual companies on their own websites and under their own conditions, which prevail over anything here."
+          ]
+        },
+        {
+          "h": "Forms and enquiries",
+          "p": [
+            "When you submit a form, you confirm that the information you provide is accurate and that you are entitled to share it. Submitting an enquiry or an application does not create a contract or an employment relationship."
+          ]
+        },
+        {
+          "h": "Intellectual property",
+          "p": [
+            "All content on this site — including text, graphics, logos and the STRETCH Group, STRETCH, Stretch Sufit, Alto Design and Re-Sound names and marks — is owned by or licensed to the group and its companies and is protected by intellectual-property laws. You may not copy, reproduce or reuse it without prior written permission, except as permitted by law."
+          ]
+        },
+        {
+          "h": "Third-party links",
+          "p": [
+            "The site links to the websites of the group companies and may link to other third-party websites. Each of those sites has its own terms and privacy policy. We are not responsible for the content or practices of sites we do not operate."
+          ]
+        },
+        {
+          "h": "Limitation of liability",
+          "p": [
+            "To the fullest extent permitted by law, we are not liable for any indirect or consequential loss arising from your use of, or inability to use, the site, or from reliance on its content. Nothing in these terms excludes liability that cannot be excluded under applicable law."
+          ]
+        },
+        {
+          "h": "Changes and governing law",
+          "p": [
+            "We may update these terms from time to time; the version published on this page applies. These terms are governed by Belgian law, and the Belgian courts have jurisdiction, to the extent permitted by law."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you are looking for may have moved or no longer exists. The group site is small — you are probably looking for one of the company websites.",
+    "home": "Back to home",
+    "companies": "Or go straight to a company website"
+  }
+}

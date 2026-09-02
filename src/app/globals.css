@@ -1,0 +1,581 @@
+/* ==========================================================================
+   STRETCH — Design system
+   Tokens sampled directly from the design mockups. Every component reads from
+   these custom properties; no component hardcodes a hex value.
+   Locked palette: red / black / white. Hard edges (no radius). No gradients
+   except the photo-overlay scrims. Archivo Expanded (display) + Archivo (body).
+   ========================================================================== */
+
+:root {
+  /* --- Brand colours --- */
+  /* Signal red, tuned for WCAG AA: #e00000 keeps ≥4.5:1 with white text on
+     red AND as red text on white/surface. Pure #ff0000 sat at 4.0:1 — the
+     single biggest Lighthouse contrast offender. On dark surfaces small red
+     text needs the brighter variant below (red darkens against black). */
+  --red: #e00000;
+  --red-bright: #ff1a1a; /* small red text on black/dark sections (≥4.5:1) */
+  --black: #0a0a0a;
+  --pure-black: #000000;
+  --white: #ffffff;
+  --bg: #ffffff;
+  --surface: #f4f3f1; /* off-white section tone */
+
+  /* --- Text --- */
+  --text: #0a0a0a;
+  --text-body: #3a3833;
+  --text-muted: #54514b;
+  --text-muted-2: #6e6b66;
+  /* Faint tones darkened to hold ≥4.5:1 on white AND on --surface
+     (WCAG AA, small text) — #6e6b66 is 4.64:1 on #f4f3f1. */
+  --text-faint: #6e6b66;
+  --text-faint-2: #6e6b66;
+
+  /* --- On dark surfaces --- */
+  --on-dark: #ffffff;
+  --on-dark-muted: #a8a49d;
+  --on-dark-muted-2: #b6b2ab;
+  --on-dark-soft: #c9c6c0;
+  --on-dark-faint: #9a968f;
+
+  /* --- Borders / lines --- */
+  --border: #eceae6; /* primary light border */
+  --border-2: #e6e3de;
+  --border-input: #dad7d2;
+  --line-dark: #262626; /* dark-section grid lines */
+  --line-footer: #1f1f1f;
+  --line-footer-2: #2a2a2a;
+
+  /* --- Spacing scale (4px base) --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 72px;
+  --space-11: 96px;
+  --space-12: 120px;
+
+  /* --- Layout --- */
+  --container: 1320px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-y: clamp(60px, 8vw, 120px);
+  --section-y-sm: clamp(48px, 6vw, 90px);
+  --header-h: 78px;
+
+  /* --- Radius (hard edges) --- */
+  --radius: 0px;
+
+  /* --- Elevation --- */
+  --shadow-sm: 0 8px 24px rgba(10, 10, 10, 0.06);
+  --shadow-md: 0 34px 60px rgba(0, 0, 0, 0.13);
+  --shadow-lg: 0 40px 80px rgba(0, 0, 0, 0.4);
+
+  /* --- Type families (overridden by next/font variable on <html>) --- */
+  /* Archivo is one variable font (weight + width). The display "expanded" look
+     is the wdth axis driven to 125 — applied via the rule below, not a second
+     family — so both vars resolve to the same self-hosted font. */
+  --font-display: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+  --font-body: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+
+  /* --- Type ramps --- */
+  --fs-display: clamp(52px, 10.5vw, 164px);
+  --fs-h1: clamp(44px, 8.5vw, 142px);
+  --fs-h2: clamp(36px, 5.5vw, 76px);
+  --fs-h2-sm: clamp(30px, 4.4vw, 58px);
+  --fs-h3: clamp(22px, 2.6vw, 26px);
+  --fs-lead: clamp(16px, 1.3vw, 19px);
+  --fs-body: 15px;
+  --fs-sm: 13.5px;
+  --fs-eyebrow: 12.5px;
+}
+
+/* --- Display "expanded" width -------------------------------------------------
+   Archivo is a single variable font; the distinctive expanded display look is
+   the width (wdth) axis pushed to 125. Apply it to every display context: the
+   heading utility classes AND any element whose inline style references the
+   display family (covers component-level `fontFamily: var(--font-display)`). */
+.h-display,
+.h1,
+.h2,
+.h2--sm,
+.eyebrow,
+h1,
+h2,
+h3,
+[style*="--font-display"] {
+  font-variation-settings: 'wdth' 125;
+}
+
+/* --- Reset / base --------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* --- Accessibility helpers ------------------------------------------------ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -64px;
+  z-index: 200;
+  background: var(--black);
+  color: #fff;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* --- Layout primitives ---------------------------------------------------- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  width: 100%;
+}
+
+.section {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+.section--sm {
+  padding-top: var(--section-y-sm);
+  padding-bottom: var(--section-y-sm);
+}
+.section--dark {
+  background: var(--black);
+  color: var(--on-dark);
+}
+.section--surface {
+  background: var(--surface);
+}
+.section--red {
+  background: var(--red);
+  color: #fff;
+}
+
+/* --- Eyebrow / section label --------------------------------------------- */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+.eyebrow__num {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+.eyebrow__label {
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint-2);
+}
+.section--dark .eyebrow__label {
+  color: var(--on-dark-faint);
+}
+/* AA per surface: brighter red for 13px text on black; all-white on red. */
+.section--dark .eyebrow__num {
+  color: var(--red-bright);
+}
+.section--red .eyebrow__num,
+.section--red .eyebrow__label {
+  color: #fff;
+}
+.section--red .eyebrow__rule {
+  background: #fff;
+}
+.eyebrow__rule {
+  width: 34px;
+  height: 2px;
+  background: var(--red);
+  display: inline-block;
+}
+
+/* --- Headings ------------------------------------------------------------- */
+.h-display {
+  font-weight: 900;
+  font-size: var(--fs-display);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.h1 {
+  font-weight: 900;
+  font-size: var(--fs-h1);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.h2 {
+  font-weight: 900;
+  font-size: var(--fs-h2);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.h2--sm {
+  font-size: var(--fs-h2-sm);
+  line-height: 0.94;
+}
+.accent {
+  color: var(--red);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--text-body);
+}
+
+/* --- Underline-slide link ------------------------------------------------- */
+.lnk {
+  position: relative;
+  text-decoration: none;
+}
+.lnk::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.25s ease;
+}
+.lnk:hover::after,
+.lnk:focus-visible::after {
+  width: 100%;
+}
+
+/* --- Buttons -------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 26px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  line-height: 1;
+  min-height: 44px;
+}
+.btn--sm {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  gap: 8px;
+  padding: 11px 18px;
+  min-height: 38px;
+}
+.btn--lg {
+  font-size: 14px;
+  padding: 17px 32px;
+}
+.btn--primary {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+}
+.btn--primary:hover {
+  background: var(--black);
+  border-color: var(--black);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--black);
+}
+.btn--ghost:hover {
+  background: var(--black);
+  color: #fff;
+}
+.btn--ghost:hover .btn__arrow {
+  color: #fff;
+}
+.btn--ghost-light {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+.btn--ghost-light:hover {
+  background: #fff;
+  color: var(--black);
+}
+.btn--ghost-light:hover .btn__arrow {
+  color: var(--black);
+}
+.btn--dark {
+  background: var(--black);
+  color: #fff;
+  border-color: var(--black);
+}
+.btn--dark:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+.btn__arrow {
+  color: var(--red);
+  font-size: 16px;
+}
+
+/* --- Hairline grids (1px gap reveals border colour) ----------------------- */
+.grid-lines {
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.grid-lines--dark {
+  background: var(--line-dark);
+  border-color: var(--line-dark);
+}
+
+/* --- Bullet (red square) -------------------------------------------------- */
+.tick {
+  width: 9px;
+  height: 9px;
+  background: var(--red);
+  flex: 0 0 auto;
+}
+.tick--sm {
+  width: 7px;
+  height: 7px;
+}
+
+/* --- Image zoom-on-hover container ---------------------------------------- */
+.zoom-wrap {
+  overflow: hidden;
+}
+.zoom-img {
+  transition: transform 0.5s ease;
+}
+.zoom-wrap:hover .zoom-img {
+  transform: scale(1.04);
+}
+
+/* --- Placeholder image tile (until real photography is supplied) ----------- */
+.img-ph {
+  background: repeating-linear-gradient(
+    135deg,
+    #1a1a1a,
+    #1a1a1a 12px,
+    #161616 12px,
+    #161616 24px
+  );
+  color: #7c7972;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 16px;
+}
+.img-ph--light {
+  background: repeating-linear-gradient(
+    135deg,
+    #ededeb,
+    #ededeb 12px,
+    #e7e7e4 12px,
+    #e7e7e4 24px
+  );
+  color: #9a968f;
+}
+
+/* --- Ticker --------------------------------------------------------------- */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Form field ----------------------------------------------------------- */
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-2);
+  margin-bottom: 8px;
+}
+.field {
+  width: 100%;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--text);
+  padding: 13px 15px;
+  border: 1.5px solid var(--border-input);
+  background: #fff;
+  transition: border-color 0.15s ease;
+  border-radius: var(--radius);
+}
+.field:focus {
+  outline: none;
+  border-color: var(--red);
+}
+.field::placeholder {
+  color: var(--text-faint-2);
+}
+.field[aria-invalid='true'] {
+  border-color: var(--red);
+}
+.field-error {
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 6px;
+}
+
+/* --- Prose (legal pages, blog body) --------------------------------------- */
+.prose {
+  max-width: 760px;
+}
+.prose h2 {
+  font-size: clamp(22px, 2.6vw, 30px);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 40px 0 14px;
+}
+.prose h3 {
+  font-size: 19px;
+  margin: 28px 0 10px;
+}
+.prose p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+.prose ul {
+  padding-left: 20px;
+  margin: 0 0 16px;
+}
+.prose li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.prose a {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* --- Responsive helpers --------------------------------------------------- */
+.only-desktop {
+  display: initial;
+}
+.only-mobile {
+  display: none;
+}
+@media (max-width: 860px) {
+  .only-desktop {
+    display: none !important;
+  }
+  .only-mobile {
+    display: initial;
+  }
+}

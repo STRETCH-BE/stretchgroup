@@ -1,0 +1,153 @@
+# ============================================================================
+# LEGACY URL INVENTORY — stretchgroup.be (Magento) + old multistore domains.
+# One URL per line; blank lines and lines starting with "#" are ignored by
+# scripts/verify-redirects.mjs. Every URL here MUST resolve to HTTP 200 through
+# the redirect chain (Layers 2–4) with zero 4xx/5xx — that is the launch gate.
+#
+# HOW THIS FILE WAS BUILT (2 Sep 2026):
+#   The build environment's egress policy blocked stretchgroup.be outright
+#   (403 on CONNECT for both www and apex), so the robots.txt / sitemap.xml /
+#   wget-spider harvest described in the brief could NOT be executed here.
+#   Sources used instead:
+#     (a) the verified navigation inventory supplied with the brief;
+#     (b) search-engine "site:stretchgroup.be" harvesting (indexed URLs);
+#     (c) search-engine "site:stretchgroup.net" harvesting (multistore);
+#     (d) Magento 1 machinery paths that exist on every Magento shop.
+#   GAP TO CLOSE BEFORE CUTOVER (see CHANGES.md): re-run the crawl commands
+#   from the brief on a machine that can reach the old site, then merge the
+#   Google Search Console "Pages" export and the Magento admin export
+#   (Marketing → SEO & Search → URL Rewrites) into this file. Re-run
+#   `npm run verify:redirects` afterwards.
+# ============================================================================
+
+# --- home + query/session variants ------------------------------------------
+https://www.stretchgroup.be/
+https://stretchgroup.be/
+https://www.stretchgroup.be/?SID=7fvnotmhmavbrp5m9qq4no5l72
+https://www.stretchgroup.be/index.php
+https://www.stretchgroup.be/index.php/
+
+# --- group pages (stay on the new group site) --------------------------------
+https://www.stretchgroup.be/over-ons/
+https://www.stretchgroup.be/over-ons
+https://www.stretchgroup.be/jobs/
+https://www.stretchgroup.be/contact/
+https://www.stretchgroup.be/general-terms-and-conditions
+
+# --- product-site content (→ stretchplafond.be) ------------------------------
+https://www.stretchgroup.be/faq
+https://www.stretchgroup.be/blog/
+https://www.stretchgroup.be/blog/?page=2
+https://www.stretchgroup.be/blog/post/beprinte-clipso-spanwand/
+https://www.stretchgroup.be/blog/post/spanplafonds-en-muren-op-kantoor/
+https://www.stretchgroup.be/blog/post/spanplafond-nadelen/
+https://www.stretchgroup.be/blog/post/gyproc-spanplafond/
+https://www.stretchgroup.be/blog/post/wat-is-een-spanplafond/
+https://www.stretchgroup.be/blog/post/snel-plafond-systeem/
+https://www.stretchgroup.be/blog/post/wil-je-baas-zijn-spanplafond-materialen-kopen-voor-een-betere-prijs-en-met-een-betere-service/
+https://www.stretchgroup.be/blog/archive/2022-04/
+https://www.stretchgroup.be/blog/archive/2018-01/
+https://www.stretchgroup.be/blog/category/spanplafond/
+https://www.stretchgroup.be/portfolio.html
+https://www.stretchgroup.be/portfolio/notariaat-kruibeke.html
+https://www.stretchgroup.be/performance-statements
+
+# --- clipso-spanplafonds tree ------------------------------------------------
+https://www.stretchgroup.be/clipso-spanplafonds.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/spanplafond-concept.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/spanplafond-voordelen.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-standaard.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-standaard/pvc-spanplafond.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-akoestiek.html
+https://www.stretchgroup.be/clipso-spanplafonds/stretch/stretch-akoestiek/akoestische-panelen.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-akoestiek/akoestisch-plafond-wand.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-akoestiek/stretch-akoestische-baffle.html
+https://www.stretchgroup.be/proffessionals/akoestish-spanplafond.html
+https://www.stretchgroup.be/clipso-spanplafonds/akoestiek-verbeteren.html
+https://www.stretchgroup.be/clipso-spanplafonds/akoestiek-verbeteren/akoestiek-in-woning.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/akoestiek-verbeteren/akoestiek-horeca.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/akoestiek-verbeteren/akoestiek-op-kantoor.html
+https://www.stretchgroup.be/clipso-spanplafonds/akoestiek-verbeteren/akoestiek-in-bedrijfsgebouwen.html
+https://www.stretchgroup.be/clipso-spanplafonds/akoestiek-verbeteren/akoestiek-in-bioscoop.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-design.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-licht.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-licht/stretch-lichtplafond.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting/backlit-verlichting.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting/edgelit-verlichting.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting/lichtgevende-wand.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting/cognitieve-verlichting.html
+https://www.stretchgroup.be/clipso-spanplafonds/verlichting/sterrenhemel.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-antibacterieel.html
+https://www.stretchgroup.be/clipso-spanplafonds/clipso/stretch-antibacterieel/stretch-antibacterieel.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur/spanplafond-badkamer.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur/spanplafond-keuken.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur/voordelen-spanplafond-woonkamer.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur/buiten-plafond.html
+https://www.stretchgroup.be/clipso-spanplafonds/spanplafond-in-jouw-interieur/spanplafond-zwembad.html
+
+# --- professionals (misspelled on the old site) + architects -----------------
+https://www.stretchgroup.be/proffessionals.html
+https://www.stretchgroup.be/proffessionals/dealers.html
+https://www.stretchgroup.be/proffessionals/dealers/waarom-stretch-dealer-worden.html
+https://www.stretchgroup.be/proffessionals/dealers/why-become-a-stretch-dealer.html
+https://www.stretchgroup.be/proffessionals/dealers/stretch-training.html
+https://www.stretchgroup.be/proffessionals/doe-het-zelf-spanplafond.html
+https://www.stretchgroup.be/architects/architects.html
+https://www.stretchgroup.be/architects/architects/stretch-assists-you.html
+https://www.stretchgroup.be/architects/architects/discover-our-stretch-walls-and-ceilings-solutions.html
+https://www.stretchgroup.be/architects/sign-market.html
+https://www.stretchgroup.be/architects/sign-market/stretch-sbl-backlit-led-modules.html
+https://www.stretchgroup.be/architects/sign-market/de-stretch-spanplafond-ssl-side-lit-led-modules.html
+https://www.stretchgroup.be/architects/sign-market/dynamische-led-panelen.html
+
+# --- webshop / catalog (indexed product + category URLs) ---------------------
+https://www.stretchgroup.be/webshop/spanplafond.html
+https://www.stretchgroup.be/webshop/tools/pneumatisch/gastacker-dynamik-cn60-688s.html
+https://www.stretchgroup.be/webshop/verlichting/spotjes/builf-in-led-verinlichting.html
+https://www.stretchgroup.be/webshop/verlichting/ssl-m-1-l.html
+https://www.stretchgroup.be/webshop/profielen/frame-profielen/p-cda35.html
+https://www.stretchgroup.be/catalog/category/view/s/webshop/id/71/
+https://www.stretchgroup.be/catalog/category/view/s/alu-profielen/id/59/
+
+# --- Magento shop machinery (accounts don't carry over) ----------------------
+https://www.stretchgroup.be/customer/account/
+https://www.stretchgroup.be/customer/account/login/
+https://www.stretchgroup.be/customer/account/create/
+https://www.stretchgroup.be/customer/account/forgotpassword/
+https://www.stretchgroup.be/checkout/cart/
+https://www.stretchgroup.be/checkout/onepage/
+https://www.stretchgroup.be/catalogsearch/result/?q=spanplafond
+https://www.stretchgroup.be/catalogsearch/advanced/
+https://www.stretchgroup.be/wishlist/
+https://www.stretchgroup.be/newsletter/subscriber/new/
+https://www.stretchgroup.be/sales/order/history/
+https://www.stretchgroup.be/contacts/
+https://www.stretchgroup.be/media/catalog/product/placeholder.jpg
+https://www.stretchgroup.be/media/wysiwyg/logo.png
+https://www.stretchgroup.be/skin/frontend/default/default/css/styles.css
+https://www.stretchgroup.be/js/prototype/prototype.js
+
+# --- old multistore domains (308 → stretchgroup.be, then the same layers) -----
+# Only stretchgroup.net returned indexed URLs; .fr/.de/.es/.it had none in the
+# index but share the same Magento paths. These are checked directly against
+# their own hosts in production (no --base), and via Host-header override
+# locally (--host-header).
+https://www.stretchgroup.net/
+https://www.stretchgroup.net/professionals.html
+https://www.stretchgroup.net/professionals/dealers.html
+https://www.stretchgroup.net/professionals/do-it-yourself-stretch-ceiling.html
+https://www.stretchgroup.net/architects/architects/stretch-assists-you.html
+https://www.stretchgroup.net/clipso-stretch-ceiling/clipso/stretch-light.html
+https://www.stretchgroup.net/clipso-stretch-ceiling/clipso/stretch-standard-stretch-ceiling.html
+https://www.stretchgroup.net/portfolio.html
+https://www.stretchgroup.net/customer/account/login/
+https://www.stretchgroup.net/customer/account/create/
+https://www.stretchgroup.fr/
+https://www.stretchgroup.de/
+https://www.stretchgroup.es/
+https://www.stretchgroup.it/
+https://stretchgroup.net/
+https://stretchgroup.fr/contact/

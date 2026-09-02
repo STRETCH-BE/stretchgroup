@@ -1,0 +1,16 @@
+# Read-only clone of the product site used as the architecture reference
+reference
+reference/
+
+# Dependencies & build output (local only — Vercel builds from source)
+node_modules/
+.next/
+*.tsbuildinfo
+next-env.d.ts
+
+# Env files
+.env
+.env*.local
+
+# Local verification output
+verify-report.*.json

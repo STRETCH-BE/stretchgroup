@@ -1,0 +1,493 @@
+{
+  "common": {
+    "skipToContent": "Ga naar de inhoud",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "close": "Sluiten",
+    "menu": "Menu",
+    "languageLabel": "Taal",
+    "external": "Opent in een nieuw tabblad",
+    "nav": {
+      "primary": "Hoofdnavigatie",
+      "home": "Home",
+      "companies": "Bedrijven",
+      "about": "Over ons",
+      "careers": "Jobs",
+      "contact": "Contact",
+      "companySites": "Websites van de bedrijven"
+    },
+    "cta": {
+      "contactGroup": "Contacteer de groep"
+    }
+  },
+  "header": {
+    "strip": "STRETCH Group · Beveren-Waas, België",
+    "homeAria": "STRETCH Group — home"
+  },
+  "meta": {
+    "homeTitle": "STRETCH Group — plafonds, wanden en akoestiek uit België en Polen",
+    "homeDescription": "STRETCH Group verenigt drie bedrijven: STRETCH (spanplafonds en spanwanden, België), Stretch Sufit / Alto Design (pvc-spanplafondfabriek, Polen) en Re-Sound (circulaire akoestische panelen, België). Vind in één klik het juiste bedrijf.",
+    "companiesTitle": "De bedrijven | STRETCH Group",
+    "companiesDescription": "Drie bedrijven, één groep: STRETCH, Stretch Sufit / Alto Design en Re-Sound. Wat elk bedrijf doet en waar u terechtkunt voor plafonds, een offerte in Polen of akoestische panelen.",
+    "stretchTitle": "STRETCH — spanplafonds en spanwanden, België | STRETCH Group",
+    "stretchDescription": "Stretch Productions BV, opgericht in 2018 in Beveren-Waas: naadloze polyester spanplafonds en spanwanden, koud gemonteerd en geplaatst op één dag. Ga naar stretchplafond.be of stretch.mt.",
+    "stretchSufitTitle": "Stretch Sufit / Alto Design — pvc-spanplafondfabriek, Polen | STRETCH Group",
+    "stretchSufitDescription": "Alto Design Sp. z o.o. in Częstochowa: pvc-spanplafondfabriek sinds 2016, naadloos tot 6,50 m, deel van STRETCH Group sinds 2024. Consumentenmerk Stretch Sufit in 17 Poolse steden. Ga naar altodesign.pl.",
+    "reSoundTitle": "Re-Sound — circulaire akoestische panelen, België | STRETCH Group",
+    "reSoundDescription": "Re-Sound maakt in België circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen, met een volledig terugnamebeleid. Ga naar re-sound.be.",
+    "aboutTitle": "Over STRETCH Group — verhaal, tijdlijn en vestigingen",
+    "aboutDescription": "Hoe STRETCH Group groeide: een pvc-fabriek in Polen in 2016, Stretch Productions BV in België in 2018, Re-Sound, en Alto Design dat in 2024 toetreedt tot de groep. Vestigingen in België, de VS, Polen en Oostenrijk.",
+    "careersTitle": "Werken bij STRETCH Group",
+    "careersDescription": "Werk bij STRETCH Group of bij een van de bedrijven in België en Polen. Stuur een spontane sollicitatie naar de groep — we lezen ze allemaal.",
+    "contactTitle": "Contact STRETCH Group — Beveren-Waas, België",
+    "contactDescription": "Bereik STRETCH Group per telefoon, e-mail of WhatsApp, of contacteer STRETCH, Stretch Sufit / Alto Design en Re-Sound rechtstreeks. Hoofdzetel in Beveren-Waas, België.",
+    "privacyTitle": "Privacybeleid | STRETCH Group",
+    "privacyDescription": "Hoe STRETCH Group persoonsgegevens verzamelt, gebruikt en beschermt die via stretchgroup.be worden doorgegeven, conform de AVG (GDPR).",
+    "termsTitle": "Gebruiksvoorwaarden | STRETCH Group",
+    "termsDescription": "De voorwaarden voor het gebruik van stretchgroup.be, de bedrijfswebsite van STRETCH Group.",
+    "notFoundTitle": "Pagina niet gevonden | STRETCH Group",
+    "notFoundDescription": "De pagina die u zoekt, werd niet gevonden."
+  },
+  "cookies": {
+    "title": "We hechten waarde aan uw privacy",
+    "body": "We gebruiken cookies om deze site te laten werken, het gebruik te meten en — met uw toestemming — onze marketing te verbeteren. Kies welke categorieën u toestaat.",
+    "acceptAll": "Alles accepteren",
+    "rejectAll": "Alles weigeren",
+    "customize": "Aanpassen",
+    "save": "Keuzes opslaan",
+    "manage": "Cookies beheren",
+    "necessary": "Noodzakelijk",
+    "necessaryDesc": "Vereist om de site te laten werken. Altijd aan.",
+    "analytics": "Analytisch",
+    "analyticsDesc": "Helpt ons anoniem te begrijpen hoe de site wordt gebruikt.",
+    "marketing": "Marketing",
+    "marketingDesc": "Laat ons campagnes meten en relevante advertenties tonen.",
+    "always": "Altijd aan",
+    "privacyLink": "Privacybeleid"
+  },
+  "security": {
+    "captchaFailed": "De veiligheidscontrole is mislukt. Probeer het opnieuw.",
+    "captchaLoadFailed": "De veiligheidscontrole kon niet laden. Vernieuw de pagina of mail ons via {email}.",
+    "tooManyRequests": "Te veel aanvragen. Wacht enkele minuten en probeer het opnieuw."
+  },
+  "forms": {
+    "fields": {
+      "name": "Naam",
+      "email": "E-mail",
+      "company": "Bedrijf",
+      "about": "Over welk bedrijf gaat het?",
+      "message": "Uw bericht"
+    },
+    "placeholders": {
+      "name": "Voor- en achternaam",
+      "email": "u@bedrijf.be",
+      "company": "Uw bedrijf (optioneel)",
+      "message": "Vertel ons wat u nodig hebt en in welk land u zich bevindt."
+    },
+    "aboutOptions": {
+      "group": "STRETCH Group in het algemeen",
+      "stretch": "STRETCH — spanplafonds en spanwanden",
+      "stretchSufit": "Stretch Sufit / Alto Design — Polen",
+      "reSound": "Re-Sound — akoestische panelen",
+      "careers": "Jobs / spontane sollicitatie"
+    },
+    "required": "*",
+    "consentPrefix": "Ik ga ermee akkoord dat STRETCH Group mijn gegevens verwerkt om mijn aanvraag te beantwoorden, zoals beschreven in het",
+    "consentPrivacy": "privacybeleid",
+    "reassurance": "We antwoorden binnen twee werkdagen en sturen uw bericht door naar het juiste bedrijf.",
+    "submit": "Verstuur bericht",
+    "sending": "Versturen…",
+    "successTitle": "Bericht ontvangen",
+    "successMessage": "Bedankt. We bezorgen uw bericht aan het juiste bedrijf en antwoorden binnen twee werkdagen.",
+    "errorMessage": "We konden uw bericht niet versturen. Probeer het opnieuw of mail ons rechtstreeks via info@stretchgroup.be.",
+    "validation": {
+      "required": "Dit veld is verplicht",
+      "email": "Geef een geldig e-mailadres op",
+      "consent": "Aanvaard het privacybeleid om verder te gaan"
+    }
+  },
+  "footer": {
+    "tagline": "De groep achter STRETCH, Stretch Sufit / Alto Design en Re-Sound: plafonds, wanden en akoestiek, gemaakt in België en Polen.",
+    "companiesHeading": "Bedrijven",
+    "groupHeading": "Groep",
+    "officesHeading": "Vestigingen",
+    "rights": "STRETCH Group",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "links": {
+      "overview": "Alle bedrijven",
+      "stretch": "STRETCH",
+      "stretchSufit": "Stretch Sufit / Alto Design",
+      "reSound": "Re-Sound",
+      "about": "Over de groep",
+      "careers": "Jobs",
+      "contact": "Contact"
+    }
+  },
+  "router": {
+    "eyebrow": "Waar moet u zijn?",
+    "title": "Vind het juiste bedrijf.",
+    "intro": "Deze site stelt de groep voor. Producten, offertes en projecten vindt u op de websites van de bedrijven — kies de uwe.",
+    "footerTitle": "Vind het juiste bedrijf",
+    "items": {
+      "ceiling": {
+        "q": "Op zoek naar een spanplafond?",
+        "a": "STRETCH ontwerpt, maakt en plaatst naadloze spanplafonds en spanwanden in België — een nieuw plafond op één dag.",
+        "cta": "Ga naar stretchplafond.be",
+        "altCta": "Internationale site: stretch.mt"
+      },
+      "acoustic": {
+        "q": "Op zoek naar akoestische panelen?",
+        "a": "Re-Sound maakt in België circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen.",
+        "cta": "Ga naar re-sound.be"
+      },
+      "poland": {
+        "q": "Een offerte nodig in Polen?",
+        "a": "Alto Design runt de pvc-spanplafondfabriek van de groep in Częstochowa; Stretch Sufit plaatst in 17 Poolse steden.",
+        "cta": "Ga naar altodesign.pl"
+      }
+    }
+  },
+  "companies": {
+    "eyebrow": "De bedrijven",
+    "title": "Drie bedrijven. Eén groep.",
+    "intro": "Elk bedrijf heeft zijn eigen merk, fabriek en website. De groep verbindt ze: gedeelde kennis, gedeelde markten, één standaard.",
+    "stretch": {
+      "name": "STRETCH",
+      "kicker": "Spanplafonds en spanwanden · België",
+      "oneLiner": "Belgische fabrikant van naadloze polyester spanplafonds en spanwanden, koud gemonteerd en geplaatst op één dag.",
+      "whatTitle": "Een nieuw plafond op één dag.",
+      "description": "STRETCH ontwerpt en maakt naadloze spanplafonds en spanwanden in Beveren-Waas. Het polyester doek wordt koud gemonteerd en op één dag geplaatst, met akoestische, verlichte en bedrukte opties. Het bedrijf handelt als Stretch Productions BV, opgericht in 2018, en bedient België via stretchplafond.be en de internationale markten via stretch.mt.",
+      "bullets": [
+        "Naadloze polyester spanplafonds en spanwanden",
+        "Koud gemonteerd, geplaatst op één dag",
+        "Akoestische, verlichte en bedrukte opties",
+        "België: stretchplafond.be · internationaal: stretch.mt"
+      ],
+      "ctaBody": "Producten, projecten, prijzen en offertes vindt u op de website van STRETCH."
+    },
+    "stretch-sufit": {
+      "name": "Stretch Sufit",
+      "kicker": "Pvc-spanplafondfabriek · Polen",
+      "oneLiner": "De pvc-spanplafondfabriek van Alto Design in Częstochowa, Polen, sinds 2016 — deel van STRETCH Group sinds 2024.",
+      "whatTitle": "De pvc-fabriek van de groep.",
+      "description": "Alto Design Sp. z o.o. produceert sinds 2016 pvc-spanplafonds in Częstochowa, naadloos tot 6,50 m. In 2024 trad het bedrijf toe tot STRETCH Group. Het consumentenmerk Stretch Sufit plaatst spanplafonds in 17 Poolse steden en realiseerde al meer dan 4.000 projecten.",
+      "bullets": [
+        "Pvc-spanplafondfabriek in Częstochowa sinds 2016",
+        "Naadloos pvc tot 6,50 m",
+        "Stretch Sufit: plaatsing in 17 Poolse steden",
+        "Meer dan 4.000 gerealiseerde projecten"
+      ],
+      "ctaBody": "Offertes, plaatsingen en het fabrieksgamma vindt u op altodesign.pl."
+    },
+    "re-sound": {
+      "name": "Re-Sound",
+      "kicker": "Circulaire akoestiek · België",
+      "oneLiner": "Belgische maker van circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen, met een volledig terugnamebeleid.",
+      "whatTitle": "Akoestiek die de kringloop sluit.",
+      "description": "Re-Sound maakt in België akoestische panelen en schermen uit gerecycleerde en duurzame materialen. Het verhaal begon in 2020 met garen gesponnen uit gerecycleerde jeans. Elk product kan op het einde van zijn levensduur worden teruggenomen en tot nieuwe panelen verwerkt. Het gamma omvat Interior-panelen en het vrijstaande scherm Divide. Re-Sound werd opgericht door Aaron Thierens.",
+      "bullets": [
+        "Akoestische panelen en schermen, gemaakt in België",
+        "Gerecycleerde en duurzame materialen — oorsprong: garen uit gerecycleerde jeans, 2020",
+        "Volledig terugnamebeleid: close the loop",
+        "Interior-panelen en het vrijstaande scherm Divide"
+      ],
+      "ctaBody": "Het gamma, de projecten en het contact voor akoestische oplossingen vindt u op re-sound.be."
+    }
+  },
+  "companyPage": {
+    "readMore": "Over het bedrijf",
+    "visit": "Ga naar {site}",
+    "visitAlt": "Internationale site: {site}",
+    "logoSlot": "Logo {name}",
+    "imageSlot": "{name} — fotografie",
+    "whatHeading": "Wat ze doen",
+    "contactHeading": "Contact {name}",
+    "membership": "Lid van de groep",
+    "partOf": "Deel van STRETCH Group",
+    "partOfSince": "Deel van STRETCH Group sinds {year}",
+    "legal": "Juridische entiteit",
+    "founder": "Oprichter",
+    "website": "Website",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "address": "Adres",
+    "otherCompanies": "De andere bedrijven",
+    "ctaTitle": "Op zoek naar {name}?",
+    "facts": {
+      "founded": "Opgericht",
+      "origin": "Thuisbasis",
+      "install": "Plafond geplaatst op",
+      "factorySince": "Fabriek sinds",
+      "seamless": "Naadloos pvc tot",
+      "cities": "Poolse steden",
+      "projects": "Gerealiseerde projecten",
+      "madeIn": "Gemaakt in",
+      "takeBack": "Terugnamebeleid"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Eén groep. Drie bedrijven.",
+      "title1": "STRETCH",
+      "title2": "Group",
+      "statement": "Spanplafonds, spanwanden en akoestiek — gemaakt in België en Polen, verkocht in heel Europa en de VS.",
+      "hint": "Kies een bedrijf",
+      "indexAria": "De bedrijven van STRETCH Group",
+      "slotLabel": "{name} — logo / foto"
+    },
+    "numbers": {
+      "eyebrow": "De groep in cijfers",
+      "items": {
+        "companies": "Bedrijven",
+        "offices": "Vestigingen",
+        "markets": "Actieve marktwebsites",
+        "factory": "Eerste fabriek geopend"
+      },
+      "note": "De cijfers komen uit de gegevens van deze site zelf: de drie bedrijven, de vier vestigingen en de marktwebsites die vandaag online zijn."
+    },
+    "markets": {
+      "eyebrow": "Markten",
+      "title": "Eén standaard, veel domeinen.",
+      "intro": "{count} actieve websites bedienen de markten van de groep in hun eigen taal. Elke site is een bedrijfswebsite — daar vindt u de producten.",
+      "byCompany": "Websites van {name}"
+    },
+    "timeline": {
+      "eyebrow": "Tijdlijn",
+      "title": "Hoe de groep groeide.",
+      "cta": "Lees het volledige verhaal"
+    },
+    "contactBand": {
+      "title": "Praat met de groep.",
+      "body": "Partnerschappen, pers, jobs of een vraag over welk bedrijf u nodig hebt — één bericht bereikt de juiste mensen.",
+      "cta": "Contacteer ons",
+      "or": "Liever bellen?"
+    }
+  },
+  "timeline": {
+    "altoFactory": {
+      "title": "Alto Design opent een pvc-spanplafondfabriek in Częstochowa, Polen.",
+      "body": "De fabriek produceert naadloze pvc-spanplafonds tot 6,50 m breed en wordt later de pvc-productiebasis van de groep."
+    },
+    "stretchFounded": {
+      "title": "Stretch Productions BV wordt opgericht in Beveren-Waas.",
+      "body": "STRETCH begint naadloze polyester spanplafonds en spanwanden te maken — koud gemonteerd, geplaatst op één dag."
+    },
+    "reSoundOrigin": {
+      "title": "De oorsprong van Re-Sound: akoestische panelen uit garen van gerecycleerde jeans.",
+      "body": "Het circulaire akoestiekbedrijf start met een garen gesponnen uit gerecycleerde jeans en bouwt een terugnamebeleid in bij elk product."
+    },
+    "altoJoins": {
+      "title": "Alto Design treedt toe tot STRETCH Group.",
+      "body": "De Poolse fabriek en het plaatsingsmerk Stretch Sufit worden deel van de groep."
+    },
+    "rollout": {
+      "title": "Internationale uitrol van landendomeinen in twaalf-plus markten.",
+      "body": "STRETCH lanceert een landenwebsite per markt, van stretch.mt voor internationale bezoekers tot stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is en meer."
+    }
+  },
+  "countries": {
+    "INT": "Internationaal",
+    "BE": "België",
+    "NL": "Nederland",
+    "FR": "Frankrijk",
+    "PL": "Polen",
+    "DE": "Duitsland",
+    "ES": "Spanje",
+    "GB": "Verenigd Koninkrijk",
+    "US": "Verenigde Staten",
+    "DK": "Denemarken",
+    "SE": "Zweden",
+    "IS": "IJsland",
+    "AT": "Oostenrijk",
+    "MT": "Malta",
+    "PT": "Portugal",
+    "NO": "Noorwegen"
+  },
+  "offices": {
+    "roles": {
+      "headquarters": "Hoofdzetel",
+      "sales": "Verkoop",
+      "branch": "Vestiging"
+    }
+  },
+  "aboutPage": {
+    "crumb": "Over ons",
+    "hero": {
+      "eyebrow": "Over STRETCH Group",
+      "titleA": "Eén groep,",
+      "titleB": "drie bedrijven.",
+      "lead": "STRETCH Group brengt een Belgische spanplafondfabrikant, een Poolse pvc-fabriek en een Belgisch bedrijf in circulaire akoestiek samen. Elk behoudt zijn eigen naam en website; de groep verbindt ze.",
+      "imageLabel": "Groep — fotografie"
+    },
+    "story": {
+      "eyebrow": "Ons verhaal",
+      "title": "Gegroeid vanuit het atelier.",
+      "p1": "Het verhaal van de groep begint op de fabrieksvloer. In 2016 opende Alto Design een pvc-spanplafondfabriek in Częstochowa, Polen. In 2018 werd Stretch Productions BV opgericht in Beveren-Waas om naadloze polyester spanplafonds en spanwanden te ontwerpen en te plaatsen — koud gemonteerd, klaar op één dag.",
+      "p2": "Re-Sound voegde akoestiek toe met een circulaire insteek: panelen en schermen, gemaakt in België uit gerecycleerde en duurzame materialen, vertrekkend van een garen gesponnen uit gerecycleerde jeans, met een terugnamebeleid zodat elk product de kringloop kan sluiten.",
+      "p3": "In 2024 trad Alto Design toe tot STRETCH Group en bracht het de fabriek en het plaatsingsmerk Stretch Sufit binnen in de groep. Vandaag delen de bedrijven kennis en markten, terwijl elk zijn eigen merk en website voert:"
+    },
+    "offices": {
+      "eyebrow": "Waar u ons vindt",
+      "title": "Vier vestigingen, de kennis van twee fabrieken."
+    },
+    "cta": {
+      "title": "Samenwerken met de groep?",
+      "button": "Contacteer ons"
+    }
+  },
+  "careersPage": {
+    "crumb": "Jobs",
+    "eyebrow": "Jobs",
+    "titleA": "Werk mee",
+    "titleB": "in de groep.",
+    "lead": "Drie bedrijven, twee landen, één standaard. Of u nu plafonds plaatst, een productielijn runt, akoestiek ontwerpt of de boekhouding doet: hier is uw werk zichtbaar.",
+    "body1": "STRETCH Group is een productiegroep: plafonds en wanden worden gemaakt in België, pvc-doeken in Polen, akoestische panelen in België. De meeste functies zijn hands-on — productie, plaatsing, projectbeheer, verkoop en ondersteuning — in België en Polen.",
+    "body2": "Openstaande vacatures verschijnen hier en op de websites van de bedrijven. Past er vandaag niets? Stuur dan een spontane sollicitatie; we houden ze bij en geven ze door aan het juiste bedrijf.",
+    "imageLabel": "Jobs — fotografie",
+    "rolesTitle": "Openstaande vacatures",
+    "rolesEmptyTitle": "Momenteel geen gepubliceerde vacatures.",
+    "rolesEmpty": "We lezen elke spontane sollicitatie en sturen ze door naar het bedrijf waar ze het best past. Vertel ons wat u doet en waar u graag zou werken.",
+    "applyTitle": "Spontane sollicitatie",
+    "applyHeading": "Stuur ons uw profiel.",
+    "applyBody": "Mail een korte voorstelling en uw cv naar info@stretchgroup.be, of gebruik het contactformulier en kies “Jobs”. We antwoorden binnen twee werkdagen.",
+    "applyCta": "Stuur een spontane sollicitatie",
+    "mailSubject": "Spontane sollicitatie — STRETCH Group",
+    "formCta": "Gebruik het contactformulier",
+    "companiesTitle": "Of solliciteer bij een bedrijf",
+    "companiesBody": "Elk bedrijf publiceert ook zijn eigen vacatures en contactgegevens op zijn website."
+  },
+  "contactPage": {
+    "crumb": "Contact",
+    "eyebrow": "Contact",
+    "titleA": "Praat met",
+    "titleB": "de groep.",
+    "cards": {
+      "call": { "label": "Bel ons" },
+      "email": { "label": "Mail ons", "sub": "Antwoord binnen twee werkdagen" },
+      "chat": { "label": "WhatsApp", "value": "Chat met ons", "sub": "Korte vragen, snelle antwoorden" }
+    },
+    "chatNote": "Ook op",
+    "formTitle": "Stuur ons een bericht",
+    "formLead": "Vertel ons wat u nodig hebt en over welk bedrijf het gaat. We bezorgen het aan de juiste mensen en antwoorden binnen twee werkdagen.",
+    "hqKicker": "Hoofdzetel",
+    "mapLabel": "Hoofdzetel — foto / kaart",
+    "routingEyebrow": "Rechtstreeks",
+    "routingTitle": "Contacteer een bedrijf rechtstreeks.",
+    "routingBody": "Voor offertes, projecten en productvragen is het bedrijf zelf de snelste weg.",
+    "officesEyebrow": "Onze vestigingen"
+  },
+  "legal": {
+    "eyebrow": "Juridisch",
+    "updated": "Laatst bijgewerkt: {date}",
+    "updatedDate": "september 2026",
+    "contactHeading": "Contact",
+    "contactBody": "Voor vragen over dit document of om uw rechten uit te oefenen, contacteert u STRETCH Group via",
+    "belgium": "België",
+    "reviewNote": "Dit document is een ontwerp dat voor de lancering werd opgesteld en dat vóór publicatie door een bevoegd juridisch adviseur moet worden nagekeken, zodat het de werkelijke juridische entiteit en gegevensverwerking van de groep weerspiegelt.",
+    "privacy": {
+      "title": "Privacybeleid",
+      "intro": "Dit privacybeleid legt uit hoe STRETCH Group (“wij”, “ons”) persoonsgegevens verzamelt en gebruikt wanneer u stretchgroup.be bezoekt of ons via de site contacteert. Wij zijn de verwerkingsverantwoordelijke voor die verwerking.",
+      "sections": [
+        {
+          "h": "Wat we verzamelen",
+          "p": [
+            "We verzamelen alleen wat we nodig hebben. Wanneer u het contactformulier gebruikt of een spontane sollicitatie stuurt, verzamelen we de gegevens die u opgeeft: uw naam, e-mailadres, bedrijf, het bedrijf waarover uw bericht gaat en de inhoud van uw bericht.",
+            "Wanneer u de site bezoekt, kunnen we ook standaard technische en gebruiksgegevens verzamelen — zoals toestel, browser en bezochte pagina’s — via cookies en gelijkaardige technologieën, maar alleen voor zover u daarvoor toestemming gaf. U kunt uw keuzes op elk moment bekijken en aanpassen via “Cookies beheren” in de voettekst."
+          ]
+        },
+        {
+          "h": "Waarvoor we ze gebruiken",
+          "p": [
+            "We gebruiken de gegevens die u doorgeeft om uw vraag te beantwoorden en om ze door te sturen naar het bedrijf van de groep dat u kan helpen (STRETCH, Stretch Sufit / Alto Design of Re-Sound). Deze verwerking is gebaseerd op uw aanvraag en op ons gerechtvaardigd belang om erop te antwoorden.",
+            "Wanneer u toestemming gaf, gebruiken we analysetechnologieën om te begrijpen hoe de site wordt gebruikt en om ze te verbeteren. U kunt die toestemming op elk moment intrekken."
+          ]
+        },
+        {
+          "h": "Cookies en analyse",
+          "p": [
+            "Niet-essentiële cookies en analysetools — waaronder Google Analytics en Microsoft Clarity — worden pas geladen nadat u ze hebt aanvaard. Tot dan blijven ze uitgeschakeld via consent mode. Essentiële cookies die nodig zijn om de site te laten werken en uw cookiekeuze te onthouden, vereisen geen toestemming."
+          ]
+        },
+        {
+          "h": "Bescherming tegen spam",
+          "p": [
+            "Om onze formulieren te beschermen tegen geautomatiseerd misbruik kunnen we Cloudflare Turnstile gebruiken, een privacyvriendelijke verificatiedienst van Cloudflare, Inc. Die beoordeelt technische signalen van uw browser om mensen van bots te onderscheiden en volgt u niet over websites heen. Met hetzelfde doel registreren we ook technische gegevens van formulierinzendingen, zoals IP-adres en browsertype. Deze verwerking is gebaseerd op ons gerechtvaardigd belang om de site veilig te houden."
+          ]
+        },
+        {
+          "h": "Met wie we ze delen",
+          "p": [
+            "We verkopen uw persoonsgegevens niet. We delen ze met het bedrijf van de groep waarover uw vraag gaat, en met dienstverleners die ons helpen de site te beheren en berichten te bezorgen — onze hostingprovider, onze e-mailprovider en, mits toestemming, onze analyseproviders — uitsluitend voor zover nodig om die diensten te leveren. Sommige providers kunnen gegevens buiten de Europese Economische Ruimte verwerken; in dat geval gelden passende waarborgen."
+          ]
+        },
+        {
+          "h": "Hoelang we ze bewaren",
+          "p": [
+            "We bewaren gegevens van aanvragen zolang dat nodig is om uw vraag te behandelen en voor onze gerechtvaardigde zakelijke en wettelijke administratie; daarna worden ze verwijderd of geanonimiseerd. Spontane sollicitaties bewaren we een beperkte periode, tenzij u ons vraagt ze eerder te verwijderen."
+          ]
+        },
+        {
+          "h": "Uw rechten",
+          "p": [
+            "Onder de toepasselijke wetgeving hebt u het recht op inzage, verbetering, verwijdering of beperking van de verwerking van uw persoonsgegevens, het recht om bezwaar te maken, het recht op overdraagbaarheid en het recht om uw toestemming op elk moment in te trekken. U hebt ook het recht om een klacht in te dienen bij uw toezichthoudende autoriteit. In België is dat de Gegevensbeschermingsautoriteit."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Gebruiksvoorwaarden",
+      "intro": "Deze voorwaarden regelen uw gebruik van stretchgroup.be (de “site”), de bedrijfswebsite van STRETCH Group (“wij”, “ons”). Door de site te gebruiken, aanvaardt u deze voorwaarden. Gaat u niet akkoord, gebruik de site dan niet.",
+      "sections": [
+        {
+          "h": "Gebruik van de site",
+          "p": [
+            "U mag deze site alleen gebruiken voor rechtmatige doeleinden — om de groep en haar bedrijven te leren kennen en om ons te contacteren. U verbindt zich ertoe de site niet te misbruiken, de werking ervan niet te verstoren, geen ongeoorloofde toegang te proberen verkrijgen en de site niet te gebruiken op een manier die de toepasselijke wetgeving schendt."
+          ]
+        },
+        {
+          "h": "Informatie op de site",
+          "p": [
+            "Deze site stelt de groep en haar bedrijven voor, louter ter algemene informatie. De site verkoopt niets en publiceert geen prijzen. Productinformatie, specificaties, offertes en bestellingen worden door de afzonderlijke bedrijven aangeboden op hun eigen websites en onder hun eigen voorwaarden, die voorrang hebben op alles wat hier staat."
+          ]
+        },
+        {
+          "h": "Formulieren en aanvragen",
+          "p": [
+            "Wanneer u een formulier verstuurt, bevestigt u dat de opgegeven informatie juist is en dat u ze mag delen. Het versturen van een aanvraag of sollicitatie doet geen overeenkomst of arbeidsrelatie ontstaan."
+          ]
+        },
+        {
+          "h": "Intellectuele eigendom",
+          "p": [
+            "Alle inhoud op deze site — met inbegrip van teksten, grafische elementen, logo’s en de namen en merken STRETCH Group, STRETCH, Stretch Sufit, Alto Design en Re-Sound — is eigendom van of in licentie gegeven aan de groep en haar bedrijven en wordt beschermd door het intellectuele-eigendomsrecht. U mag ze niet kopiëren, reproduceren of hergebruiken zonder voorafgaande schriftelijke toestemming, behalve voor zover de wet dat toelaat."
+          ]
+        },
+        {
+          "h": "Links naar derden",
+          "p": [
+            "De site linkt naar de websites van de bedrijven van de groep en kan linken naar andere websites van derden. Elk van die sites heeft eigen voorwaarden en een eigen privacybeleid. Wij zijn niet verantwoordelijk voor de inhoud of praktijken van sites die we niet zelf beheren."
+          ]
+        },
+        {
+          "h": "Beperking van aansprakelijkheid",
+          "p": [
+            "Voor zover de wet dat toelaat, zijn wij niet aansprakelijk voor indirecte schade of gevolgschade die voortvloeit uit uw gebruik van de site, uit de onmogelijkheid om ze te gebruiken of uit het vertrouwen op de inhoud ervan. Niets in deze voorwaarden sluit aansprakelijkheid uit die volgens de toepasselijke wetgeving niet kan worden uitgesloten."
+          ]
+        },
+        {
+          "h": "Wijzigingen en toepasselijk recht",
+          "p": [
+            "We kunnen deze voorwaarden van tijd tot tijd aanpassen; de versie die op deze pagina is gepubliceerd, is van toepassing. Op deze voorwaarden is het Belgische recht van toepassing en zijn de Belgische rechtbanken bevoegd, voor zover de wet dat toelaat."
+          ]
+        }
+      ]
+    }
+  },
+  "notFound": {
+    "title": "Pagina niet gevonden",
+    "body": "De pagina die u zoekt, is misschien verhuisd of bestaat niet meer. De groepssite is klein — waarschijnlijk zoekt u een van de bedrijfswebsites.",
+    "home": "Terug naar home",
+    "companies": "Of ga meteen naar een bedrijfswebsite"
+  }
+}
