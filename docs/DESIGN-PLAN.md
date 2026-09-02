@@ -120,8 +120,8 @@ claims. Header nav is four items. The only red band is the contact band.
 
 ## Motion & accessibility
 
-- One entrance animation (hero). `Reveal` is used sparingly for section
-  headings only. All motion collapses under `prefers-reduced-motion` (global
+- One entrance animation (hero). The inherited `Reveal` scroll-reveal helper is
+  copied but deliberately unused at launch. All motion collapses under `prefers-reduced-motion` (global
   rule inherited from the reference CSS).
 - Landmarks: `header`, `nav[aria-label]`, `main#main`, `footer`; skip link.
 - Focus: inherited 3px red `:focus-visible` outline; hero rows are `<a>`.

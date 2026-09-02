@@ -6,7 +6,6 @@ reference/
 node_modules/
 .next/
 *.tsbuildinfo
-next-env.d.ts
 
 # Env files
 .env
