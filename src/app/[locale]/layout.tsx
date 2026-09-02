@@ -18,6 +18,10 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieConsent from '@/components/layout/CookieConsent';
 
+// Only the live locales exist as segments; anything else must fall through to
+// the next.config fallback rewrite (Layer 4b) instead of rendering a 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return liveLocales.map((locale) => ({ locale }));
 }

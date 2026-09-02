@@ -1,7 +1,6 @@
 // Contact (/contact): quick-contact cards, the group form (→ /api/contact)
 // beside the HQ block, per-company contact routing and the offices grid.
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Phone, Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { isValidLocale, type Locale } from '@/i18n/config';
@@ -79,9 +78,7 @@ export default async function ContactPage({ params }: { params: { locale: string
           <div>
             <h2 className="h2 h2--sm" style={{ margin: '0 0 8px' }}>{t('formTitle')}</h2>
             <p style={{ color: 'var(--text-muted)', margin: '0 0 28px', maxWidth: 480 }}>{t('formLead')}</p>
-            <Suspense fallback={null}>
-              <ContactForm />
-            </Suspense>
+            <ContactForm />
           </div>
           <div style={{ position: 'relative', minHeight: 380, height: '100%' }}>
             <Placeholder label={t('mapLabel')} style={{ minHeight: 380 }} />

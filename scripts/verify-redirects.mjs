@@ -36,6 +36,14 @@
 //   --json <path>       Also write the full report as JSON.
 //   --no-variants       Skip the scheme/www/slash/query variant checks.
 //   --no-junk           Skip the invented-path checks.
+//   --bypass <secret>   Vercel Deployment Protection bypass secret for the base
+//                       host (Project → Deployment Protection → Protection
+//                       Bypass for Automation). Also read from the
+//                       VERCEL_AUTOMATION_BYPASS_SECRET env var. Without it a
+//                       protected preview answers 401 to every request.
+//
+// Every on-site chain must additionally end on https, on the apex host (no
+// www.) and without a trailing slash — the canonical form.
 // ============================================================================
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -53,7 +61,9 @@ const HOST_HEADER = flag('--host-header');
 const EXTERNAL = opt('--external', 'follow');
 const CONCURRENCY = Number(opt('--concurrency', '8')) || 8;
 const JSON_OUT = opt('--json', '');
+const BYPASS = opt('--bypass', process.env.VERCEL_AUTOMATION_BYPASS_SECRET || '');
 const MAX_HOPS = 5;
+const APEX = 'stretchgroup.be';
 
 // Domains a chain may legitimately end on (or, in --external stop mode, hop
 // to). Keep in sync with site-config markets + redirects.mjs targets.
@@ -65,7 +75,13 @@ const ALLOWED_HOSTS = new Set([
   're-sound.be',
 ]);
 
-const HOME_PATHS = new Set(['/', '/nl']); // localized homes (Layer 4 targets)
+// Localized homes (Layer 4 targets): a junk path under a live locale prefix
+// must land on THAT locale's home, everything else on the default home.
+const LIVE_LOCALES = ['nl'];
+function expectedHomeFor(pathname) {
+  const seg = pathname.split('/').filter(Boolean)[0] ?? '';
+  return LIVE_LOCALES.includes(seg) ? `/${seg}` : '/';
+}
 
 function readInventory(file) {
   const text = readFileSync(resolve(file), 'utf8');
@@ -100,10 +116,14 @@ async function fetchOnce(url, headers) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 20000);
   try {
+    const bypass =
+      BYPASS && BASE && hostOf(url) === hostOf(BASE)
+        ? { 'x-vercel-protection-bypass': BYPASS, 'x-vercel-set-bypass-cookie': 'true' }
+        : {};
     const res = await fetch(url, {
       method: 'GET',
       redirect: 'manual',
-      headers: { 'user-agent': 'stretchgroup-verify-redirects/1.0', ...headers },
+      headers: { 'user-agent': 'stretchgroup-verify-redirects/1.0', ...bypass, ...headers },
       signal: controller.signal,
     });
     // Drain the body so keep-alive sockets are reusable.
@@ -169,10 +189,18 @@ async function follow(startUrl, headers, expect = {}) {
       continue;
     }
     if (r.status === 200) {
+      const finalUrl = new URL(current);
+      const onSite = BASE ? finalUrl.host.toLowerCase() === hostOf(BASE) : apexOf(finalUrl.host.toLowerCase()) === APEX;
+      if (onSite) {
+        // Canonical form: https, apex host, no trailing slash.
+        if (!BASE && finalUrl.protocol !== 'https:') return { ok: false, chain, reason: 'final URL is not https' };
+        if (!BASE && finalUrl.host.toLowerCase().startsWith('www.')) return { ok: false, chain, reason: 'final URL is on the www host' };
+        if (finalUrl.pathname !== '/' && finalUrl.pathname.endsWith('/')) return { ok: false, chain, reason: 'final URL keeps a trailing slash' };
+      }
       if (expect.home) {
-        const finalPath = new URL(current).pathname.replace(/\/+$/, '') || '/';
-        if (!HOME_PATHS.has(finalPath)) {
-          return { ok: false, chain, reason: `expected the homepage, landed on ${finalPath}` };
+        const finalPath = finalUrl.pathname.replace(/\/+$/, '') || '/';
+        if (finalPath !== expect.home) {
+          return { ok: false, chain, reason: `expected the homepage ${expect.home}, landed on ${finalPath}` };
         }
       }
       if (hop > MAX_HOPS) return { ok: false, chain, reason: 'too many hops' };
@@ -258,17 +286,29 @@ if (!flag('--no-junk')) {
     '/about/extra',
     '/%E2%9C%93/unicode',
     '/customer/account/login/?referer=abc',
+    // Layer 4b: asset-like / API-like paths the middleware does not touch
+    '/images/nope.jpg',
+    '/fonts/missing.woff2',
+    '/manifest.webmanifest',
+    '/api/rest/products',
+    '/api/soap/?wsdl',
+    '/api/v2_soap/',
+    '/api/xmlrpc/',
+    '/api/does-not-exist',
+    '/nl/oude-pagina.html',
+    '/nl/images/foto.jpg',
+    '/index.php/customer/account/',
   ];
   for (const p of junk) {
     const u = (BASE || 'https://stretchgroup.be') + p;
-    tests.push({ group: 'junk→home', label: u, url: u, headers: {}, expectHome: true });
+    tests.push({ group: 'junk→home', label: u, url: u, headers: {}, expectHome: expectedHomeFor(p) });
   }
 }
 
 // ---------------------------------------------------------------------------
 // Run + report
 // ---------------------------------------------------------------------------
-console.log(`verify-redirects — ${tests.length} checks · base=${BASE || '(as listed)'} · external=${EXTERNAL}${HOST_HEADER ? ' · host-header' : ''}`);
+console.log(`verify-redirects — ${tests.length} checks · base=${BASE || '(as listed)'} · external=${EXTERNAL}${HOST_HEADER ? ' · host-header' : ''}${BYPASS ? ' · bypass' : ''}`);
 console.log('');
 
 const results = await runPool(tests, async (t) => {

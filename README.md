@@ -66,15 +66,18 @@ The old stretchgroup.be is a Magento shop with years of indexed URLs. After cuto
 | --- | --- | --- |
 | 1 | `legacy/legacy-urls.txt` | The committed URL inventory (see the file header for how it was built and the gap to close) |
 | 2 | `redirects.mjs` → explicit rules | Every known URL mapped exactly; Dutch content → `https://stretchplafond.be/...` (301), group pages stay here (308) |
-| 3 | `redirects.mjs` → prefix catch-alls | `/clipso-spanplafonds/:path*`, `/blog/:path*`, `/portfolio/:path*`, `/architects/:path*`, `/proffessionals/:path*`, `/webshop/:path*`, any remaining `.html` → home |
-| 4 | `src/middleware.ts` | Anything that is not one of the site's own routes (`staticRoutes` in `src/lib/site-config.ts`) 301s to the localized home — mistyped links, dead backlinks, whatever the crawl missed |
+| 3 | `redirects.mjs` → prefix catch-alls | `/clipso-spanplafonds/:path*`, `/blog/:path*`, `/portfolio/:path*`, `/architects/:path*`, `/proffessionals/:path*`, `/webshop/:path*`; `/index.php/:path*` strips the prefix and re-evaluates the real path |
+| 4 | `src/middleware.ts` | Any page-like path that is not one of the site's own routes (`staticRoutes` in `src/lib/site-config.ts`) 301s to the localized home — mistyped links, dead backlinks, whatever the crawl missed |
+| 4b | `next.config.mjs` `rewrites.fallback` → `src/app/api/legacy-fallback` | Runs AFTER the filesystem: a missing static asset, a stray `.html`, an unknown `/api/*` path (Magento's `/api/soap`, `/api/rest`, …) is 301'd to the visitor's localized home. Real files in `public/` (Search Console verification, manifest, fonts) are served untouched |
 | 5 | `scripts/verify-redirects.mjs` | Requests every inventory URL with redirects followed (max 5 hops), asserts 200 with zero 4xx/5xx, plus scheme/www/slash/query variants and junk paths that must land on the homepage |
 
 Old multistore domains (`stretchgroup.fr` / `.de` / `.net` / `.es` / `.it`, with and without `www`) and `www.stretchgroup.be` are 308'd host-wide to `https://stretchgroup.be/:path*` by `redirects.mjs`, so they flow through the same layers.
 
 ```bash
-# against a Vercel preview (before DNS cutover)
-npm run verify:redirects -- --base https://<preview>.vercel.app
+# against a Vercel preview (before DNS cutover). Previews are protected by
+# default: pass the project's "Protection Bypass for Automation" secret
+# (or export VERCEL_AUTOMATION_BYPASS_SECRET) or every request answers 401.
+npm run verify:redirects -- --base https://<preview>.vercel.app --bypass <secret>
 
 # against production (after DNS cutover) — the final launch gate
 npm run verify:redirects
@@ -84,7 +87,7 @@ npm run verify:redirects
 npm run verify:redirects -- --base http://localhost:3000 --host-header --external stop
 ```
 
-The script exits non-zero on any failure and prints a per-URL chain report (`--json <file>` writes it out).
+Every on-site chain must also end in canonical form — https, apex host (no `www.`), no trailing slash — and junk paths under `/nl/` must land on `/nl`. The script exits non-zero on any failure and prints a per-URL chain report (`--json <file>` writes it out).
 
 ---
 
@@ -93,7 +96,7 @@ The script exits non-zero on any failure and prints a per-URL chain report (`--j
 1. Push this repository to GitHub and import it in Vercel (team **STRETCH**). The Next.js preset is detected automatically; no build-command changes.
 2. Set environment variables in **Project → Settings → Environment Variables** (at minimum a lead-delivery method — `LEAD_WEBHOOK_URL` is the one-line option — plus `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_CLARITY_ID`).
 3. Deploy. Every push produces a preview URL.
-4. **Gate 1:** `npm run verify:redirects -- --base https://<preview>.vercel.app` must be green.
+4. **Gate 1:** `npm run verify:redirects -- --base https://<preview>.vercel.app --bypass <secret>` must be green (Project → Settings → Deployment Protection → Protection Bypass for Automation).
 
 ### DNS cutover checklist — stretchgroup.be
 
@@ -141,6 +144,7 @@ src/
     api/
       contact/              # Form endpoint → guard chain → delivery chain
       form-token/           # Signed time-to-submit token
+      legacy-fallback/      # Layer 4b: 301 to the localized home for whatever matched nothing
       og/  og/[slug]/       # Dynamic Open Graph images (edge)
   components/
     layout/                 # Header, Footer, MobileMenu, LanguageSwitcher, CookieConsent

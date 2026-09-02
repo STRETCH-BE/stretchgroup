@@ -217,13 +217,60 @@ but the explicit map is only as good as the inventory:
   mobile 96 / 100 / 100 / 100 · /contact desktop 100 / 100 / 100 / 100**
   (Performance / Accessibility / Best Practices / SEO).
 
+### Adversarial review round (same day)
+
+Seven independent reviewers (correctness, redirects, SEO, accessibility,
+i18n, brief compliance, security), each finding re-checked by a skeptic.
+Fixed from the first two reports:
+
+- **Contact form was not in the server HTML.** `useSearchParams` inside the
+  form bailed the whole component out to client rendering (Next replaces the
+  Suspense boundary with a template on static pages). The query read now
+  lives in a tiny `AboutFromQuery` child inside its own Suspense boundary; the
+  form itself is server-rendered again (`curl /contact` contains the fields).
+- **Footer CSS never reached the server HTML.** The App Router has no
+  styled-jsx registry, so the footer's `<style jsx>` block only arrived with
+  the client bundle — an unstyled footer at first paint on every page. It now
+  uses the plain inline `<style>` every other component uses. (The product
+  site's Footer has the same latent issue.)
+- **Stale-token retry re-sent the old token.** After a `400 stale_token` the
+  retry read `security.formToken` from the closure — still the old value. The
+  fresh token returned by `refreshFormToken()` is now passed explicitly.
+  (Same latent bug in the product site's ContactForm.)
+- **Zero-404 holes closed — Layer 4b.** The middleware matcher skipped
+  `/api/*` and `/images/*`, so Magento 1's API endpoints (`/api/soap`,
+  `/api/rest`, `/api/v2_soap`, `/api/xmlrpc`) and any missing image 404'd,
+  invisible to the gate; and the generic `/:path(.*\.html) → /` rule ran
+  before the filesystem, so it would also have hijacked real files in
+  `public/` (a Search Console verification page) and dropped the locale
+  (`/nl/x.html` → English home). Now: explicit rules for the Magento API
+  paths; the `.html` catch-all is gone; the middleware lets any asset-like
+  path (file extension) through to the filesystem; a `rewrites.fallback` in
+  `next.config.mjs` — checked AFTER public files, pages and routes — hands
+  whatever still matched nothing to `/api/legacy-fallback`, which 301s to the
+  visitor's localized home. `dynamicParams = false` on the locale layout so an
+  unknown first segment cannot masquerade as a locale and short-circuit the
+  fallback. Verified: `/images/nope.jpg`, `/api/rest/products`,
+  `/api/soap/?wsdl`, `/manifest.webmanifest`, `/foo.html` → 301 home;
+  `/favicon.svg`, `/robots.txt`, `/sitemap.xml` still 200.
+- **`/index.php/<path>`** now strips the prefix (`→ /:path*`) so the real
+  path is re-evaluated by the map (`/index.php/faq` → `/faq` →
+  stretchplafond.be/faq) instead of always landing on the homepage.
+- **Verifier hardened.** Every on-site chain must end on https, the apex host
+  and without a trailing slash (previously only "200" was asserted); junk
+  paths must land on their locale's home (`/nl/…` → `/nl`); `--bypass` /
+  `VERCEL_AUTOMATION_BYPASS_SECRET` sends Vercel's protection-bypass headers
+  so Gate 1 works on protected previews; twelve new junk paths cover Layer 4b.
+  Inventory grew to 120 URLs (Magento API endpoints, `/index.php/…` forms).
+
 ### Verification record (this build)
 
 - `npm run typecheck` clean · `npm run lint` clean · `npm run build` clean
   (25 static pages, 2 locales) · `npm test` 23/23.
 - `npm run verify:redirects -- --base http://localhost:3000 --host-header
-  --external stop`: 209 checks (112 inventory URLs, 78 slash/query/www
-  variants, 13 junk paths), **0 failures** after the `/contact` loop fix.
+  --external stop`: 234 checks (120 inventory URLs, 90 slash/query/www
+  variants, 24 junk paths), **0 failures** after the `/contact` loop fix and
+  the Layer 4b work.
 - Contact API exercised: honeypot → silent 200; missing fields → 422; invalid
   JSON → 400; valid → 200 + console log; spam row → 200 + `[REVIEW]`
   (score 180); 7th POST in 10 min from one IP → 429; `/api/form-token` → `null`

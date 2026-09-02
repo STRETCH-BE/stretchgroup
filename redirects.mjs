@@ -7,7 +7,10 @@
 //   Layer 1  legacy/legacy-urls.txt  — the URL inventory (launch gate input)
 //   Layer 2  EXPLICIT rules below     — every known URL, mapped exactly
 //   Layer 3  PREFIX catch-alls below  — ordered AFTER the explicit rules
-//   Layer 4  src/middleware.ts        — anything else 301s to the localized home
+//   Layer 4  src/middleware.ts        — any page-like path that is not a route
+//            301s to the localized home; Layer 4b: next.config `fallback`
+//            rewrite → /api/legacy-fallback catches asset-like paths, stray
+//            .html and unknown /api/* AFTER the filesystem (real files win)
 //   Layer 5  scripts/verify-redirects.mjs — proves it (npm run verify:redirects)
 //
 // Rules:
@@ -69,7 +72,20 @@ const explicitRules = [
   R('/contacts/:path*', '/contact'),
   R('/general-terms-and-conditions', '/terms'),
   R('/index.php', '/'),
-  R('/index.php/:path*', '/'),
+  // Magento served every page under /index.php/ too — strip the prefix and let
+  // the rules re-evaluate the real path on the next hop (chains stay ≤ 5).
+  R('/index.php/:path*', '/:path*'),
+  // Magento 1 API endpoints (every Magento shop exposes these; crawlers keep
+  // them). next.config redirects run BEFORE the filesystem, so a rule here
+  // works even though the middleware matcher skips /api/.
+  R('/api/rest', '/'),
+  R('/api/rest/:path*', '/'),
+  R('/api/soap', '/'),
+  R('/api/soap/:path*', '/'),
+  R('/api/v2_soap', '/'),
+  R('/api/v2_soap/:path*', '/'),
+  R('/api/xmlrpc', '/'),
+  R('/api/xmlrpc/:path*', '/'),
 
   // --- product-site content (Dutch) ---
   X('/faq', '/faq'),
@@ -210,8 +226,12 @@ const prefixRules = [
   X('/webshop.html', '/materials'),
   X('/webshop/:path*', '/materials'),
   X('/catalog/:path*', '/materials'),
-  // any remaining Magento ".html" page → home
-  R('/:path(.*\\.html)', '/'),
+  // NOTE: no generic ".html → /" rule here. Redirects run BEFORE the
+  // filesystem, so it would also hijack real files in public/ (a Search
+  // Console verification .html, for instance) and it cannot see the locale.
+  // Stray .html paths are handled by Layer 4b (the fallback rewrite in
+  // next.config → /api/legacy-fallback), which runs AFTER the filesystem and
+  // keeps the visitor's locale.
 ];
 
 export const legacyRedirects = [...hostRules, ...explicitRules, ...prefixRules];

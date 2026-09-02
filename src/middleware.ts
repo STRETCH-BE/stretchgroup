@@ -18,8 +18,20 @@ const intlMiddleware = createMiddleware(routing);
 // The known-route list lives next to `staticRoutes` in src/lib/site-config.ts
 // (re-exported through src/lib/routes.ts, which is edge-safe).
 // ---------------------------------------------------------------------------
+// Anything with a file extension is asset-like: let the filesystem decide. A
+// real file in public/ is served; a missing one falls through to the
+// `fallback` rewrite in next.config (Layer 4b) and still ends on the homepage.
+const ASSET_LIKE = /\.[a-z0-9]{1,8}$/i;
+
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (ASSET_LIKE.test(pathname)) {
+    // Forward the original path so the Layer 4b handler can keep the locale
+    // ("/nl/foto.jpg" → "/nl") if the file turns out not to exist.
+    const headers = new Headers(request.headers);
+    headers.set('x-legacy-path', pathname);
+    return NextResponse.next({ request: { headers } });
+  }
   const route = removeLocaleFromPath(pathname);
 
   if (!isKnownRoute(route)) {
@@ -33,11 +45,8 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Match everything except: API routes, Next internals, the site's own
-  // static assets and the metadata route handlers. Deliberately NOT the usual
-  // "anything with a dot" exclusion — legacy ".html/.php/.jpg" paths that no
-  // redirect caught must still land on the homepage (Layer 4), never 404.
-  matcher: [
-    '/((?!api/|_next/|_vercel/|images/|favicon\\.ico|favicon\\.svg|apple-touch-icon\\.png|icon-512\\.png|robots\\.txt|sitemap\\.xml|llms\\.txt).*)',
-  ],
+  // Match everything except API routes and Next internals. Asset-like paths
+  // (any file extension) pass straight through above; unknown ones are caught
+  // by the next.config fallback rewrite, so nothing 404s either way.
+  matcher: ['/((?!api/|_next/|_vercel/).*)'],
 };

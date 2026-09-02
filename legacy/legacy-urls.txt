@@ -26,6 +26,9 @@ https://stretchgroup.be/
 https://www.stretchgroup.be/?SID=7fvnotmhmavbrp5m9qq4no5l72
 https://www.stretchgroup.be/index.php
 https://www.stretchgroup.be/index.php/
+https://www.stretchgroup.be/index.php/over-ons/
+https://www.stretchgroup.be/index.php/faq
+https://www.stretchgroup.be/index.php/clipso-spanplafonds/clipso.html
 
 # --- group pages (stay on the new group site) --------------------------------
 https://www.stretchgroup.be/over-ons/
@@ -129,6 +132,11 @@ https://www.stretchgroup.be/media/catalog/product/placeholder.jpg
 https://www.stretchgroup.be/media/wysiwyg/logo.png
 https://www.stretchgroup.be/skin/frontend/default/default/css/styles.css
 https://www.stretchgroup.be/js/prototype/prototype.js
+https://www.stretchgroup.be/api/rest/products
+https://www.stretchgroup.be/api/soap/?wsdl
+https://www.stretchgroup.be/api/v2_soap/index/
+https://www.stretchgroup.be/api/xmlrpc/
+https://www.stretchgroup.be/images/logo.png
 
 # --- old multistore domains (308 → stretchgroup.be, then the same layers) -----
 # Only stretchgroup.net returned indexed URLs; .fr/.de/.es/.it had none in the

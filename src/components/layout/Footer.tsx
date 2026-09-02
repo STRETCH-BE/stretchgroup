@@ -136,7 +136,10 @@ export default function Footer() {
         </div>
       </div>
 
-      <style jsx>{`
+      {/* Plain <style>: styled-jsx has no server registry in the App Router,
+          so a <style jsx> block would only arrive with the client bundle (unstyled
+          footer at first paint). Same pattern as every other component. */}
+      <style dangerouslySetInnerHTML={{ __html: `
         .footer-grid {
           display: grid;
           grid-template-columns: 1.4fr 1fr 0.8fr 1.3fr;
@@ -154,7 +157,7 @@ export default function Footer() {
             grid-template-columns: 1fr;
           }
         }
-      `}</style>
+      ` }} />
     </footer>
   );
 }

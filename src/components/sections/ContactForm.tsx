@@ -4,7 +4,7 @@
 // about?", message. Honeypot + signed time-to-submit token + optional
 // Turnstile, posting to /api/contact (rate-limited + spam-scored there).
 // `?about=<key>` pre-selects the routing question (careers links use it).
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, Check } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -24,6 +24,18 @@ export const ABOUT_OPTIONS = [
   { value: 'careers', key: 'careers' },
 ] as const;
 
+// Reads `?about=` on the client. Isolated in its own Suspense boundary so
+// useSearchParams only bails THIS no-op child out of static rendering — the
+// form itself stays in the server-rendered HTML.
+function AboutFromQuery({ onSelect }: { onSelect: (value: string) => void }) {
+  const params = useSearchParams();
+  useEffect(() => {
+    const wanted = params.get('about');
+    if (wanted && ABOUT_OPTIONS.some((o) => o.value === wanted)) onSelect(wanted);
+  }, [params, onSelect]);
+  return null;
+}
+
 function isEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
@@ -33,16 +45,10 @@ export default function ContactForm() {
   const tsec = useTranslations('security');
   const locale = useLocale();
   const security = useFormSecurity();
-  const params = useSearchParams();
   const [about, setAbout] = useState<string>('group');
   const [status, setStatus] = useState<Status>('idle');
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    const wanted = params.get('about');
-    if (wanted && ABOUT_OPTIONS.some((o) => o.value === wanted)) setAbout(wanted);
-  }, [params]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -67,12 +73,15 @@ export default function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setStatus('sending');
-    const post = async (retried: boolean): Promise<void> => {
+    // The token is passed explicitly: after a 'stale_token' refresh the closure's
+    // `security.formToken` would still be the OLD value (state updates land on
+    // the next render), so the retry must carry the freshly minted one.
+    const post = async (retried: boolean, formToken: string | null = security.formToken): Promise<void> => {
       const turnstileToken = await security.waitForTurnstile();
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, formToken: security.formToken, turnstileToken }),
+        body: JSON.stringify({ ...data, formToken, turnstileToken }),
       });
       if (res.status === 429) {
         setErrors({ __captcha: tsec('tooManyRequests') });
@@ -82,8 +91,8 @@ export default function ContactForm() {
       if (res.status === 400) {
         const err = (await res.clone().json().catch(() => null)) as { error?: string } | null;
         if (err?.error === 'stale_token' && !retried) {
-          await security.refreshFormToken();
-          return post(true);
+          const fresh = await security.refreshFormToken();
+          return post(true, fresh);
         }
         if (err?.error === 'captcha') {
           security.resetTurnstile();
@@ -120,6 +129,9 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      <Suspense fallback={null}>
+        <AboutFromQuery onSelect={setAbout} />
+      </Suspense>
       <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
       <div className="cf-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
         <div>
