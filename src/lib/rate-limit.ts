@@ -48,12 +48,26 @@ function sweep(now: number, windowMs: number) {
   }
 }
 
-/** Client IP: first x-forwarded-for entry → x-real-ip → 'unknown'. */
+/**
+ * Client IP for the rate-limit keys. Platform-set headers first (Vercel
+ * writes x-vercel-forwarded-for and x-real-ip from the real connection), then
+ * the LAST x-forwarded-for entry — the one appended by the nearest proxy; the
+ * first entry is whatever the client sent — then 'unknown'. Only meaningful
+ * behind a proxy that overwrites these headers (Vercel does); behind anything
+ * else, or with no proxy at all, put a WAF rate-limit rule in front instead.
+ */
 export function getClientIp(req: Request): string {
-  const fwd = req.headers.get('x-forwarded-for');
-  if (fwd) {
-    const first = fwd.split(',')[0].trim();
+  const vercel = req.headers.get('x-vercel-forwarded-for');
+  if (vercel) {
+    const first = vercel.split(',')[0].trim();
     if (first) return first;
   }
-  return req.headers.get('x-real-ip')?.trim() || 'unknown';
+  const real = req.headers.get('x-real-ip')?.trim();
+  if (real) return real;
+  const fwd = req.headers.get('x-forwarded-for');
+  if (fwd) {
+    const parts = fwd.split(',').map((s) => s.trim()).filter(Boolean);
+    if (parts.length) return parts[parts.length - 1];
+  }
+  return 'unknown';
 }

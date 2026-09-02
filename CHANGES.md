@@ -32,17 +32,20 @@ the two hero concepts: `docs/DESIGN-PLAN.md`.
   one image slot; one staggered entrance animation, collapsed under
   `prefers-reduced-motion`. Concept B (split-screen triptych) is documented and
   rejected for launch in `docs/DESIGN-PLAN.md`.
-- **Zero-404 in five layers.** Layer 2 (`redirects.mjs`) maps every URL from
-  the verified inventory exactly; cross-domain targets are **301** to the Dutch
-  product site (old content is Dutch), on-site targets are **308**. Layer 3
-  prefix catch-alls run after the explicit rules; the last rule
-  `/:path(.*\.html)` → `/` sweeps any remaining Magento `.html` page. Layer 4
-  (`src/middleware.ts`) 301s anything that is not one of the site's own routes
-  (`staticRoutes` in `site-config.ts`, checked via the edge-safe
-  `src/lib/routes.ts`) to the localized home — the matcher deliberately
-  includes paths with a file extension so `.php` / `.jpg` / `.pdf` junk also
-  lands on the homepage instead of a static 404. A branded `not-found.tsx`
-  exists as belt-and-braces. **Deliberate trade-off:** strict SEO practice
+- **Zero-404 in five layers (plus 4b).** Layer 2 (`redirects.mjs`) maps every
+  URL from the verified inventory exactly; cross-domain targets are **301** to
+  the Dutch product site (old content is Dutch), on-site targets are **308**.
+  Layer 3 prefix catch-alls run after the explicit rules. Layer 4
+  (`src/middleware.ts`) 301s any page-like path that is not one of the site's
+  own routes (`staticRoutes` in `site-config.ts`, checked via the edge-safe
+  `src/lib/routes.ts`) to the localized home; asset-like paths (any file
+  extension) are let through to the filesystem so real files in `public/`
+  are served. Layer 4b (`rewrites.fallback` in `next.config.mjs` →
+  `/api/legacy-fallback`) runs AFTER public files, pages and routes and 301s
+  whatever still matched nothing — a missing asset, a stray `.html`, an
+  unknown `/api/*` path — to the visitor's localized home. There is
+  deliberately NO generic `.html → /` redirect (see Deviations). A branded
+  `not-found.tsx` exists as belt-and-braces. **Deliberate trade-off:** strict SEO practice
   would 410 dead shop machinery (`/customer/**`, `/checkout/**`, `/media/**`);
   the business requirement is zero visible errors, and Google treats a redirect
   to the homepage as a soft 404 at worst — no penalty, no error page.
@@ -61,8 +64,8 @@ the two hero concepts: `docs/DESIGN-PLAN.md`.
   harmless twice). DNS steps are in the README cutover checklist.
 - **Layer 5 verification (`npm run verify:redirects`).** Follows up to 5 hops,
   asserts 200 with zero 4xx/5xx, adds trailing-slash, query-string, www and
-  http variants for one URL per URL family, and 13 invented junk paths that
-  must land on the homepage. `--host-header` exercises the host-scoped rules
+  http variants for one URL per URL family, and invented junk paths that
+  must land on the homepage (24 junk paths after the Layer 4b work). `--host-header` exercises the host-scoped rules
   locally; `--external stop` accepts a hop to an allow-listed https group
   domain without following it (needed in this build sandbox, which cannot
   reach any group domain). **The production run must use the default
@@ -113,15 +116,17 @@ the two hero concepts: `docs/DESIGN-PLAN.md`.
 - **Copy discipline.** Group-level copy only; no long-form text copied from
   stretchplafond.be. Numbers on the page are computed from `site-config`
   (3 companies, 4 offices, 14 live market websites, first factory 2016) so
-  they can never drift from the data. The "4,000+ projects" and "17 cities"
-  claims appear only on the Stretch Sufit page, attributed to that company.
+  they can never drift from the data. The "4,000+ projects" claim appears
+  only on the Stretch Sufit page; "17 Polish cities" also appears in the
+  Poland router card on the home and companies pages — attributed to Stretch
+  Sufit in both places, never as a group number.
 
 ### Layer 1 — what could and could not be harvested
 
 The build environment's egress policy blocked `stretchgroup.be` (and every
 other group domain) outright — 403 on CONNECT for both `www` and apex — so the
 `robots.txt` / `sitemap.xml` / `wget --spider` harvest in the brief could not
-run here. `legacy/legacy-urls.txt` (112 URLs) was built instead from (a) the
+run here. `legacy/legacy-urls.txt` (120 URLs after the review round) was built instead from (a) the
 verified navigation inventory in the brief, (b) search-engine `site:` harvests
 of stretchgroup.be and stretchgroup.net (which surfaced the `/webshop/**`,
 `/catalog/**`, `/blog/post|category|archive/**`, `/portfolio/**` and
@@ -143,6 +148,11 @@ but the explicit map is only as good as the inventory:
 4. Flagged spam is delivered with a review banner instead of stored-not-delivered.
 5. `localeDetection: false` (the reference's domain mode never needed detection).
 6. Rate limiting is in-memory (no database).
+7. The brief's Layer-3 "any remaining `.html` → `/`" redirect is replaced by
+   Layer 4b: a redirect runs before the filesystem, so it would also hijack
+   real `.html` files in `public/` (a Search Console verification page) and
+   cannot see the locale; the fallback rewrite handles stray `.html` after
+   the filesystem and keeps `/nl/…` on the Dutch home.
 
 ### [TO CONFIRM] — open items, each marked in code
 
@@ -172,16 +182,18 @@ but the explicit map is only as good as the inventory:
    instead. → `redirects.mjs`.
 10. **Antibacterial pages** (`/clipso-spanplafonds/clipso/stretch-antibacterieel*`)
     → `stretchplafond.be/products` — no direct equivalent on the product site.
+    → marker in `redirects.mjs`.
 11. **Open roles** for `/careers` — the `OPEN_ROLES` list in
     `src/app/[locale]/careers/page.tsx` is empty; the page renders the
     "no advertised roles" state and the open-application path.
 12. **Favicons** are the product site's mark (shared identity assumed). Replace
-    if the group gets its own mark.
+    if the group gets its own mark. → marker in `src/app/[locale]/layout.tsx`.
 13. **Group logo + company logos + photography** — every slot is a
     `Placeholder` (search `Placeholder`, `logoSlot`, `imageSlot`, `imageLabel`).
 14. **Lead delivery:** set `LEAD_WEBHOOK_URL` to the existing Power Automate
     flow into leads@stretchgroup.be (fastest), or the four `MS_*` Graph
-    variables. Until then messages are console-logged only.
+    variables. Until then messages are console-logged only. → markers in
+    `src/lib/deliver.ts` and `.env.example`.
 
 ### Pre-launch content checklist
 
@@ -317,6 +329,50 @@ Fixed from the i18n report:
 - **OG images are localized:** `/api/og?locale=nl` and
   `/api/og/<slug>?locale=nl` render Dutch kicker/statement; page-meta and the
   layout append the locale to every og:image URL.
+
+Fixed from the compliance and security reports:
+
+- **Privacy policy was inaccurate about Google Analytics.** gtag.js loads on
+  every page in Consent Mode "denied" (no cookies, no identifiers, cookieless
+  aggregated signals) until analytics consent — exactly as the product site
+  does, per the brief. The policy paragraph (EN + NL) now says so instead of
+  "only loaded after you accept". Clarity really is loaded only after consent.
+- **Careers copy made unverified claims** (that each company lists vacancies
+  on its site, and about the role mix). Rewritten to neutral wording that
+  claims nothing beyond site-config.
+- **"WORD — fragment" labels** (brief guardrail) removed from the form's
+  company options, every placeholder-slot label, the page titles, the home
+  aria-label, one Re-Sound bullet and the careers mail subject.
+- **CHANGES.md itself** was stale after the Layer 4b work (it still
+  described the removed `.html` catch-all and the old middleware matcher,
+  counted 13 junk paths / 112 URLs, and claimed "17 cities" appears only on
+  the Stretch Sufit page); corrected above, deviation 7 added, and the three
+  [TO CONFIRM] items that had no code marker now have one.
+- **/api/contact could 500.** A JSON body of `null`, an array, or a field
+  holding an object with a non-callable `toString` threw a TypeError. The
+  route now accepts only a plain object; non-string fields become empty
+  strings; the e-mail is validated server-side (422 `invalid_email`) and
+  CR/LF are stripped from every single-line field, so a crafted address can
+  no longer inject a Reply-To/Bcc header (line breaks survive only in the
+  message body). Exercised: `null` → 400, array → 400, object field → 422,
+  CRLF address → 422, bad address → 422, valid → 200.
+- **A configured-but-failing transport silently lost the lead** (the chain
+  fell through to "log-only" and the visitor saw success). `deliverLead` now
+  throws when at least one method is configured and all fail; the route
+  answers 502 and the form shows its error state with the e-mail address.
+  The payload is written to the server log as `[lead] UNDELIVERED` in that
+  one case — a deliberate exception to the no-PII-in-logs rule, because this
+  site has no lead database to fall back on.
+- **Turnstile half-configuration was a bypass:** with the sitekey set and the
+  secret unset any token "passed" without a siteverify call. It now counts as
+  an outage (score +40) with a one-time console warning; README and
+  `.env.example` say both values are required.
+- **Rate-limit key trusted the first x-forwarded-for entry** (spoofable off
+  Vercel). Now: `x-vercel-forwarded-for` → `x-real-ip` → the LAST
+  x-forwarded-for entry → `unknown`; the README states the limiter is only
+  meaningful on Vercel and that a WAF rule is the hard cap elsewhere.
+  Exercised: eight POSTs rotating the first XFF entry share one bucket again
+  (200 ×6, 429 ×2).
 
 ### Verification record (this build)
 

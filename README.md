@@ -52,9 +52,9 @@ Every variable is **optional**. See `.env.example` for the annotated list.
 | `FORM_SIGNING_SECRET` | HMAC secret for the signed time-to-submit form token (anti-bot). Unset = off. |
 | `NEXT_PUBLIC_TURNSTILE_SITEKEY` / `TURNSTILE_SECRET` | Cloudflare Turnstile (one widget: stretchgroup.be, www, the Vercel preview host, localhost). Unset = no CAPTCHA. |
 
-**Lead delivery** auto-selects a method at runtime, in priority order: Microsoft Graph → webhook → SMTP → log-only. The first one whose env vars are present wins.
+**Lead delivery** auto-selects a method at runtime, in priority order: Microsoft Graph → webhook → SMTP → log-only. The first one whose env vars are present wins. If a method is configured and every configured method fails, the form shows its error state (with the e-mail address) and the message is written to the server log as `[lead] UNDELIVERED` so it can be recovered — it is never silently lost.
 
-**Anti-spam** on the contact form: honeypot, in-memory rate limiting (6 / 10 min per IP, 10 / day per e-mail — best-effort per serverless instance; use a Vercel WAF rate-limit rule for a hard cap), optional signed form token, optional Turnstile, disposable-e-mail detection and content-based spam scoring. Flagged messages are **still delivered**, with a `[REVIEW]` subject prefix and a banner — the group site has no lead database, so nothing is dropped silently. Only honeypot hits are.
+**Anti-spam** on the contact form: honeypot, in-memory rate limiting (6 / 10 min per IP, 10 / day per e-mail — best-effort per serverless instance, keyed on the platform-set client IP, so only meaningful on Vercel; use a Vercel WAF rate-limit rule for a hard cap), optional signed form token, optional Turnstile (set **both** the sitekey and the secret — with only the sitekey the layer scores the submission instead of verifying it), disposable-e-mail detection and content-based spam scoring. Flagged messages are **still delivered**, with a `[REVIEW]` subject prefix and a banner — the group site has no lead database, so nothing is dropped silently. Only honeypot hits are.
 
 ---
 

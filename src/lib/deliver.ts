@@ -5,7 +5,12 @@
 // fastest production path, see README) → SMTP/Nodemailer (SMTP_HOST) →
 // log-only. The site works with no env vars at all (log-only), so it never
 // hard-fails. PII is never logged — only the lead source, the destination
-// and the submitter's email domain.
+// and the submitter's email domain — with ONE deliberate exception: when a
+// transport IS configured and every configured transport fails, the message
+// would otherwise exist nowhere (this site has no lead database), so the
+// payload is written to the server log as `[lead] UNDELIVERED` and the route
+// answers 502 so the visitor sees the error state and the e-mail address.
+// [TO CONFIRM] which delivery method production uses (README → env table).
 // ============================================================================
 import { buildLeadEmail, type LeadPayload, type SpamNote } from '@/lib/email';
 import { contact } from '@/lib/site-config';
@@ -30,10 +35,15 @@ export async function deliverLead(payload: LeadPayload, spam?: SpamNote): Promis
   const from =
     process.env.LEAD_FROM_EMAIL ||
     `STRETCH Group Website <website@${contact.email.split('@')[1] || 'stretchgroup.be'}>`;
-  const replyTo = typeof payload.email === 'string' && payload.email ? payload.email : undefined;
+  // Reply-To only for one syntactically valid address (the route validates
+  // too; header injection via a crafted address is impossible either way).
+  const replyTo =
+    typeof payload.email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email) ? payload.email : undefined;
+  let configured = 0;
 
   // 0) Microsoft 365 (Graph) — the company's own mailbox, preferred ---------
   if (isGraphMailConfigured()) {
+    configured++;
     try {
       await sendGraphMail({ to, replyTo, subject: built.subject, html: built.html });
       return { ok: true, method: 'graph' };
@@ -44,6 +54,7 @@ export async function deliverLead(payload: LeadPayload, spam?: SpamNote): Promis
 
   // 1) Generic webhook (Power Automate / Zapier / Make) ----------------------
   if (process.env.LEAD_WEBHOOK_URL) {
+    configured++;
     try {
       const res = await fetch(process.env.LEAD_WEBHOOK_URL, {
         method: 'POST',
@@ -67,6 +78,7 @@ export async function deliverLead(payload: LeadPayload, spam?: SpamNote): Promis
 
   // 2) SMTP via Nodemailer (optional dependency, loaded only when set) -------
   if (process.env.SMTP_HOST) {
+    configured++;
     try {
       const nodemailer = await import('nodemailer');
       const port = Number(process.env.SMTP_PORT || 587);
@@ -93,7 +105,15 @@ export async function deliverLead(payload: LeadPayload, spam?: SpamNote): Promis
     }
   }
 
-  // 3) Log-only -------------------------------------------------------------
+  // 3a) Every configured transport failed — do NOT pretend success ---------
+  if (configured > 0) {
+    console.error(
+      `[lead] UNDELIVERED — all ${configured} configured delivery method(s) failed for "${String(payload.source)}" → ${to}. Recover the message from this line: ${JSON.stringify(payload)}`,
+    );
+    throw new Error('all configured delivery methods failed');
+  }
+
+  // 3b) Log-only (nothing configured) -------------------------------------
   console.info(
     `[lead] received "${String(payload.source)}" → ${to} (no delivery method configured; submitter domain: ${emailDomain(payload)}${spam ? `; flagged score ${spam.score}` : ''})`,
   );

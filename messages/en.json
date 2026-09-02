@@ -23,24 +23,24 @@
   },
   "header": {
     "strip": "STRETCH Group · Beveren-Waas, Belgium",
-    "homeAria": "STRETCH Group — home"
+    "homeAria": "STRETCH Group home"
   },
   "meta": {
-    "homeTitle": "STRETCH Group — ceilings, walls and acoustics from Belgium and Poland",
+    "homeTitle": "STRETCH Group: ceilings, walls and acoustics from Belgium and Poland",
     "homeDescription": "STRETCH Group unites STRETCH (stretch ceilings, Belgium), Stretch Sufit / Alto Design (PVC factory, Poland) and Re-Sound (acoustics). Find the right company.",
     "companiesTitle": "The companies | STRETCH Group",
     "companiesDescription": "Three companies, one group: STRETCH, Stretch Sufit / Alto Design and Re-Sound. What each does and where to go for ceilings, acoustics or a quote in Poland.",
-    "stretchTitle": "STRETCH — stretch ceilings and walls, Belgium | STRETCH Group",
+    "stretchTitle": "STRETCH, stretch ceilings and walls in Belgium | STRETCH Group",
     "stretchDescription": "Stretch Productions BV, Beveren-Waas (2018): seamless polyester stretch ceilings and walls, cold-mounted, installed in one day. Visit stretchplafond.be.",
-    "stretchSufitTitle": "Stretch Sufit / Alto Design — PVC stretch-ceiling factory, Poland | STRETCH Group",
+    "stretchSufitTitle": "Stretch Sufit / Alto Design, PVC stretch-ceiling factory in Poland | STRETCH Group",
     "stretchSufitDescription": "Alto Design Sp. z o.o., Częstochowa: PVC stretch-ceiling factory since 2016, seamless to 6.50 m, in STRETCH Group since 2024. Stretch Sufit: 17 cities.",
-    "reSoundTitle": "Re-Sound — circular acoustic panels, Belgium | STRETCH Group",
+    "reSoundTitle": "Re-Sound, circular acoustic panels from Belgium | STRETCH Group",
     "reSoundDescription": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials, with a full take-back policy. Visit re-sound.be.",
-    "aboutTitle": "About STRETCH Group — story, timeline and offices",
+    "aboutTitle": "About STRETCH Group: story, timeline and offices",
     "aboutDescription": "How STRETCH Group grew: a PVC factory in Poland (2016), Stretch Productions BV in Belgium (2018), Re-Sound, and Alto Design joining in 2024. Four offices.",
     "careersTitle": "Careers at STRETCH Group",
     "careersDescription": "Work at STRETCH Group or one of its companies in Belgium and Poland. Send an open application to the group — we read every one.",
-    "contactTitle": "Contact STRETCH Group — Beveren-Waas, Belgium",
+    "contactTitle": "Contact STRETCH Group in Beveren-Waas, Belgium",
     "contactDescription": "Reach STRETCH Group by phone, email or WhatsApp, or contact STRETCH, Stretch Sufit / Alto Design and Re-Sound directly. Headquarters in Beveren-Waas, Belgium.",
     "privacyTitle": "Privacy policy | STRETCH Group",
     "privacyDescription": "How STRETCH Group collects, uses and protects personal data submitted through stretchgroup.be, under the EU GDPR.",
@@ -87,10 +87,10 @@
     },
     "aboutOptions": {
       "group": "STRETCH Group in general",
-      "stretch": "STRETCH — stretch ceilings and walls",
-      "stretchSufit": "Stretch Sufit / Alto Design — Poland",
-      "reSound": "Re-Sound — acoustic panels",
-      "careers": "Careers / open application"
+      "stretch": "STRETCH (stretch ceilings and walls)",
+      "stretchSufit": "Stretch Sufit / Alto Design (Poland)",
+      "reSound": "Re-Sound (acoustic panels)",
+      "careers": "Careers or an open application"
     },
     "required": "*",
     "consentPrefix": "I agree to STRETCH Group processing my details to respond to my request, as described in the",
@@ -189,7 +189,7 @@
       "description": "Re-Sound makes acoustic panels and screens in Belgium from recycled and sustainable materials. It started in 2020 with yarn spun from recycled jeans. Every product can be returned at the end of its life and made into new panels. The range includes Interior panels and the Divide freestanding screen. Re-Sound was founded by Aaron Thierens.",
       "bullets": [
         "Acoustic panels and screens made in Belgium",
-        "Recycled and sustainable materials — origin: recycled jeans yarn, 2020",
+        "Recycled and sustainable materials, starting from recycled jeans yarn in 2020",
         "Full take-back policy: close the loop",
         "Interior panels and the Divide freestanding screen"
       ],
@@ -201,7 +201,7 @@
     "visit": "Visit {site}",
     "visitAlt": "International site: {site}",
     "logoSlot": "{name} logo",
-    "imageSlot": "{name} — photography",
+    "imageSlot": "{name} photo",
     "whatHeading": "What they do",
     "contactHeading": "Contact {name}",
     "membership": "Group membership",
@@ -253,7 +253,7 @@
       "statement": "Stretch ceilings, walls and acoustics — made in Belgium and Poland, sold across Europe and the US.",
       "hint": "Choose a company",
       "indexAria": "The companies of STRETCH Group",
-      "slotLabel": "{name} — logo / photo"
+      "slotLabel": "{name} logo or photo"
     },
     "numbers": {
       "eyebrow": "The group in numbers",
@@ -337,7 +337,7 @@
       "titleA": "One group,",
       "titleB": "three companies.",
       "lead": "STRETCH Group brings together a Belgian stretch-ceiling manufacturer, a Polish PVC factory and a Belgian circular-acoustics company. Each keeps its own name and website; the group connects them.",
-      "imageLabel": "Group — photography"
+      "imageLabel": "Group photo"
     },
     "story": {
       "eyebrow": "Our story",
@@ -361,9 +361,9 @@
     "titleA": "Work with",
     "titleB": "the group.",
     "lead": "Three companies, two countries, one standard. Whether you install ceilings, run a production line, design acoustics or keep the books, there is a place where your work is visible.",
-    "body1": "STRETCH Group is a manufacturing group: ceilings and walls are made in Belgium, PVC membranes in Poland, acoustic panels in Belgium. Most roles are hands-on — production, installation, project management, sales and support — across Belgium and Poland.",
-    "body2": "Open positions are published here and on the company websites. If nothing fits today, send an open application; we keep it on file and pass it to the right company.",
-    "imageLabel": "Careers — photography",
+    "body1": "STRETCH Group is a manufacturing group with companies in Belgium and Poland. Every application is read by the group and passed to the company where it fits.",
+    "body2": "Open roles appear on this page when there are any. If nothing fits today, send an open application; we keep it on file.",
+    "imageLabel": "Careers photo",
     "rolesTitle": "Open roles",
     "rolesEmptyTitle": "No advertised roles right now.",
     "rolesEmpty": "We read every open application and forward it to the company where it fits best. Tell us what you do and where you would like to work.",
@@ -371,10 +371,10 @@
     "applyHeading": "Send us your profile.",
     "applyBody": "Email a short introduction and your CV to info@stretchgroup.be, or use the contact form and choose “Careers”. We reply within two working days.",
     "applyCta": "Send an open application",
-    "mailSubject": "Open application — STRETCH Group",
+    "mailSubject": "Open application to STRETCH Group",
     "formCta": "Use the contact form",
     "companiesTitle": "Or apply at a company",
-    "companiesBody": "Each company also lists its own vacancies and contact details on its website."
+    "companiesBody": "Prefer to approach a company directly? Each one can be reached through its own website."
   },
   "contactPage": {
     "crumb": "Contact",
@@ -399,7 +399,7 @@
     "formTitle": "Send us a message",
     "formLead": "Tell us what you need and which company it concerns. We route it to the right people and reply within two working days.",
     "hqKicker": "Headquarters",
-    "mapLabel": "Headquarters — photo / map",
+    "mapLabel": "Headquarters map",
     "routingEyebrow": "Go direct",
     "routingTitle": "Contact a company directly.",
     "routingBody": "For quotes, projects and product questions the company itself is the fastest route.",
@@ -434,7 +434,7 @@
         {
           "h": "Cookies and analytics",
           "p": [
-            "Non-essential cookies and analytics — including Google Analytics and Microsoft Clarity — are only loaded after you accept them. Until then they remain disabled through consent mode. Essential cookies needed to operate the site and remember your cookie choice do not require consent."
+            "Google Analytics is loaded with Google Consent Mode set to “denied” by default: until you accept analytics it sets no cookies, stores no identifiers and only sends cookieless, aggregated signals. Microsoft Clarity is only loaded after you accept analytics. Essential cookies needed to operate the site and to remember your cookie choice do not require consent."
           ]
         },
         {

@@ -29,6 +29,8 @@ export function turnstileSiteKey(): string {
 
 export type TurnstileVerdict = 'pass' | 'fail' | 'unavailable';
 
+let warnedMissingSecret = false;
+
 /**
  * Verify a Turnstile token with Cloudflare. 'unavailable' (network error /
  * 5xx / timeout) lets callers continue with a score penalty instead of
@@ -36,7 +38,16 @@ export type TurnstileVerdict = 'pass' | 'fail' | 'unavailable';
  */
 export async function verifyTurnstile(opts: { token: string; ip?: string | null }): Promise<TurnstileVerdict> {
   const secret = process.env.TURNSTILE_SECRET || '';
-  if (!secret) return 'pass'; // disabled → no-op
+  if (!secret) {
+    // Half-configured (sitekey set, secret missing): the widget renders and a
+    // token arrives, but nothing can verify it. Never wave it through — treat
+    // it like a siteverify outage (spam score +40) and say so once.
+    if (!warnedMissingSecret) {
+      console.warn('[turnstile] NEXT_PUBLIC_TURNSTILE_SITEKEY is set but TURNSTILE_SECRET is not — tokens cannot be verified; submissions are scored instead. Set both or neither.');
+      warnedMissingSecret = true;
+    }
+    return 'unavailable';
+  }
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 5000);
   try {

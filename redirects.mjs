@@ -135,7 +135,8 @@ const explicitRules = [
   X('/clipso-spanplafonds/verlichting/cognitieve-verlichting.html', '/products/light-print-stretch-ceiling'),
   X('/clipso-spanplafonds/verlichting/sterrenhemel.html', '/products/light-print-stretch-ceiling'),
 
-  // --- antibacterial (no direct equivalent on the product site — CHANGES.md) ---
+  // --- antibacterial — [TO CONFIRM] no direct equivalent on the product site;
+  //     /products is the closest hub (CHANGES.md item 10) ---
   X('/clipso-spanplafonds/clipso/stretch-antibacterieel.html', '/products'),
   X('/clipso-spanplafonds/clipso/stretch-antibacterieel/stretch-antibacterieel.html', '/products'),
 

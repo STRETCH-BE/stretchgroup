@@ -51,6 +51,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       images: [{ url: og, width: 1200, height: 630, alt: brand.name }],
     },
     twitter: { card: 'summary_large_image', title: t('homeTitle'), description: t('homeDescription'), images: [og] },
+    // [TO CONFIRM] the favicons are the product site's mark (shared identity
+    // assumed) — replace the files in public/ if the group gets its own mark.
     icons: {
       icon: [{ url: '/favicon.ico' }, { url: '/favicon.svg', type: 'image/svg+xml' }],
       apple: '/apple-touch-icon.png',

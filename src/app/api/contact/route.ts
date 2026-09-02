@@ -14,15 +14,17 @@ export const dynamic = 'force-dynamic';
 
 const MAX_LEN = 5000;
 const ABOUT = new Set(['group', 'stretch', 'stretch-sufit', 're-sound', 'careers']);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-/** Coerce to string, drop C0 control characters (keeping tab, LF, CR),
- *  cap the length and trim. */
-function clean(value: unknown, max = MAX_LEN): string {
-  const input = String(value ?? '');
+/** Strings only (anything else → ''), C0 control characters dropped — line
+ *  breaks survive only in the multi-line message field, never in a value
+ *  that ends up in an e-mail header (Reply-To, subject) — capped, trimmed. */
+function clean(value: unknown, max = MAX_LEN, multiline = false): string {
+  if (typeof value !== 'string') return '';
   let out = '';
-  for (const ch of input) {
+  for (const ch of value) {
     const code = ch.charCodeAt(0);
-    if (code < 32 && code !== 9 && code !== 10 && code !== 13) continue;
+    if (code < 32 && !(multiline && (code === 9 || code === 10 || code === 13))) continue;
     out += ch;
     if (out.length >= max) break;
   }
@@ -30,19 +32,30 @@ function clean(value: unknown, max = MAX_LEN): string {
 }
 
 export async function POST(request: Request) {
-  let body: Record<string, unknown>;
+  let parsed: unknown;
   try {
-    body = await request.json();
+    parsed = await request.json();
   } catch {
     return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 });
   }
+  // Only a plain object of fields is a form submission (null, arrays and
+  // scalars are rejected before anything reads a property).
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+    return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 });
+  }
+  const body = parsed as Record<string, unknown>;
 
   const honeypot = clean(body._gotcha, 200);
   const name = clean(body.name, 200);
   const email = clean(body.email, 320);
-  const message = clean(body.message);
+  const message = clean(body.message, MAX_LEN, true);
   if (!honeypot && (!email || !name || !message)) {
     return NextResponse.json({ ok: false, error: 'missing_fields' }, { status: 422 });
+  }
+  // Server-side e-mail check (the UI validates too): the address becomes the
+  // notification's Reply-To, so it must be one syntactically valid address.
+  if (!honeypot && !EMAIL_RE.test(email)) {
+    return NextResponse.json({ ok: false, error: 'invalid_email' }, { status: 422 });
   }
   const aboutRaw = clean(body.about, 40);
   const about = ABOUT.has(aboutRaw) ? aboutRaw : 'group';
