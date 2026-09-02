@@ -21,9 +21,11 @@ export const ORG_ID = `${siteUrl}/#organization`;
 
 const availableLanguages = liveLocales.map((l) => localeFullCodes[l]);
 
+// The product site's node for the same address uses the bare street; the two
+// graphs must agree ("Beverpark" stays in visible copy only).
 const hqAddress = {
   '@type': 'PostalAddress',
-  streetAddress: `${contact.address.street} (${contact.address.building})`,
+  streetAddress: contact.address.street,
   addressLocality: contact.address.city,
   postalCode: contact.address.postalCode,
   addressRegion: contact.address.region,
@@ -51,7 +53,11 @@ function companyNode(c: Company): Record<string, unknown> {
   if (c.founder) node.founder = { '@type': 'Person', name: c.founder };
   if (c.email) node.email = c.email;
   if (c.phoneHref) node.telephone = c.phoneHref.replace(/^tel:/, '');
-  if (c.addressLines.length > 0) {
+  if (c.slug === 'stretch') {
+    // Same address as the product site's node with this @id — byte-identical,
+    // so the shared entity carries one PostalAddress, not two conflicting ones.
+    node.address = hqAddress;
+  } else if (c.addressLines.length > 0) {
     // addressLines[1] is "postal locality" — split so postalCode is its own property.
     const m = (c.addressLines[1] ?? '').match(/^(\S+)\s+(.+)$/);
     node.address = {
@@ -88,7 +94,9 @@ export function organizationSchema() {
         availableLanguage: availableLanguages,
       },
     ],
-    sameAs: social.map((s) => s.url),
+    // Identity pages only: chat deep links (WhatsApp) are contact channels,
+    // not references, so they stay in contactPoint/UI and out of sameAs.
+    sameAs: social.filter((s) => s.label !== 'WhatsApp').map((s) => s.url),
     subOrganization: companies.map(companyNode),
   };
   if (brand.legalName) schema.legalName = brand.legalName;
@@ -132,7 +140,8 @@ export function localBusinessSchema() {
       },
     ],
     areaServed,
-    parentOrganization: { '@id': ORG_ID },
+    // No parentOrganization here: this node IS the group at its premises —
+    // linking it to itself would list STRETCH Group as its own subsidiary.
   };
 }
 
@@ -140,15 +149,21 @@ export function localBusinessSchema() {
  * LocalBusiness nodes for the group's OFFICES other than the HQ (Sales US,
  * Alto Design PL, STRETCH Austria). NAP data comes straight from site-config
  * offices — nothing invented; an office without a street address carries
- * locality + email only.
+ * locality + email only. An office that IS a member company (the Polish
+ * branch trades as Alto Design, whose node already sits in subOrganization
+ * with the same address, e-mail and url) is skipped so the graph never
+ * describes one legal entity twice under two names.
  */
 export function officeSchemas() {
+  const companyUrls = new Set(companies.map((c) => c.url));
   return offices
-    .filter((o) => o.role !== 'headquarters')
+    .filter((o) => o.role !== 'headquarters' && !(o.url && companyUrls.has(o.url)))
     .map((o) => {
       const cityLine = o.addressLines[o.addressLines.length - 1] ?? '';
-      const m = cityLine.match(/^(\S+)\s+(.+)$/);
       const hasStreet = o.addressLines.length > 1;
+      // "postcode locality" split only makes sense on a full postal address;
+      // a bare city line ("New York") must stay whole.
+      const m = hasStreet ? cityLine.match(/^(\S+)\s+(.+)$/) : null;
       return {
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
@@ -159,7 +174,7 @@ export function officeSchemas() {
           '@type': 'PostalAddress',
           ...(hasStreet ? { streetAddress: o.addressLines[0] } : {}),
           addressLocality: m ? m[2] : cityLine,
-          ...(m && hasStreet ? { postalCode: m[1] } : {}),
+          ...(m ? { postalCode: m[1] } : {}),
           addressCountry: o.country,
         },
         ...(o.email ? { email: o.email } : {}),

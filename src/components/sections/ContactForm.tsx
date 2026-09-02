@@ -70,7 +70,14 @@ export default function ContactForm() {
     if (!data.message) next.message = t('validation.required');
     if (!consent) next.__consent = t('validation.consent');
     setErrors(next);
-    if (Object.keys(next).length > 0) return;
+    if (Object.keys(next).length > 0) {
+      // Move focus to the first invalid control so keyboard and screen-reader
+      // users land on the problem; the alert region below announces the list.
+      const first = ['name', 'email', 'message', '__consent'].find((k) => next[k]);
+      const id = first === '__consent' ? 'cf-consent' : `cf-${first}`;
+      requestAnimationFrame(() => document.getElementById(id)?.focus());
+      return;
+    }
 
     setStatus('sending');
     // The token is passed explicitly: after a 'stale_token' refresh the closure's
@@ -129,6 +136,13 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
+      {/* One announcement per failed submit: the field errors themselves are
+          tied to their inputs via aria-describedby. */}
+      {Object.keys(errors).length > 0 && (
+        <div role="alert" className="visually-hidden">
+          {Object.values(errors).join('. ')}
+        </div>
+      )}
       <Suspense fallback={null}>
         <AboutFromQuery onSelect={setAbout} />
       </Suspense>
@@ -136,12 +150,12 @@ export default function ContactForm() {
       <div className="cf-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
         <div>
           <label className="field-label" htmlFor="cf-name">{t('fields.name')} {t('required')}</label>
-          <input id="cf-name" name="name" className="field" autoComplete="name" placeholder={t('placeholders.name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'cf-name-err' : undefined} />
+          <input id="cf-name" name="name" className="field" autoComplete="name" aria-required="true" placeholder={t('placeholders.name')} aria-invalid={!!errors.name} aria-describedby={errors.name ? 'cf-name-err' : undefined} />
           {errors.name && <div id="cf-name-err" style={errStyle}>{errors.name}</div>}
         </div>
         <div>
           <label className="field-label" htmlFor="cf-email">{t('fields.email')} {t('required')}</label>
-          <input id="cf-email" name="email" type="email" className="field" autoComplete="email" placeholder={t('placeholders.email')} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'cf-email-err' : undefined} />
+          <input id="cf-email" name="email" type="email" className="field" autoComplete="email" aria-required="true" placeholder={t('placeholders.email')} aria-invalid={!!errors.email} aria-describedby={errors.email ? 'cf-email-err' : undefined} />
           {errors.email && <div id="cf-email-err" style={errStyle}>{errors.email}</div>}
         </div>
         <div>
@@ -158,19 +172,19 @@ export default function ContactForm() {
         </div>
         <div style={{ gridColumn: '1 / -1' }}>
           <label className="field-label" htmlFor="cf-message">{t('fields.message')} {t('required')}</label>
-          <textarea id="cf-message" name="message" className="field" rows={6} placeholder={t('placeholders.message')} aria-invalid={!!errors.message} aria-describedby={errors.message ? 'cf-message-err' : undefined} style={{ resize: 'vertical' }} />
+          <textarea id="cf-message" name="message" className="field" rows={6} aria-required="true" placeholder={t('placeholders.message')} aria-invalid={!!errors.message} aria-describedby={errors.message ? 'cf-message-err' : undefined} style={{ resize: 'vertical' }} />
           {errors.message && <div id="cf-message-err" style={errStyle}>{errors.message}</div>}
         </div>
       </div>
 
       <label style={{ display: 'flex', gap: 11, alignItems: 'flex-start', marginTop: 18, cursor: 'pointer', fontSize: 13.5, lineHeight: 1.5, color: 'var(--text-muted)' }}>
-        <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} aria-invalid={!!errors.__consent} style={{ marginTop: 3, accentColor: 'var(--red)', width: 16, height: 16, flexShrink: 0 }} />
+        <input id="cf-consent" type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} aria-invalid={!!errors.__consent} aria-required="true" aria-describedby={errors.__consent ? 'cf-consent-err' : undefined} style={{ marginTop: 3, accentColor: 'var(--red)', width: 16, height: 16, flexShrink: 0 }} />
         <span>
           {t('consentPrefix')}{' '}
           <Link href="/privacy" className="lnk" style={{ color: 'var(--red)' }}>{t('consentPrivacy')}</Link>.
         </span>
       </label>
-      {errors.__consent && <div style={errStyle} role="alert">{errors.__consent}</div>}
+      {errors.__consent && <div id="cf-consent-err" style={errStyle}>{errors.__consent}</div>}
       <TurnstileWidget ref={security.widgetRef} onToken={security.setTurnstileToken} />
       {errors.__captcha && <div style={errStyle} role="alert">{errors.__captcha}</div>}
 

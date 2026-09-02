@@ -12,6 +12,9 @@ import ExternalLink from '@/components/ui/ExternalLink';
 export default function CompaniesGrid({ num = '02', heading = true, location }: { num?: string; heading?: boolean; location: string }) {
   const t = useTranslations('companies');
   const tp = useTranslations('companyPage');
+  // Without the section h2 (the /companies page has its own h1), the card
+  // names become the h2 level so the outline never skips a level.
+  const NameTag: 'h2' | 'h3' = heading ? 'h3' : 'h2';
 
   return (
     <section className="section--surface" id="companies" aria-labelledby={heading ? 'companies-title' : undefined}>
@@ -37,7 +40,7 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
                   <span className="cg-card__num">0{i + 1}</span>
                   {t(`${c.slug}.kicker`)}
                 </div>
-                <h3 className="cg-card__name">{t(`${c.slug}.name`)}</h3>
+                <NameTag className="cg-card__name">{t(`${c.slug}.name`)}</NameTag>
                 {c.legalName && <div className="cg-card__legal">{c.legalName}</div>}
                 <p className="cg-card__text">{t(`${c.slug}.oneLiner`)}</p>
                 <div className="cg-card__links">

@@ -3,18 +3,27 @@
 // Language switcher — PATH-PREFIX aware (one domain). Renders real, crawlable
 // anchors to the same route in every live locale via the i18n Link, so
 // "/about" ↔ "/nl/about". Pending locales never appear.
+// Disclosure pattern (button + list of links), not ARIA menu roles: a menu
+// would demand the full arrow-key protocol; a short list of links does not.
 import { useState, useRef, useEffect } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { ChevronDown } from 'lucide-react';
 import { liveLocales, localeNames, localeFlags, localeFullCodes, type Locale } from '@/i18n/config';
 import { analytics } from '@/lib/analytics';
 
 export default function LanguageSwitcher({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
+  const t = useTranslations('common');
   const locale = useLocale() as Locale;
   const pathname = usePathname(); // locale-agnostic path, e.g. "/about"
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  // Focus the first language when the list opens.
+  useEffect(() => {
+    if (open) rootRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
+  }, [open]);
 
   // Close on outside click / Escape.
   useEffect(() => {
@@ -23,7 +32,10 @@ export default function LanguageSwitcher({ tone = 'dark' }: { tone?: 'dark' | 'l
       if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
     };
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
     };
     document.addEventListener('mousedown', onDown);
     document.addEventListener('keydown', onKey);
@@ -38,10 +50,12 @@ export default function LanguageSwitcher({ tone = 'dark' }: { tone?: 'dark' | 'l
   return (
     <div ref={rootRef} style={{ position: 'relative' }}>
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-haspopup="menu"
         aria-expanded={open}
+        aria-controls="language-list"
+        aria-label={`${t('languageLabel')}: ${localeNames[locale]}`}
         style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -61,7 +75,8 @@ export default function LanguageSwitcher({ tone = 'dark' }: { tone?: 'dark' | 'l
       </button>
       {open && (
         <ul
-          role="menu"
+          id="language-list"
+          aria-label={t('languageLabel')}
           style={{
             position: 'absolute',
             right: 0,
@@ -77,9 +92,8 @@ export default function LanguageSwitcher({ tone = 'dark' }: { tone?: 'dark' | 'l
           }}
         >
           {liveLocales.map((l) => (
-            <li key={l} role="none">
+            <li key={l}>
               <Link
-                role="menuitem"
                 href={pathname}
                 locale={l}
                 hrefLang={localeFullCodes[l]}

@@ -26,21 +26,21 @@
   },
   "meta": {
     "homeTitle": "STRETCH Group — plafonds, wanden en akoestiek uit België en Polen",
-    "homeDescription": "STRETCH Group verenigt drie bedrijven: STRETCH (spanplafonds en spanwanden, België), Stretch Sufit / Alto Design (pvc-spanplafondfabriek, Polen) en Re-Sound (circulaire akoestische panelen, België). Vind in één klik het juiste bedrijf.",
+    "homeDescription": "STRETCH Group verenigt STRETCH (spanplafonds, België), Stretch Sufit / Alto Design (pvc-fabriek, Polen) en Re-Sound (akoestiek). Vind het juiste bedrijf.",
     "companiesTitle": "De bedrijven | STRETCH Group",
-    "companiesDescription": "Drie bedrijven, één groep: STRETCH, Stretch Sufit / Alto Design en Re-Sound. Wat elk bedrijf doet en waar u terechtkunt voor plafonds, een offerte in Polen of akoestische panelen.",
+    "companiesDescription": "Drie bedrijven, één groep: STRETCH, Stretch Sufit / Alto Design en Re-Sound. Wat elk bedrijf doet en waar u terechtkunt voor plafonds, akoestiek of Polen.",
     "stretchTitle": "STRETCH — spanplafonds en spanwanden, België | STRETCH Group",
-    "stretchDescription": "Stretch Productions BV, opgericht in 2018 in Beveren-Waas: naadloze polyester spanplafonds en spanwanden, koud gemonteerd en geplaatst op één dag. Ga naar stretchplafond.be of stretch.mt.",
+    "stretchDescription": "Stretch Productions BV, Beveren-Waas (2018): naadloze polyester spanplafonds en spanwanden, koud gemonteerd, geplaatst op één dag. Ga naar stretchplafond.be.",
     "stretchSufitTitle": "Stretch Sufit / Alto Design — pvc-spanplafondfabriek, Polen | STRETCH Group",
-    "stretchSufitDescription": "Alto Design Sp. z o.o. in Częstochowa: pvc-spanplafondfabriek sinds 2016, naadloos tot 6,50 m, deel van STRETCH Group sinds 2024. Consumentenmerk Stretch Sufit in 17 Poolse steden. Ga naar altodesign.pl.",
+    "stretchSufitDescription": "Alto Design Sp. z o.o., Częstochowa: pvc-spanplafondfabriek sinds 2016, naadloos tot 6,50 m, in STRETCH Group sinds 2024. Stretch Sufit plaatst in 17 steden.",
     "reSoundTitle": "Re-Sound — circulaire akoestische panelen, België | STRETCH Group",
-    "reSoundDescription": "Re-Sound maakt in België circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen, met een volledig terugnamebeleid. Ga naar re-sound.be.",
+    "reSoundDescription": "Re-Sound maakt in België circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen, met terugnamebeleid. Ga naar re-sound.be.",
     "aboutTitle": "Over STRETCH Group — verhaal, tijdlijn en vestigingen",
-    "aboutDescription": "Hoe STRETCH Group groeide: een pvc-fabriek in Polen in 2016, Stretch Productions BV in België in 2018, Re-Sound, en Alto Design dat in 2024 toetreedt tot de groep. Vestigingen in België, de VS, Polen en Oostenrijk.",
+    "aboutDescription": "Hoe STRETCH Group groeide: een pvc-fabriek in Polen (2016), Stretch Productions BV in België (2018), Re-Sound, en Alto Design erbij in 2024. Vier vestigingen.",
     "careersTitle": "Werken bij STRETCH Group",
     "careersDescription": "Werk bij STRETCH Group of bij een van de bedrijven in België en Polen. Stuur een spontane sollicitatie naar de groep — we lezen ze allemaal.",
     "contactTitle": "Contact STRETCH Group — Beveren-Waas, België",
-    "contactDescription": "Bereik STRETCH Group per telefoon, e-mail of WhatsApp, of contacteer STRETCH, Stretch Sufit / Alto Design en Re-Sound rechtstreeks. Hoofdzetel in Beveren-Waas, België.",
+    "contactDescription": "Bereik STRETCH Group per telefoon, e-mail of WhatsApp, of contacteer STRETCH, Alto Design en Re-Sound rechtstreeks. Hoofdzetel in Beveren-Waas, België.",
     "privacyTitle": "Privacybeleid | STRETCH Group",
     "privacyDescription": "Hoe STRETCH Group persoonsgegevens verzamelt, gebruikt en beschermt die via stretchgroup.be worden doorgegeven, conform de AVG (GDPR).",
     "termsTitle": "Gebruiksvoorwaarden | STRETCH Group",
@@ -363,9 +363,18 @@
     "titleA": "Praat met",
     "titleB": "de groep.",
     "cards": {
-      "call": { "label": "Bel ons" },
-      "email": { "label": "Mail ons", "sub": "Antwoord binnen twee werkdagen" },
-      "chat": { "label": "WhatsApp", "value": "Chat met ons", "sub": "Korte vragen, snelle antwoorden" }
+      "call": {
+        "label": "Bel ons"
+      },
+      "email": {
+        "label": "Mail ons",
+        "sub": "Antwoord binnen twee werkdagen"
+      },
+      "chat": {
+        "label": "WhatsApp",
+        "value": "Chat met ons",
+        "sub": "Korte vragen, snelle antwoorden"
+      }
     },
     "chatNote": "Ook op",
     "formTitle": "Stuur ons een bericht",

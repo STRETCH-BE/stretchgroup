@@ -36,7 +36,7 @@ export default function Hero() {
           </p>
 
           <p className="hero-hint hero-in" style={{ animationDelay: '260ms' }}>{t('hint')}</p>
-          <ul className="hero-index" aria-label={t('indexAria')}>
+          <ul className="hero-index" role="list" aria-label={t('indexAria')}>
             {companies.map((c, i) => (
               <li key={c.slug} className="hero-in" style={{ animationDelay: `${320 + i * 90}ms` }}>
                 <Link
@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="hero-slot hero-in" style={{ animationDelay: '200ms' }} aria-hidden="true">
           {companies.map((c, i) => (
             <div key={c.slug} className="hero-slot__layer" style={{ opacity: active === i ? 1 : 0 }}>
-              <Placeholder label={t('slotLabel', { name: c.name })} decorative style={{ background: 'repeating-linear-gradient(135deg, #222, #222 12px, #1a1a1a 12px, #1a1a1a 24px)', color: '#8a867f' }} />
+              <Placeholder label={t('slotLabel', { name: c.name })} decorative style={{ background: 'repeating-linear-gradient(135deg, #222, #222 12px, #1a1a1a 12px, #1a1a1a 24px)', color: '#a8a49d' }} />
             </div>
           ))}
           <div className="hero-slot__caption">

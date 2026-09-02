@@ -6,7 +6,7 @@
 // Derives entirely from i18n/config: adding a locale needs no change here.
 // ============================================================================
 import type { Metadata } from 'next';
-import { liveLocales, defaultLocale, localeFullCodes, localePath, localePrefix, type Locale } from '@/i18n/config';
+import { liveLocales, defaultLocale, localeFullCodes, localePath, localePrefix, type Locale, ogLocaleCodes } from '@/i18n/config';
 import { siteUrl } from '@/lib/site-config';
 
 /** Normalize a route to a clean, leading-slash path with no trailing slash. */
@@ -38,7 +38,7 @@ export function buildAlternates(locale: Locale, route: string): Metadata['altern
 export function buildOgLocales(locale: Locale): { ogLocale: string; alternate: string[] } {
   const fmt = (code: string) => code.replace('-', '_');
   return {
-    ogLocale: fmt(localeFullCodes[locale]),
-    alternate: liveLocales.filter((l) => l !== locale).map((l) => fmt(localeFullCodes[l])),
+    ogLocale: fmt(ogLocaleCodes[locale]),
+    alternate: liveLocales.filter((l) => l !== locale).map((l) => fmt(ogLocaleCodes[l])),
   };
 }

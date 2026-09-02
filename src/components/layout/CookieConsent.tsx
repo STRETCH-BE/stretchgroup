@@ -5,7 +5,7 @@
 // Analytics, Marketing). Persists via setConsent (which also pushes the Consent
 // Mode v2 update + fires consent-update). Reopens on the consent-open-banner
 // event from the footer "Manage cookies" link.
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import {
@@ -21,6 +21,14 @@ export default function CookieConsent() {
   const [customizing, setCustomizing] = useState(false);
   const [analyticsOn, setAnalyticsOn] = useState(true);
   const [marketingOn, setMarketingOn] = useState(true);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  // A live region cannot announce a node that is inserted whole, so when the
+  // banner appears (first visit, or reopened from the footer) focus moves to
+  // its heading — that is what assistive tech announces.
+  useEffect(() => {
+    if (visible) headingRef.current?.focus();
+  }, [visible]);
 
   useEffect(() => {
     if (!hasConsentDecision()) setVisible(true);
@@ -47,7 +55,6 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label={t('title')}
-      aria-live="polite"
       style={{
         position: 'fixed',
         left: 0,
@@ -74,8 +81,10 @@ export default function CookieConsent() {
         >
           <div style={{ maxWidth: 560 }}>
             <h2
+              ref={headingRef}
+              tabIndex={-1}
               className="h2 h2--sm"
-              style={{ fontSize: 20, marginBottom: 8 }}
+              style={{ fontSize: 20, marginBottom: 8, outline: 'none' }}
             >
               {t('title')}
             </h2>
@@ -92,6 +101,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 className="btn btn--ghost btn--sm"
+                aria-expanded={customizing}
                 onClick={() => setCustomizing(true)}
               >
                 {t('customize')}
@@ -215,7 +225,9 @@ function ToggleRow({
               height: 24,
               border: 'none',
               cursor: 'pointer',
-              background: on ? 'var(--red)' : '#cfccc6',
+              // Off state ≥ 3:1 against the white card (WCAG 1.4.11): the
+              // reference's #cfccc6 measured 1.6:1.
+              background: on ? 'var(--red)' : 'var(--text-muted-2)',
               position: 'relative',
               transition: 'background .2s',
               flex: '0 0 auto',

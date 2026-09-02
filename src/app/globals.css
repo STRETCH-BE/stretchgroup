@@ -40,7 +40,10 @@
   /* --- Borders / lines --- */
   --border: #eceae6; /* primary light border */
   --border-2: #e6e3de;
-  --border-input: #dad7d2;
+  /* Field borders: WCAG 1.4.11 non-text contrast needs ≥ 3:1 against white
+     for a control's boundary — #8a8781 is 3.6:1 (the product site's #dad7d2
+     was 1.4:1). Group-site override of the inherited token. */
+  --border-input: #8a8781;
   --line-dark: #262626; /* dark-section grid lines */
   --line-footer: #1f1f1f;
   --line-footer-2: #2a2a2a;
@@ -447,7 +450,7 @@ h4 {
     #161616 12px,
     #161616 24px
   );
-  color: #7c7972;
+  color: #9a968f; /* 5.6:1 on the dark tile (label is real text until assets arrive) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,7 +470,7 @@ h4 {
     #e7e7e4 12px,
     #e7e7e4 24px
   );
-  color: #9a968f;
+  color: #6e6b66; /* 4.6:1 on the light tile */
 }
 
 /* --- Ticker --------------------------------------------------------------- */

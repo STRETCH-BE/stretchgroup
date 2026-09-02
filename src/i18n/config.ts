@@ -88,6 +88,16 @@ export const localeFullCodes: Record<Locale, string> = {
   pl: 'pl-PL',
 };
 
+// Open Graph locales — og:locale wants language_TERRITORY (Facebook rejects a
+// bare "en"); hreflang / <html lang> keep the BCP 47 codes above.
+export const ogLocaleCodes: Record<Locale, string> = {
+  en: 'en_GB',
+  nl: 'nl_BE',
+  fr: 'fr_BE',
+  de: 'de_DE',
+  pl: 'pl_PL',
+};
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------

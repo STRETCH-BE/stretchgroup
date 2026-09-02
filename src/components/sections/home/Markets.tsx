@@ -30,7 +30,7 @@ export default function Markets({ num = '04' }: { num?: string }) {
           return (
             <div key={c.slug} className="mk-group">
               <h3 className="mk-group__title">{t('byCompany', { name: tc(`${c.slug}.name`) })}</h3>
-              <ul className="grid-lines mk-list" aria-label={t('byCompany', { name: tc(`${c.slug}.name`) })}>
+              <ul className="grid-lines mk-list" role="list" aria-label={t('byCompany', { name: tc(`${c.slug}.name`) })}>
                 {sites.map((m) => (
                   <li key={m.domain}>
                     <ExternalLink href={`https://${m.domain}`} company={c.slug} location="home_markets" className="mk-item">

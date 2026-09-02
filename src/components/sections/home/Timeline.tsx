@@ -29,7 +29,7 @@ export default function Timeline({ variant = 'full', num = '05' }: { variant?: '
           )}
         </div>
 
-        <ol className={`tl ${teaser ? 'tl--teaser' : 'tl--full'}`}>
+        <ol className={`tl ${teaser ? 'tl--teaser' : 'tl--full'}`} role="list">
           {timeline.map((e, i) => (
             <li key={e.key} className="tl__item">
               <div className="tl__year">

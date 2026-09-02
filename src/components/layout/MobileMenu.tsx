@@ -5,7 +5,7 @@
 // contact CTA, the phone line and the language grid (the desktop switcher
 // lives in the .only-desktop utility strip, so this is the ONLY way to
 // change language on a phone).
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useLocale, useTranslations } from 'next-intl';
@@ -41,10 +41,44 @@ export default function MobileMenu() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const openBtnRef = useRef<HTMLButtonElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const wasOpen = useRef(false);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Modal focus management: focus lands on the close button when the drawer
+  // opens and returns to the hamburger when it closes.
+  useEffect(() => {
+    if (open) {
+      wasOpen.current = true;
+      closeBtnRef.current?.focus();
+    } else if (wasOpen.current) {
+      wasOpen.current = false;
+      openBtnRef.current?.focus();
+    }
+  }, [open]);
+
+  // Keep Tab inside the dialog while it is open.
+  const trapTab = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== 'Tab' || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'),
+    );
+    if (focusables.length === 0) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -66,6 +100,7 @@ export default function MobileMenu() {
     // No inline display here: it would override the .only-mobile media query.
     <div className="only-mobile">
       <button
+        ref={openBtnRef}
         type="button"
         aria-label={t('openMenu')}
         aria-expanded={open}
@@ -80,9 +115,11 @@ export default function MobileMenu() {
       {open &&
         createPortal(
           <div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-label={t('menu')}
+            onKeyDown={trapTab}
             style={{ position: 'fixed', inset: 0, zIndex: 200, background: '#fff', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}
           >
             <div
@@ -91,6 +128,7 @@ export default function MobileMenu() {
             >
               <Wordmark size={22} />
               <button
+                ref={closeBtnRef}
                 type="button"
                 aria-label={t('closeMenu')}
                 onClick={() => setOpen(false)}

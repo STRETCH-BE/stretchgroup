@@ -263,6 +263,44 @@ Fixed from the first two reports:
   so Gate 1 works on protected previews; twelve new junk paths cover Layer 4b.
   Inventory grew to 120 URLs (Magento API endpoints, `/index.php/…` forms).
 
+Fixed from the SEO and accessibility reports (verified by hand against the
+code and the rendered output; the two-skeptic stage was dropped after the
+sandbox's 2-agent concurrency cap made it hours long):
+
+- **robots.txt blocked the OG images.** `Disallow: /api/` also covered
+  `/api/og*`, the og:image on every page. `Allow: /api/og` / `/api/og/`
+  added (longest match wins). *Note for the product site: same issue there.*
+- **JSON-LD said the US office is in "York".** The "postcode locality"
+  regex ran on the bare city line. It now only runs on full postal addresses.
+- **Alto Design was two entities.** The Polish office node duplicated the
+  Stretch Sufit / Alto Design subOrganization node under another name; an
+  office that is a member company is now skipped in `officeSchemas()`.
+- **STRETCH's shared node disagreed with the product site.** The
+  `https://stretch.mt/#organization` node emitted here now carries the same
+  PostalAddress as the product site (bare street, with region); "Beverpark"
+  stays in visible copy only. The HQ `LocalBusiness` no longer lists the
+  group as its own parent; WhatsApp is out of `sameAs` (not an identity page).
+- **og:locale** is now `en_GB` / `nl_BE` (`ogLocaleCodes` in i18n/config)
+  instead of the bare hreflang codes; **meta descriptions** trimmed to ≤ 160
+  characters in both languages.
+- **Mobile menu is a real modal now:** focus moves to the close button on
+  open, Tab is trapped inside, focus returns to the hamburger on close.
+- **Form errors are announced:** `aria-required` on the required fields,
+  focus moves to the first invalid control, a single `role="alert"` summary
+  is inserted, the consent checkbox has an id and `aria-describedby`.
+- **Language switcher** uses the disclosure pattern (button with an
+  accessible name + a labelled list of links) instead of ARIA menu roles it
+  did not implement; focus moves into the list on open and back on Escape.
+- **Cookie banner** moves focus to its heading when it appears (a live region
+  cannot announce a node inserted whole); the Customize button exposes
+  `aria-expanded`; the switch's off state is 5.3:1 instead of 1.6:1.
+- **Non-text contrast:** `--border-input` raised from #dad7d2 (1.4:1) to
+  #8a8781 (3.6:1) — a deliberate override of the inherited token for WCAG
+  1.4.11; placeholder-tile labels lifted to ≥ 4.5:1 on both tiles.
+- **Outline:** on /companies the card names are h2 (the page has its own h1
+  and no section h2); `role="list"` on every list that drops bullets so
+  WebKit keeps list semantics.
+
 ### Verification record (this build)
 
 - `npm run typecheck` clean · `npm run lint` clean · `npm run build` clean

@@ -81,7 +81,7 @@ export default function Footer() {
             <p style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--red-bright)', margin: '0 0 18px' }}>
               {t('officesHeading')}
             </p>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12, fontSize: 13.5, color: 'var(--on-dark-soft)' }}>
+            <ul role="list" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 12, fontSize: 13.5, color: 'var(--on-dark-soft)' }}>
               {offices.map((o) => (
                 <li key={o.country}>
                   <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--on-dark-muted)' }}>
@@ -166,7 +166,7 @@ function FooterCol({ heading, children }: { heading: string; children: React.Rea
   return (
     <div>
       <p style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: 'var(--red-bright)', margin: '0 0 18px' }}>{heading}</p>
-      <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 11, fontSize: 14 }}>{children}</ul>
+      <ul role="list" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 11, fontSize: 14 }}>{children}</ul>
     </div>
   );
 }

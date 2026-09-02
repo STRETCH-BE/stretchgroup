@@ -72,7 +72,7 @@ export default async function CareersPage({ params }: { params: { locale: string
               <p style={{ color: 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>{t('rolesEmpty')}</p>
             </div>
           ) : (
-            <ul className="grid-lines" style={{ listStyle: 'none', margin: 0, padding: 1, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+            <ul className="grid-lines" role="list" style={{ listStyle: 'none', margin: 0, padding: 1, gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
               {OPEN_ROLES.map((r) => (
                 <li key={r.title} style={{ background: '#fff', padding: 24 }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 18 }}>{r.title}</div>
@@ -103,7 +103,7 @@ export default async function CareersPage({ params }: { params: { locale: string
           <div style={{ background: 'var(--black)', color: '#fff', padding: 'clamp(24px,3vw,40px)' }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--red-bright)', marginBottom: 14 }}>{t('companiesTitle')}</div>
             <p style={{ fontSize: 14.5, lineHeight: 1.6, color: 'var(--on-dark-muted-2)', margin: '0 0 18px' }}>{t('companiesBody')}</p>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <ul role="list" style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
               {companies.map((c) => (
                 <li key={c.slug}>
                   <ExternalLink href={c.url} company={c.slug} location="careers_companies" className="lnk" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#fff', fontWeight: 600 }}>

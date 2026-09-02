@@ -67,7 +67,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
               <div className="prose">
                 <p>{t(`${c.slug}.description`)}</p>
               </div>
-              <ul style={{ listStyle: 'none', margin: '18px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <ul role="list" style={{ listStyle: 'none', margin: '18px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {bullets.map((b) => (
                   <li key={b} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 15, lineHeight: 1.55, color: 'var(--text-body)' }}>
                     <span className="tick" style={{ marginTop: 7 }} aria-hidden />

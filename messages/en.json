@@ -26,17 +26,17 @@
   },
   "meta": {
     "homeTitle": "STRETCH Group — ceilings, walls and acoustics from Belgium and Poland",
-    "homeDescription": "STRETCH Group unites three companies: STRETCH (stretch ceilings and walls, Belgium), Stretch Sufit / Alto Design (PVC stretch-ceiling factory, Poland) and Re-Sound (circular acoustic panels, Belgium). Find the right company in one click.",
+    "homeDescription": "STRETCH Group unites STRETCH (stretch ceilings, Belgium), Stretch Sufit / Alto Design (PVC factory, Poland) and Re-Sound (acoustics). Find the right company.",
     "companiesTitle": "The companies | STRETCH Group",
-    "companiesDescription": "Three companies, one group: STRETCH, Stretch Sufit / Alto Design and Re-Sound. What each one does and where to go for ceilings, a quote in Poland or acoustic panels.",
+    "companiesDescription": "Three companies, one group: STRETCH, Stretch Sufit / Alto Design and Re-Sound. What each does and where to go for ceilings, acoustics or a quote in Poland.",
     "stretchTitle": "STRETCH — stretch ceilings and walls, Belgium | STRETCH Group",
-    "stretchDescription": "Stretch Productions BV, founded 2018 in Beveren-Waas: seamless polyester stretch ceilings and walls, cold-mounted and installed in one day. Visit stretchplafond.be or stretch.mt.",
+    "stretchDescription": "Stretch Productions BV, Beveren-Waas (2018): seamless polyester stretch ceilings and walls, cold-mounted, installed in one day. Visit stretchplafond.be.",
     "stretchSufitTitle": "Stretch Sufit / Alto Design — PVC stretch-ceiling factory, Poland | STRETCH Group",
-    "stretchSufitDescription": "Alto Design Sp. z o.o. in Częstochowa: PVC stretch-ceiling factory since 2016, seamless up to 6.50 m, part of STRETCH Group since 2024. Consumer brand Stretch Sufit in 17 Polish cities. Visit altodesign.pl.",
+    "stretchSufitDescription": "Alto Design Sp. z o.o., Częstochowa: PVC stretch-ceiling factory since 2016, seamless to 6.50 m, in STRETCH Group since 2024. Stretch Sufit: 17 cities.",
     "reSoundTitle": "Re-Sound — circular acoustic panels, Belgium | STRETCH Group",
     "reSoundDescription": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials, with a full take-back policy. Visit re-sound.be.",
     "aboutTitle": "About STRETCH Group — story, timeline and offices",
-    "aboutDescription": "How STRETCH Group grew: a PVC factory in Poland in 2016, Stretch Productions BV in Belgium in 2018, Re-Sound, and Alto Design joining the group in 2024. Offices in Belgium, the US, Poland and Austria.",
+    "aboutDescription": "How STRETCH Group grew: a PVC factory in Poland (2016), Stretch Productions BV in Belgium (2018), Re-Sound, and Alto Design joining in 2024. Four offices.",
     "careersTitle": "Careers at STRETCH Group",
     "careersDescription": "Work at STRETCH Group or one of its companies in Belgium and Poland. Send an open application to the group — we read every one.",
     "contactTitle": "Contact STRETCH Group — Beveren-Waas, Belgium",
@@ -363,9 +363,18 @@
     "titleA": "Talk to",
     "titleB": "the group.",
     "cards": {
-      "call": { "label": "Call us" },
-      "email": { "label": "Email us", "sub": "Reply within two working days" },
-      "chat": { "label": "WhatsApp", "value": "Chat with us", "sub": "Quick questions, fast answers" }
+      "call": {
+        "label": "Call us"
+      },
+      "email": {
+        "label": "Email us",
+        "sub": "Reply within two working days"
+      },
+      "chat": {
+        "label": "WhatsApp",
+        "value": "Chat with us",
+        "sub": "Quick questions, fast answers"
+      }
     },
     "chatNote": "Also on",
     "formTitle": "Send us a message",
