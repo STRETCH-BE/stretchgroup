@@ -269,7 +269,8 @@
       "eyebrow": "Markten",
       "title": "Eén standaard, veel domeinen.",
       "intro": "{count} actieve websites bedienen de markten van de groep in hun eigen taal. Elke site is een bedrijfswebsite — daar vindt u de producten.",
-      "byCompany": "Websites van {name}"
+      "byCompany": "Websites van {name}",
+      "otherGroup": "Andere websites van de groep"
     },
     "timeline": {
       "eyebrow": "Tijdlijn",

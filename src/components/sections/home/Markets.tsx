@@ -24,16 +24,18 @@ export default function Markets({ num = '04' }: { num?: string }) {
       </div>
 
       <div className="mk-groups">
-        {companies.map((c) => {
-          const sites = liveMarkets.filter((m) => m.company === c.slug);
-          if (sites.length === 0) return null;
+        {[...companies.map((c) => ({ key: c.slug as string, title: t('byCompany', { name: tc(`${c.slug}.name`) }), sites: liveMarkets.filter((m) => m.company === c.slug) })),
+          // Group websites whose owning company is still [TO CONFIRM] (site-config).
+          { key: 'group', title: t('otherGroup'), sites: liveMarkets.filter((m) => !m.company) },
+        ].map((group) => {
+          if (group.sites.length === 0) return null;
           return (
-            <div key={c.slug} className="mk-group">
-              <h3 className="mk-group__title">{t('byCompany', { name: tc(`${c.slug}.name`) })}</h3>
-              <ul className="grid-lines mk-list" role="list" aria-label={t('byCompany', { name: tc(`${c.slug}.name`) })}>
-                {sites.map((m) => (
+            <div key={group.key} className="mk-group">
+              <h3 className="mk-group__title">{group.title}</h3>
+              <ul className="grid-lines mk-list" role="list" aria-label={group.title}>
+                {group.sites.map((m) => (
                   <li key={m.domain}>
-                    <ExternalLink href={`https://${m.domain}`} company={c.slug} location="home_markets" className="mk-item">
+                    <ExternalLink href={`https://${m.domain}`} company={m.company ?? 'group'} location="home_markets" className="mk-item">
                       <span className="mk-item__country">{tcountry(m.country)}</span>
                       <span className="mk-item__domain">{m.domain}</span>
                       <ArrowUpRight size={14} className="mk-item__arrow" aria-hidden />

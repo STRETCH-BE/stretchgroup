@@ -1,3 +1,13 @@
+## 2026-09-02 (2) — stretchmetal.pl added as a group website
+
+Added on the team's instruction. Unverifiable from the build environment
+(egress-blocked; web search returns nothing relevant), so it appears by
+domain only: "Other group websites · Poland · stretchmetal.pl" in the
+Markets section (home) and in llms.txt, via a new optional `company` on the
+`Market` type. Not in JSON-LD, the router or the footer company columns
+until [TO CONFIRM] item 15 is answered. The "live market websites" tile now
+counts 15.
+
 ## 2026-09-02 (1) — Initial build: group site, zero-404 redirect layers, verification gate
 
 First commit of the STRETCH Group corporate site (stretchgroup.be). Built on the
@@ -190,6 +200,14 @@ but the explicit map is only as good as the inventory:
     if the group gets its own mark. → marker in `src/app/[locale]/layout.tsx`.
 13. **Group logo + company logos + photography** — every slot is a
     `Placeholder` (search `Placeholder`, `logoSlot`, `imageSlot`, `imageLabel`).
+15. **stretchmetal.pl** — named by the team as a group website that must not
+    be forgotten. It could not be reached or researched from the build
+    environment, so nothing about it is stated: it is listed by domain only
+    under "Other group websites" (Poland) in the Markets section and in
+    llms.txt, counted in the "live market websites" number, and left out of
+    JSON-LD, the router and the footer company lists. Confirm what it is, which
+    entity owns it, its language and that it is live; then attribute it to a
+    company (`company:` in `markets`) or promote it to an entity of its own.
 14. **Lead delivery:** set `LEAD_WEBHOOK_URL` to the existing Power Automate
     flow into leads@stretchgroup.be (fastest), or the four `MS_*` Graph
     variables. Until then messages are console-logged only. → markers in
@@ -197,7 +215,7 @@ but the explicit map is only as good as the inventory:
 
 ### Pre-launch content checklist
 
-- [ ] Resolve the 14 `[TO CONFIRM]` items above.
+- [ ] Resolve the 15 `[TO CONFIRM]` items above.
 - [ ] Legal review of `/privacy` and `/terms` (EN + NL); remove the review note
       (`legal.reviewNote`) once approved.
 - [ ] Supply logo assets (group + 3 companies) and photography; wire them into

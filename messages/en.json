@@ -269,7 +269,8 @@
       "eyebrow": "Markets",
       "title": "One standard, many domains.",
       "intro": "{count} live websites serve the group’s markets in their own language. Each one is a company site — this is where the products are.",
-      "byCompany": "{name} websites"
+      "byCompany": "{name} websites",
+      "otherGroup": "Other group websites"
     },
     "timeline": {
       "eyebrow": "Timeline",

@@ -177,7 +177,9 @@ export const companySlugs = companies.map((c) => c.slug);
 // ---------------------------------------------------------------------------
 export type Market = {
   domain: string;
-  company: CompanySlug;
+  /** Owning member company. Omitted = a group website whose owner is still
+   *  [TO CONFIRM]; rendered under "Other group websites", never as a company. */
+  company?: CompanySlug;
   /** ISO 3166-1 alpha-2, or 'INT' for the international x-default domain. */
   country: string;
   lang: string; // BCP 47
@@ -201,6 +203,11 @@ export const markets: Market[] = [
   { domain: 'stretchtak.no', company: 'stretch', country: 'NO', lang: 'nb-NO', status: 'pending' }, // no DNS yet
   { domain: 'altodesign.pl', company: 'stretch-sufit', country: 'PL', lang: 'pl-PL', status: 'live' },
   { domain: 're-sound.be', company: 're-sound', country: 'BE', lang: 'nl-BE', status: 'live' },
+  // [TO CONFIRM] stretchmetal.pl — named by the team as a group website that
+  // must not be forgotten. Not reachable from the build environment, so its
+  // description, owning entity and language are unverified: listed by domain
+  // only, under "Other group websites", not in JSON-LD, not in the router.
+  { domain: 'stretchmetal.pl', country: 'PL', lang: 'pl-PL', status: 'live' },
 ];
 
 export const liveMarkets = markets.filter((m) => m.status === 'live');
