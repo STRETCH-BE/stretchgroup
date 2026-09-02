@@ -22,7 +22,7 @@ export default function CompanyRouter({ variant = 'full', location }: { variant?
         <style dangerouslySetInnerHTML={{ __html: `
           .router-compact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.12); }
           .router-compact__label { font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-muted); }
-          .router-compact__link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--on-dark-soft); }
+          .router-compact__link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--on-dark-soft); padding: 5px 0; }
           .router-compact__link strong { color: #fff; font-weight: 700; }
           .router-compact__link svg { color: var(--red-bright); }
         `}} />

@@ -199,6 +199,24 @@ but the explicit map is only as good as the inventory:
       multistore domains), then `npm run verify:redirects` against production
       (the launch gate).
 
+### Visual + Lighthouse pass (same day)
+
+- Playwright screenshots of every page at 1440 px and 390 px, plus the mobile
+  drawer and the hero hover state: no console errors, layouts hold at both
+  widths. Two fixes from the pass: the hero's image slot was a dark hatch on
+  black (now a lighter hatch with a border), and the Markets grid showed empty
+  hairline cells for the two single-site companies (hairline moved onto the
+  items).
+- Lighthouse (local production build, Chromium): three accessibility audits
+  failed at first — white text at 92 % opacity on the red bands measured
+  4.37:1 (now solid white, 4.53:1), the wordmark's two spans produced the
+  accessible name "STRETCHGROUP" which did not match its aria-label (a real
+  space added), and 12.5 px footer links were 14 px tall (padded to ≥ 24 px,
+  same for the utility strip and legal row). After the fixes: **/ desktop
+  100 / 100 / 100 / 100 · / mobile 96 / 100 / 100 / 100 · /companies/stretch
+  mobile 96 / 100 / 100 / 100 · /contact desktop 100 / 100 / 100 / 100**
+  (Performance / Accessibility / Best Practices / SEO).
+
 ### Verification record (this build)
 
 - `npm run typecheck` clean · `npm run lint` clean · `npm run build` clean

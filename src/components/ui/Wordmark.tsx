@@ -11,7 +11,7 @@ export default function Wordmark({ size = 26, tone = 'light' }: WordmarkProps) {
     <span style={{ display: 'inline-flex', alignItems: 'baseline', gap: Math.round(size * 0.28), whiteSpace: 'nowrap' }}>
       <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: size, letterSpacing: '-.02em', color: main, lineHeight: 1 }}>
         STRETCH
-      </span>
+      </span>{' '}
       <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: size * 0.72, letterSpacing: '.02em', color: accent, lineHeight: 1 }}>
         GROUP
       </span>

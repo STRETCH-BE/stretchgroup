@@ -49,7 +49,8 @@ export default function Markets({ num = '04' }: { num?: string }) {
       <style dangerouslySetInnerHTML={{ __html: `
         .mk-groups { display: flex; flex-direction: column; gap: clamp(28px,3vw,40px); }
         .mk-group__title { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint-2); margin: 0 0 12px; }
-        .mk-list { list-style: none; margin: 0; padding: 1px; grid-template-columns: repeat(4, 1fr); }
+        .mk-list { list-style: none; margin: 0; padding: 1px; grid-template-columns: repeat(4, 1fr); background: transparent; border: 0; }
+        .mk-list > li { box-shadow: 0 0 0 1px var(--border); }
         .mk-item { display: flex; align-items: center; gap: 10px; background: #fff; padding: 16px 18px; transition: background .15s ease; }
         .mk-item:hover { background: var(--surface); }
         .mk-item__country { font-size: 12.5px; color: var(--text-muted); flex: 1 1 auto; }

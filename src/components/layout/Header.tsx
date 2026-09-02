@@ -42,12 +42,12 @@ export default function Header() {
             {/* The persistent router, in its most compact form: the three
                 company sites, one click away on every page. */}
             {companies.map((c) => (
-              <ExternalLink key={c.slug} href={c.url} company={c.slug} location="header_utility" className="lnk" style={{ color: 'rgba(255,255,255,.8)' }}>
+              <ExternalLink key={c.slug} href={c.url} company={c.slug} location="header_utility" className="lnk" style={{ color: 'rgba(255,255,255,.8)', display: 'inline-block', padding: '12px 0' }}>
                 {c.urlLabel}
               </ExternalLink>
             ))}
             <span style={{ opacity: 0.4 }} aria-hidden>|</span>
-            <a href={contact.phoneHref} className="lnk" style={{ color: 'var(--red-bright)' }} onClick={() => analytics.phoneClick('header_utility')}>
+            <a href={contact.phoneHref} className="lnk" style={{ color: 'var(--red-bright)', display: 'inline-block', padding: '12px 0' }} onClick={() => analytics.phoneClick('header_utility')}>
               {contact.phoneDisplay}
             </a>
             <LanguageSwitcher />

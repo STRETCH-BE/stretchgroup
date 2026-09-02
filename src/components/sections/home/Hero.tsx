@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="hero-slot hero-in" style={{ animationDelay: '200ms' }} aria-hidden="true">
           {companies.map((c, i) => (
             <div key={c.slug} className="hero-slot__layer" style={{ opacity: active === i ? 1 : 0 }}>
-              <Placeholder label={t('slotLabel', { name: c.name })} decorative />
+              <Placeholder label={t('slotLabel', { name: c.name })} decorative style={{ background: 'repeating-linear-gradient(135deg, #222, #222 12px, #1a1a1a 12px, #1a1a1a 24px)', color: '#8a867f' }} />
             </div>
           ))}
           <div className="hero-slot__caption">
@@ -75,7 +75,7 @@ export default function Hero() {
         .hero { background: var(--black); color: #fff; overflow: hidden; }
         .hero-grid {
           display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px,4vw,64px); align-items: stretch;
-          min-height: calc(100vh - var(--header-h) - 42px);
+          min-height: min(calc(100vh - var(--header-h) - 42px), 860px);
           padding-top: clamp(56px,8vw,110px); padding-bottom: clamp(48px,6vw,90px);
         }
         .hero-copy { display: flex; flex-direction: column; justify-content: center; }
@@ -103,7 +103,7 @@ export default function Hero() {
         .hero-row__url { grid-column: 3; }
         .hero-row { grid-template-columns: 2.4rem 1fr auto 20px; }
         .hero-row__kicker { grid-column: 1 / 3; grid-row: 2; text-align: left; max-width: none; }
-        .hero-slot { position: relative; min-height: 420px; border: 1px solid var(--line-dark); }
+        .hero-slot { position: relative; min-height: 420px; border: 1px solid #333; background: #141414; }
         .hero-slot__layer { position: absolute; inset: 0; transition: opacity .35s ease; }
         .hero-slot__layer > * { width: 100%; height: 100%; }
         .hero-slot__caption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 14px; align-items: baseline; padding: 18px 22px; background: rgba(10,10,10,.82); font-size: 13.5px; line-height: 1.5; color: var(--on-dark-soft); border-top: 1px solid var(--line-dark); }

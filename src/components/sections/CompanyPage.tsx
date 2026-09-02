@@ -157,7 +157,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
         <div className="container section--sm" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
           <div>
             <h2 className="h2 h2--sm" style={{ color: '#fff', margin: '0 0 8px', maxWidth: '18ch' }}>{tp('ctaTitle', { name: c.name })}</h2>
-            <p style={{ color: 'rgba(255,255,255,.92)', margin: 0, maxWidth: 480, lineHeight: 1.6 }}>{t(`${c.slug}.ctaBody`)}</p>
+            <p style={{ color: '#fff', margin: 0, maxWidth: 480, lineHeight: 1.6 }}>{t(`${c.slug}.ctaBody`)}</p>
           </div>
           <ExternalLink href={c.url} company={c.slug} location={`${location}_cta`} className="btn btn--dark">
             {tp('visit', { site: c.urlLabel })} <ArrowUpRight size={16} aria-hidden />

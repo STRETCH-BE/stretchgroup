@@ -51,14 +51,14 @@ export default function Footer() {
           <FooterCol heading={t('companiesHeading')}>
             {footerNav.companies.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="lnk" style={{ color: 'var(--on-dark-soft)' }}>
+                <Link href={l.href} className="lnk" style={{ color: 'var(--on-dark-soft)', display: 'inline-block', padding: '2px 0' }}>
                   {t(`links.${l.key}`)}
                 </Link>
               </li>
             ))}
             <li style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 8 }}>
               {companies.map((c) => (
-                <ExternalLink key={c.slug} href={c.url} company={c.slug} location="footer_companies" className="lnk" style={{ fontSize: 13, color: 'var(--on-dark-muted)', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                <ExternalLink key={c.slug} href={c.url} company={c.slug} location="footer_companies" className="lnk" style={{ fontSize: 13, color: 'var(--on-dark-muted)', display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 0' }}>
                   {c.urlLabel} <ArrowUpRight size={12} aria-hidden />
                 </ExternalLink>
               ))}
@@ -69,7 +69,7 @@ export default function Footer() {
           <FooterCol heading={t('groupHeading')}>
             {footerNav.group.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="lnk" style={{ color: 'var(--on-dark-soft)' }}>
+                <Link href={l.href} className="lnk" style={{ color: 'var(--on-dark-soft)', display: 'inline-block', padding: '2px 0' }}>
                   {t(`links.${l.key}`)}
                 </Link>
               </li>
@@ -91,7 +91,7 @@ export default function Footer() {
                     {/* The PL branch trades under its own name — a followed
                         link to the group-owned altodesign.pl on every page. */}
                     {o.url ? (
-                      <ExternalLink href={o.url} company="stretch-sufit" location="footer_offices" className="lnk" style={{ color: '#fff' }}>
+                      <ExternalLink href={o.url} company="stretch-sufit" location="footer_offices" className="lnk" style={{ color: '#fff', display: 'inline-block', padding: '4px 0' }}>
                         {o.name}
                       </ExternalLink>
                     ) : (
@@ -100,7 +100,7 @@ export default function Footer() {
                     <span style={{ color: 'var(--on-dark-muted)' }}> — {o.addressLines[o.addressLines.length - 1]}</span>
                   </div>
                   {o.email && (
-                    <a href={`mailto:${o.email}`} className="lnk" style={{ fontSize: 12.5, color: 'var(--on-dark-muted)' }} onClick={() => analytics.emailClick(`footer_office_${o.country.toLowerCase()}`)}>
+                    <a href={`mailto:${o.email}`} className="lnk" style={{ fontSize: 12.5, color: 'var(--on-dark-muted)', display: 'inline-block', padding: '5px 0' }} onClick={() => analytics.emailClick(`footer_office_${o.country.toLowerCase()}`)}>
                       {o.email}
                     </a>
                   )}
@@ -120,7 +120,7 @@ export default function Footer() {
           </p>
           <div style={{ display: 'flex', gap: 22, fontSize: 12.5, color: 'var(--on-dark-muted)', flexWrap: 'wrap' }}>
             {footerNav.legal.map((l) => (
-              <Link key={l.href} href={l.href} className="lnk">
+              <Link key={l.href} href={l.href} className="lnk" style={{ display: 'inline-block', padding: '6px 0' }}>
                 {l.key === 'privacy' ? t('privacy') : t('terms')}
               </Link>
             ))}
@@ -128,7 +128,7 @@ export default function Footer() {
               type="button"
               className="lnk"
               onClick={() => window.dispatchEvent(new Event(CONSENT_OPEN_BANNER_EVENT))}
-              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'var(--on-dark-muted)', padding: 0 }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', color: 'var(--on-dark-muted)', padding: '6px 0' }}
             >
               {tc('manage')}
             </button>

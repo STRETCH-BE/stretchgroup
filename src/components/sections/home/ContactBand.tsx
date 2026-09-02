@@ -14,7 +14,7 @@ export default function ContactBand({ titleKey = 'title' }: { titleKey?: string 
       <div className="container section--sm" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
         <div>
           <h2 id="contact-band-title" className="h2 h2--sm" style={{ color: '#fff', margin: '0 0 8px', maxWidth: '18ch' }}>{t(titleKey)}</h2>
-          <p style={{ color: 'rgba(255,255,255,.92)', margin: 0, maxWidth: 480, lineHeight: 1.6 }}>{t('body')}</p>
+          <p style={{ color: '#fff', margin: 0, maxWidth: 480, lineHeight: 1.6 }}>{t('body')}</p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 12 }}>
           <Link href="/contact" className="btn btn--dark">
