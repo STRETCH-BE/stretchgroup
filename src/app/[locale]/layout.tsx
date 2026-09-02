@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   const locale = params.locale as Locale;
   const t = await getTranslations({ locale, namespace: 'meta' });
   const { ogLocale, alternate } = buildOgLocales(locale);
-  const og = `${siteUrl}/api/og`;
+  const og = `${siteUrl}/api/og?locale=${locale}`;
 
   return {
     metadataBase: new URL(siteUrl),

@@ -18,7 +18,8 @@
     },
     "cta": {
       "contactGroup": "Contacteer de groep"
-    }
+    },
+    "hours": "ma–vr · 08:30–17:00"
   },
   "header": {
     "strip": "STRETCH Group · Beveren-Waas, België",
@@ -157,7 +158,7 @@
       "kicker": "Spanplafonds en spanwanden · België",
       "oneLiner": "Belgische fabrikant van naadloze polyester spanplafonds en spanwanden, koud gemonteerd en geplaatst op één dag.",
       "whatTitle": "Een nieuw plafond op één dag.",
-      "description": "STRETCH ontwerpt en maakt naadloze spanplafonds en spanwanden in Beveren-Waas. Het polyester doek wordt koud gemonteerd en op één dag geplaatst, met akoestische, verlichte en bedrukte opties. Het bedrijf handelt als Stretch Productions BV, opgericht in 2018, en bedient België via stretchplafond.be en de internationale markten via stretch.mt.",
+      "description": "STRETCH ontwerpt en maakt naadloze spanplafonds en spanwanden in Beveren-Waas. Het polyester doek wordt koud gemonteerd en op één dag geplaatst, met akoestische, verlichte en bedrukte opties. De vennootschap achter STRETCH is Stretch Productions BV, opgericht in 2018; ze bedient België via stretchplafond.be en de internationale markten via stretch.mt.",
       "bullets": [
         "Naadloze polyester spanplafonds en spanwanden",
         "Koud gemonteerd, geplaatst op één dag",
@@ -189,7 +190,7 @@
       "bullets": [
         "Akoestische panelen en schermen, gemaakt in België",
         "Gerecycleerde en duurzame materialen — oorsprong: garen uit gerecycleerde jeans, 2020",
-        "Volledig terugnamebeleid: close the loop",
+        "Volledig terugnamebeleid: de kringloop sluiten",
         "Interior-panelen en het vrijstaande scherm Divide"
       ],
       "ctaBody": "Het gamma, de projecten en het contact voor akoestische oplossingen vindt u op re-sound.be."
@@ -224,6 +225,24 @@
       "projects": "Gerealiseerde projecten",
       "madeIn": "Gemaakt in",
       "takeBack": "Terugnamebeleid"
+    },
+    "factValues": {
+      "stretch": {
+        "founded": "2018",
+        "origin": "Beveren-Waas, BE",
+        "install": "1 dag"
+      },
+      "stretch-sufit": {
+        "factorySince": "2016",
+        "seamless": "6,50 m",
+        "cities": "17",
+        "projects": "4.000+"
+      },
+      "re-sound": {
+        "origin": "2020",
+        "madeIn": "België",
+        "takeBack": "100 %"
+      }
     }
   },
   "home": {
@@ -282,7 +301,7 @@
       "body": "De Poolse fabriek en het plaatsingsmerk Stretch Sufit worden deel van de groep."
     },
     "rollout": {
-      "title": "Internationale uitrol van landendomeinen in twaalf-plus markten.",
+      "title": "Internationale uitrol van landendomeinen in meer dan twaalf markten.",
       "body": "STRETCH lanceert een landenwebsite per markt, van stretch.mt voor internationale bezoekers tot stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is en meer."
     }
   },

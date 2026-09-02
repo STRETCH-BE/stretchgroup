@@ -1,20 +1,33 @@
-// GET /api/og/[slug] — per-company Open Graph image. Renders the company name
-// and its own domain onto the branded card; unknown slugs fall back to the
-// group card copy.
+// GET /api/og/[slug]?locale=<en|nl> — per-company Open Graph image. Renders
+// the company name and its own domain onto the branded card; unknown slugs
+// fall back to the group card copy. Copy is localized from an inline map.
 import { ImageResponse } from 'next/og';
 import { brand, getCompany } from '@/lib/site-config';
 
 export const runtime = 'edge';
 
-const KICKER: Record<string, string> = {
-  stretch: 'Stretch ceilings & walls · Belgium',
-  'stretch-sufit': 'PVC stretch-ceiling factory · Poland',
-  're-sound': 'Circular acoustic panels · Belgium',
+const KICKER: Record<string, Record<string, string>> = {
+  en: {
+    stretch: 'Stretch ceilings & walls · Belgium',
+    'stretch-sufit': 'PVC stretch-ceiling factory · Poland',
+    're-sound': 'Circular acoustic panels · Belgium',
+    group: 'One group · Three companies',
+    partOf: 'Part of STRETCH Group',
+  },
+  nl: {
+    stretch: 'Spanplafonds & spanwanden · België',
+    'stretch-sufit': 'Pvc-spanplafondfabriek · Polen',
+    're-sound': 'Circulaire akoestische panelen · België',
+    group: 'Eén groep · Drie bedrijven',
+    partOf: 'Deel van STRETCH Group',
+  },
 };
 
-export function GET(_req: Request, { params }: { params: { slug: string } }) {
+export function GET(request: Request, { params }: { params: { slug: string } }) {
+  const locale = new URL(request.url).searchParams.get('locale') ?? 'en';
+  const copy = KICKER[locale] ?? KICKER.en;
   const company = getCompany(params.slug);
-  const kicker = company ? KICKER[company.slug] : 'One group · Three companies';
+  const kicker = company ? copy[company.slug] : copy.group;
   const title = company ? company.name : brand.name;
   const footer = company ? company.urlLabel : brand.domain;
 
@@ -36,7 +49,7 @@ export function GET(_req: Request, { params }: { params: { slug: string } }) {
         </div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', color: '#B6B2AB', fontSize: 28 }}>{footer}</div>
-          <div style={{ display: 'flex', color: '#6E6B66', fontSize: 20, letterSpacing: 2, textTransform: 'uppercase' }}>Part of STRETCH Group</div>
+          <div style={{ display: 'flex', color: '#6E6B66', fontSize: 20, letterSpacing: 2, textTransform: 'uppercase' }}>{copy.partOf}</div>
         </div>
       </div>
     ),

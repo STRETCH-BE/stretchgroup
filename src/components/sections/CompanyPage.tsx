@@ -50,7 +50,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
         <div className="grid-lines cp-facts">
           {c.facts.map((f) => (
             <div key={f.key} style={{ background: '#fff', padding: 'clamp(22px,2.4vw,32px)' }}>
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,3vw,42px)', lineHeight: 1, letterSpacing: '-.03em' }}>{f.value}</div>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 'clamp(28px,3vw,42px)', lineHeight: 1, letterSpacing: '-.03em' }}>{tp(`factValues.${c.slug}.${f.key}`)}</div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--red)', marginTop: 12 }}>{tp(`facts.${f.key}`)}</div>
             </div>
           ))}

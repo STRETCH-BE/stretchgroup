@@ -28,7 +28,7 @@ export default async function ContactPage({ params }: { params: { locale: string
   const tcountry = await getTranslations('countries');
 
   const cards = [
-    { icon: Phone, label: t('cards.call.label'), value: contact.phoneDisplay, sub: contact.hoursDisplay, href: contact.phoneHref },
+    { icon: Phone, label: t('cards.call.label'), value: contact.phoneDisplay, sub: tc('hours'), href: contact.phoneHref },
     { icon: Mail, label: t('cards.email.label'), value: contact.email, sub: t('cards.email.sub'), href: `mailto:${contact.email}` },
     { icon: MessageCircle, label: t('cards.chat.label'), value: t('cards.chat.value'), sub: t('cards.chat.sub'), href: contact.whatsappHref },
   ];
@@ -86,7 +86,7 @@ export default async function ContactPage({ params }: { params: { locale: string
               <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--red-bright)', marginBottom: 8 }}>{t('hqKicker')}</div>
               <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 4 }}>{contact.address.building}, {contact.address.street}</div>
               <div style={{ fontSize: 15, color: 'var(--on-dark-soft)' }}>{contact.address.postalCode} {contact.address.city}, {tcountry('BE')}</div>
-              <div style={{ fontSize: 13, color: 'var(--on-dark-muted)', marginTop: 8 }}>{contact.hoursDisplay}</div>
+              <div style={{ fontSize: 13, color: 'var(--on-dark-muted)', marginTop: 8 }}>{tc('hours')}</div>
             </div>
           </div>
         </div>

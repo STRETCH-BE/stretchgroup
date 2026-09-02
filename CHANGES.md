@@ -301,6 +301,23 @@ sandbox's 2-agent concurrency cap made it hours long):
   and no section h2); `role="list"` on every list that drops bullets so
   WebKit keeps list semantics.
 
+Fixed from the i18n report:
+
+- **English leaking into Dutch pages.** Company fact values ("1 day",
+  "Belgium", "6.50 m", "4,000+") and the opening-hours label were rendered
+  from site-config verbatim. Displayed fact values now live in messages
+  (`companyPage.factValues`, nl: "1 dag", "België", "6,50 m", "4.000+"); the
+  hours label is `common.hours` ("ma–vr · 08:30–17:00"); site-config keeps
+  only the machine-readable `hours` for JSON-LD.
+- **Dutch copy:** "close the loop" → "de kringloop sluiten"; the calque
+  "handelt als" → "De vennootschap achter STRETCH is …"; "twaalf-plus
+  markten" → "meer dan twaalf markten" (en likewise "more than twelve").
+- **Vienna → "1100 Wien"** (native postal form, correct in every locale and
+  consistent with the German street line).
+- **OG images are localized:** `/api/og?locale=nl` and
+  `/api/og/<slug>?locale=nl` render Dutch kicker/statement; page-meta and the
+  layout append the locale to every og:image URL.
+
 ### Verification record (this build)
 
 - `npm run typecheck` clean · `npm run lint` clean · `npm run build` clean

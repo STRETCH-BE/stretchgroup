@@ -18,7 +18,8 @@
     },
     "cta": {
       "contactGroup": "Contact the group"
-    }
+    },
+    "hours": "Mon–Fri · 08:30–17:00"
   },
   "header": {
     "strip": "STRETCH Group · Beveren-Waas, Belgium",
@@ -224,6 +225,24 @@
       "projects": "Completed projects",
       "madeIn": "Made in",
       "takeBack": "Take-back policy"
+    },
+    "factValues": {
+      "stretch": {
+        "founded": "2018",
+        "origin": "Beveren-Waas, BE",
+        "install": "1 day"
+      },
+      "stretch-sufit": {
+        "factorySince": "2016",
+        "seamless": "6.50 m",
+        "cities": "17",
+        "projects": "4,000+"
+      },
+      "re-sound": {
+        "origin": "2020",
+        "madeIn": "Belgium",
+        "takeBack": "100%"
+      }
     }
   },
   "home": {
@@ -282,7 +301,7 @@
       "body": "The Polish factory and its Stretch Sufit installation brand become part of the group."
     },
     "rollout": {
-      "title": "International domain rollout across twelve-plus markets.",
+      "title": "International domain rollout across more than twelve markets.",
       "body": "STRETCH launches a country website per market, from stretch.mt for international visitors to stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is and more."
     }
   },

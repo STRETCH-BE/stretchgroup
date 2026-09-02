@@ -49,8 +49,7 @@ export const contact = {
   // Legacy office line found on the old Magento site. [TO CONFIRM] which
   // number(s) to display — NOT rendered anywhere until confirmed.
   legacyOfficePhone: '+32 3 284 68 18',
-  hours: 'Mo-Fr 08:30-17:00',
-  hoursDisplay: 'Mon–Fri · 08:30–17:00',
+  hours: 'Mo-Fr 08:30-17:00', // machine-readable (JSON-LD); the display label is `common.hours` in messages
   address: {
     street: 'Gentseweg 309 A3',
     building: 'Beverpark',
@@ -95,7 +94,9 @@ export type Company = {
   /** Brand accent from the company's own identity. Only STRETCH is verified;
    *  the others stay undefined ([TO CONFIRM] — pull from the real logo). */
   accent?: string;
-  /** Verified, company-specific claims rendered ONLY on that company's page. */
+  /** Verified, company-specific claims rendered ONLY on that company's page.
+   *  `value` is the canonical (English) fact for reference; the DISPLAYED
+   *  value is localized in messages under `companyPage.factValues.<slug>.<key>`. */
   facts: { key: string; value: string }[];
 };
 
@@ -258,7 +259,7 @@ export const offices: Office[] = [
     role: 'branch',
     country: 'AT',
     name: 'STRETCH Austria',
-    addressLines: ['Gertrude-Fröhlich-Sandner-Straße 2', '1100 Vienna'],
+    addressLines: ['Gertrude-Fröhlich-Sandner-Straße 2', '1100 Wien'], // native postal form (correct in every locale)
     email: 'info@stretchdecken.at',
   },
 ];

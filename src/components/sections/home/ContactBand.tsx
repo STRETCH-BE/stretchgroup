@@ -9,6 +9,7 @@ import { analytics } from '@/lib/analytics';
 
 export default function ContactBand({ titleKey = 'title' }: { titleKey?: string }) {
   const t = useTranslations('home.contactBand');
+  const tc = useTranslations('common');
   return (
     <section className="section--red" aria-labelledby="contact-band-title">
       <div className="container section--sm" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 24 }}>
@@ -25,7 +26,7 @@ export default function ContactBand({ titleKey = 'title' }: { titleKey?: string 
             <a href={contact.phoneHref} style={{ fontWeight: 700, borderBottom: '2px solid #fff' }} onClick={() => analytics.phoneClick('contact_band')}>
               {contact.phoneDisplay}
             </a>{' '}
-            · {contact.hoursDisplay}
+            · {tc('hours')}
           </p>
         </div>
       </div>

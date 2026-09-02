@@ -13,7 +13,8 @@ export async function pageMetadata(opts: {
   route: string;
   titleKey: string;
   descKey: string;
-  /** OG image path (default /api/og). Locale-independent, served from the apex. */
+  /** OG image path (default /api/og). The locale is appended as ?locale= so
+   *  the card's copy matches the page language. */
   ogPath?: string;
   index?: boolean;
   /** Override the title/description with already-resolved strings. */
@@ -26,7 +27,7 @@ export async function pageMetadata(opts: {
   const { ogLocale, alternate } = buildOgLocales(locale);
   const title = opts.title ?? t(opts.titleKey);
   const description = opts.description ?? t(opts.descKey);
-  const ogImg = `${siteUrl}${opts.ogPath ?? '/api/og'}`;
+  const ogImg = `${siteUrl}${opts.ogPath ?? '/api/og'}?locale=${locale}`;
   const url = buildCanonical(locale, opts.route);
 
   return {
