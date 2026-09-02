@@ -1,12 +1,28 @@
-## 2026-09-02 (2) — stretchmetal.pl added as a group website
+## 2026-09-02 (3) — Stretch Metal is the fourth company
 
-Added on the team's instruction. Unverifiable from the build environment
-(egress-blocked; web search returns nothing relevant), so it appears by
-domain only: "Other group websites · Poland · stretchmetal.pl" in the
-Markets section (home) and in llms.txt, via a new optional `company` on the
-`Market` type. Not in JSON-LD, the router or the footer company columns
-until [TO CONFIRM] item 15 is answered. The "live market websites" tile now
-counts 15.
+The team confirmed what stretchmetal.pl is: the group's Polish metal
+fabrication company. Verified facts, in the team's words: it started out of
+necessity for the group's own prefab elements and the big structures its
+projects need; because of scaling, it started taking jobs from other
+companies as well; Stretch Metal was created in 2026. The site itself is still
+unreachable from the build environment.
+
+Stretch Metal is now a full member company everywhere the other three are:
+`companies[3]` in site-config, the hero index (04), a fourth router card
+("Need metal fabrication?" → stretchmetal.pl), the companies grid and
+`/companies/stretch-metal` in both languages, the 2026 timeline entry, the
+contact routing card and form option, the footer column, JSON-LD
+`subOrganization` (with `foundingDate` 2026), the sitemap, llms.txt and the OG
+copy ("One group · Four companies"). Group copy that said "three companies"
+now says four; the about story and careers lead mention the metal company.
+Four-up grids collapse to two columns below 1100 px and one below 640 px.
+
+Nothing beyond the confirmed facts is claimed: no legal entity, address,
+e-mail or phone is shown for Stretch Metal until item 15 is answered.
+
+## 2026-09-02 (2) — stretchmetal.pl added as a group website (superseded by (3))
+
+Added on the team's instruction, by domain only, pending the facts above.
 
 ## 2026-09-02 (1) — Initial build: group site, zero-404 redirect layers, verification gate
 
@@ -200,14 +216,12 @@ but the explicit map is only as good as the inventory:
     if the group gets its own mark. → marker in `src/app/[locale]/layout.tsx`.
 13. **Group logo + company logos + photography** — every slot is a
     `Placeholder` (search `Placeholder`, `logoSlot`, `imageSlot`, `imageLabel`).
-15. **stretchmetal.pl** — named by the team as a group website that must not
-    be forgotten. It could not be reached or researched from the build
-    environment, so nothing about it is stated: it is listed by domain only
-    under "Other group websites" (Poland) in the Markets section and in
-    llms.txt, counted in the "live market websites" number, and left out of
-    JSON-LD, the router and the footer company lists. Confirm what it is, which
-    entity owns it, its language and that it is live; then attribute it to a
-    company (`company:` in `markets`) or promote it to an entity of its own.
+15. **Stretch Metal** (stretchmetal.pl) — confirmed by the team as the group's
+    Polish metal fabrication company, created in 2026 (see entry (3) above).
+    Still [TO CONFIRM]: legal entity name, city and address, e-mail and phone,
+    exact brand casing and logo, whether it also belongs in the offices list,
+    and whether "prefab elements" should name the products. → `companies[3]`
+    in `src/lib/site-config.ts`.
 14. **Lead delivery:** set `LEAD_WEBHOOK_URL` to the existing Power Automate
     flow into leads@stretchgroup.be (fastest), or the four `MS_*` Graph
     variables. Until then messages are console-logged only. → markers in

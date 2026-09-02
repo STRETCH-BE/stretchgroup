@@ -1,7 +1,7 @@
 'use client';
 
 // Mobile navigation drawer (shown below 860px via the .only-mobile helper).
-// Full-screen overlay with the four nav links, the three company sites, the
+// Full-screen overlay with the four nav links, the company sites, the
 // contact CTA, the phone line and the language grid (the desktop switcher
 // lives in the .only-desktop utility strip, so this is the ONLY way to
 // change language on a phone).

@@ -1,4 +1,4 @@
-// The three companies as cards: logo slot, kicker, name, legal entity,
+// The group's companies as cards: logo slot, kicker, name, legal entity,
 // one-liner, a link to the detail page and the company's own site. Used on
 // the home page and as the body of /companies.
 import { useTranslations } from 'next-intl';
@@ -58,7 +58,8 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .cg-grid { grid-template-columns: repeat(3, 1fr); }
+        .cg-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1100px) { .cg-grid { grid-template-columns: repeat(2, 1fr); } }
         .cg-card { background: #fff; display: flex; flex-direction: column; }
         .cg-card__logo { border-bottom: 1px solid var(--border); }
         .cg-card__body { padding: clamp(22px,2.4vw,32px); display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; }
@@ -69,7 +70,7 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
         .cg-card__text { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin: 6px 0 0; flex: 1 1 auto; }
         .cg-card__links { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
         .cg-card__site { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--red); }
-        @media (max-width: 900px) { .cg-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .cg-grid { grid-template-columns: 1fr; } }
       `}} />
     </section>
   );

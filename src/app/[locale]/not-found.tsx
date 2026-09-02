@@ -1,6 +1,6 @@
 // Branded 404 (noindex, follow). With the middleware fallback (Layer 4)
 // active this page is effectively unreachable for URL typos — it exists as
-// belt-and-braces for notFound() calls. Short message + the three company
+// belt-and-braces for notFound() calls. Short message + the company
 // sites, so even here nobody is stranded.
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';

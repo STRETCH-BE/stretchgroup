@@ -50,6 +50,7 @@ const ABOUT_LABELS: Record<string, string> = {
   stretch: 'STRETCH — ceilings & walls (stretchplafond.be / stretch.mt)',
   'stretch-sufit': 'Stretch Sufit / Alto Design — Poland (altodesign.pl)',
   're-sound': 'Re-Sound — acoustics (re-sound.be)',
+  'stretch-metal': 'Stretch Metal — metal fabrication (stretchmetal.pl)',
   careers: 'Careers / open application',
 };
 

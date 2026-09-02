@@ -1,5 +1,5 @@
 // GET /api/og?locale=<en|nl> — default Open Graph image (1200×630). Black
-// field, the group wordmark, the three company domains. Copy is localized
+// field, the group wordmark, the four company domains. Copy is localized
 // from a small inline map (the edge bundle stays tiny). No external fonts.
 import { ImageResponse } from 'next/og';
 import { brand, companies } from '@/lib/site-config';
@@ -7,8 +7,8 @@ import { brand, companies } from '@/lib/site-config';
 export const runtime = 'edge';
 
 const COPY: Record<string, { kicker: string; statement: string }> = {
-  en: { kicker: 'One group · Three companies', statement: 'Ceilings, walls and acoustics — from Belgium and Poland.' },
-  nl: { kicker: 'Eén groep · Drie bedrijven', statement: 'Plafonds, wanden en akoestiek — uit België en Polen.' },
+  en: { kicker: 'One group · Four companies', statement: 'Ceilings, walls, acoustics and metal fabrication — from Belgium and Poland.' },
+  nl: { kicker: 'Eén groep · Vier bedrijven', statement: 'Plafonds, wanden, akoestiek en metaalbewerking — uit België en Polen.' },
 };
 
 export function GET(request: Request) {

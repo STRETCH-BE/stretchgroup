@@ -8,7 +8,7 @@
 //                  parentOrganization: { name: 'STRETCH Group' } }
 // This site is the other end of that link: ONE Organization with
 //   @id: https://stretchgroup.be/#organization, name: 'STRETCH Group'
-// and `subOrganization` entries for the three companies, each carrying its
+// and `subOrganization` entries for the member companies, each carrying its
 // own site as @id/url (STRETCH's @id is the product site's existing entity
 // id so the two graphs join on the same node). Never fabricates ratings,
 // prices, founding dates or addresses the brief did not verify.

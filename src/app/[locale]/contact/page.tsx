@@ -147,9 +147,11 @@ export default async function ContactPage({ params }: { params: { locale: string
       <style dangerouslySetInnerHTML={{ __html: `
         .qc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
         .ct-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px,4vw,56px); align-items: start; }
-        .rt-grid { grid-template-columns: repeat(3, 1fr); }
+        .rt-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1100px) { .rt-grid { grid-template-columns: repeat(2, 1fr) !important; } }
         .off-grid { grid-template-columns: repeat(4, 1fr); }
-        @media (max-width: 860px) { .qc-grid, .ct-grid, .rt-grid { grid-template-columns: 1fr; } .off-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 860px) { .qc-grid, .ct-grid { grid-template-columns: 1fr; } .off-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 640px) { .rt-grid { grid-template-columns: 1fr !important; } }
         @media (max-width: 520px) { .off-grid { grid-template-columns: 1fr; } }
       `}} />
     </>

@@ -34,11 +34,11 @@ export default function Header() {
       {/* Utility strip */}
       <div style={{ background: 'var(--black)', color: '#fff' }}>
         <div className="container" style={{ height: 42, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 11.5, letterSpacing: '.16em', textTransform: 'uppercase', fontWeight: 600 }}>
+          <div className="util-strip__label" style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 11.5, letterSpacing: '.16em', textTransform: 'uppercase', fontWeight: 600 }}>
             <span style={{ width: 8, height: 8, background: 'var(--red)', display: 'inline-block' }} aria-hidden />
             <span>{th('strip')}</span>
           </div>
-          <div className="only-desktop" style={{ display: 'flex', alignItems: 'center', gap: 22, fontSize: 11.5, letterSpacing: '.12em', textTransform: 'uppercase', fontWeight: 600 }}>
+          <div className="only-desktop util-strip__links" style={{ display: 'flex', alignItems: 'center', gap: 22, fontSize: 11.5, letterSpacing: '.12em', textTransform: 'uppercase', fontWeight: 600, whiteSpace: 'nowrap' }}>
             {/* The persistent router, in its most compact form: the three
                 company sites, one click away on every page. */}
             {companies.map((c) => (
@@ -54,6 +54,13 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Between 860 and 1100px the four company domains, the phone and the
+          language switcher need the whole strip: the descriptor gives way
+          (the wordmark sits right below it anyway). */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1100px) { .util-strip__label { display: none !important; } .util-strip__links { gap: 16px !important; } }
+      ` }} />
 
       {/* Main nav */}
       <div className="container" style={{ height: 'var(--header-h)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

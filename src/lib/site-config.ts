@@ -25,7 +25,7 @@ export const brand = {
   domain: 'stretchgroup.be',
   // Drafted group-level line — not a verified fact, plain description only.
   description:
-    'STRETCH Group unites three companies in ceilings, walls and acoustics: STRETCH (Belgian stretch ceilings and walls), Stretch Sufit / Alto Design (PVC stretch-ceiling factory in Poland) and Re-Sound (circular acoustic panels made in Belgium).',
+    'STRETCH Group unites four companies in ceilings, walls, acoustics and metal fabrication: STRETCH (Belgian stretch ceilings and walls), Stretch Sufit / Alto Design (PVC stretch-ceiling factory in Poland), Re-Sound (circular acoustic panels made in Belgium) and Stretch Metal (metal fabrication in Poland).',
   // The product site carries a "Powered by STRETCH Media" credit.
   // [TO CONFIRM] whether STRETCH Media is listed as a group entity — until
   // then the credit is kept as a footer line only, not as an organisation.
@@ -65,7 +65,7 @@ export const contact = {
 // COMPANIES — the three member companies. Copy (what they do) lives in the
 // message files under `companies.<slug>`; only facts live here.
 // ---------------------------------------------------------------------------
-export type CompanySlug = 'stretch' | 'stretch-sufit' | 're-sound';
+export type CompanySlug = 'stretch' | 'stretch-sufit' | 're-sound' | 'stretch-metal';
 
 export type Company = {
   slug: CompanySlug;
@@ -162,6 +162,30 @@ export const companies: Company[] = [
       { key: 'takeBack', value: '100%' },
     ],
   },
+  {
+    slug: 'stretch-metal',
+    // Facts from the team (2 Sep 2026): the group's Polish metal fabrication
+    // company. It started out of necessity for the group's own prefab
+    // elements and the big structures its projects need; as the business
+    // scaled it took on jobs from other companies too, and in 2026 that work
+    // became Stretch Metal.
+    // [TO CONFIRM] legal entity, city/address, e-mail, phone, exact brand
+    // casing and logo — the site is unreachable from the build environment.
+    name: 'Stretch Metal',
+    legalName: '',
+    founded: 2026,
+    memberSince: 2026,
+    country: 'PL',
+    city: '',
+    addressLines: [],
+    url: 'https://stretchmetal.pl',
+    urlLabel: 'stretchmetal.pl',
+    facts: [
+      { key: 'founded', value: '2026' },
+      { key: 'origin', value: 'Poland' },
+      { key: 'clients', value: 'Group + external' },
+    ],
+  },
 ];
 
 export function getCompany(slug: string): Company | undefined {
@@ -203,11 +227,7 @@ export const markets: Market[] = [
   { domain: 'stretchtak.no', company: 'stretch', country: 'NO', lang: 'nb-NO', status: 'pending' }, // no DNS yet
   { domain: 'altodesign.pl', company: 'stretch-sufit', country: 'PL', lang: 'pl-PL', status: 'live' },
   { domain: 're-sound.be', company: 're-sound', country: 'BE', lang: 'nl-BE', status: 'live' },
-  // [TO CONFIRM] stretchmetal.pl — named by the team as a group website that
-  // must not be forgotten. Not reachable from the build environment, so its
-  // description, owning entity and language are unverified: listed by domain
-  // only, under "Other group websites", not in JSON-LD, not in the router.
-  { domain: 'stretchmetal.pl', country: 'PL', lang: 'pl-PL', status: 'live' },
+  { domain: 'stretchmetal.pl', company: 'stretch-metal', country: 'PL', lang: 'pl-PL', status: 'live' },
 ];
 
 export const liveMarkets = markets.filter((m) => m.status === 'live');
@@ -283,6 +303,7 @@ export const timeline: TimelineEntry[] = [
   { year: '2020', key: 'reSoundOrigin', company: 're-sound', confirm: true }, // [TO CONFIRM] exact framing
   { year: '2024', key: 'altoJoins', company: 'stretch-sufit' },
   { year: '2025–26', key: 'rollout', company: 'stretch', confirm: true }, // [TO CONFIRM] year framing
+  { year: '2026', key: 'stretchMetal', company: 'stretch-metal' },
 ];
 
 // Social handles: only Telegram is public today (same as the product site).
@@ -307,6 +328,7 @@ export const routerItems: RouterItem[] = [
   },
   { key: 'acoustic', company: 're-sound', href: 'https://re-sound.be', label: 're-sound.be' },
   { key: 'poland', company: 'stretch-sufit', href: 'https://altodesign.pl', label: 'altodesign.pl' },
+  { key: 'metal', company: 'stretch-metal', href: 'https://stretchmetal.pl', label: 'stretchmetal.pl' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -327,6 +349,7 @@ export const footerNav = {
     { key: 'stretch', href: '/companies/stretch' },
     { key: 'stretchSufit', href: '/companies/stretch-sufit' },
     { key: 'reSound', href: '/companies/re-sound' },
+    { key: 'stretchMetal', href: '/companies/stretch-metal' },
   ] as NavLink[],
   group: [
     { key: 'about', href: '/about' },
@@ -350,6 +373,7 @@ export const staticRoutes = [
   '/companies/stretch',
   '/companies/stretch-sufit',
   '/companies/re-sound',
+  '/companies/stretch-metal',
   '/about',
   '/careers',
   '/contact',
@@ -370,6 +394,7 @@ export const staticRouteDates: Record<string, string> = {
   '/companies/stretch': '2026-09-02',
   '/companies/stretch-sufit': '2026-09-02',
   '/companies/re-sound': '2026-09-02',
+  '/companies/stretch-metal': '2026-09-02',
   '/about': '2026-09-02',
   '/careers': '2026-09-02',
   '/contact': '2026-09-02',

@@ -1,4 +1,4 @@
-// Shared body for the three company detail pages. Facts come from
+// Shared body for the company detail pages. Facts come from
 // site-config (verified only); copy from messages `companies.<slug>`. The
 // PRIMARY CTA is the outbound link to the company's own website — the
 // group site routes, it doesn't sell.
@@ -170,7 +170,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
         .cp-facts { grid-template-columns: repeat(${Math.max(c.facts.length, 2)}, 1fr); }
         .cp-what { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px,4vw,64px); align-items: start; }
         .cp-contact { grid-template-columns: 1fr 1fr; }
-        .cp-others { grid-template-columns: 1fr 1fr; }
+        .cp-others { grid-template-columns: repeat(3, 1fr); }
         .cp-other { background: #fff; padding: clamp(22px,2.4vw,32px); display: flex; flex-direction: column; gap: 12px; transition: background .15s ease; }
         .cp-other:hover { background: var(--surface); }
         @media (max-width: 860px) {

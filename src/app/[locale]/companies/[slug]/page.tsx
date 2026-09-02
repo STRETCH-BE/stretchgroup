@@ -19,7 +19,7 @@ export function generateStaticParams() {
 }
 
 // meta key prefixes per slug (messages/meta.*)
-const META_KEYS: Record<string, string> = { stretch: 'stretch', 'stretch-sufit': 'stretchSufit', 're-sound': 'reSound' };
+const META_KEYS: Record<string, string> = { stretch: 'stretch', 'stretch-sufit': 'stretchSufit', 're-sound': 'reSound', 'stretch-metal': 'stretchMetal' };
 
 export function generateMetadata({ params }: { params: { locale: string; slug: string } }): Promise<Metadata> {
   const key = META_KEYS[params.slug];

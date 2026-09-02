@@ -45,7 +45,7 @@ export default function Timeline({ variant = 'full', num = '05' }: { variant?: '
 
       <style dangerouslySetInnerHTML={{ __html: `
         .tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-        .tl--teaser { grid-template-columns: repeat(5, 1fr); }
+        .tl--teaser { grid-template-columns: repeat(6, 1fr); }
         .tl--full { grid-template-columns: 1fr; }
         .tl__item { background: #fff; padding: clamp(20px,2.2vw,30px); position: relative; }
         .tl--full .tl__item { display: grid; grid-template-columns: 140px 1fr; gap: 8px clamp(20px,3vw,48px); align-items: start; }

@@ -65,7 +65,8 @@ export default function CompanyRouter({ variant = 'full', location }: { variant?
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .router-grid { grid-template-columns: repeat(3, 1fr); }
+        .router-grid { grid-template-columns: repeat(4, 1fr); }
+        @media (max-width: 1100px) { .router-grid { grid-template-columns: repeat(2, 1fr); } }
         .router-card { background: #fff; padding: clamp(24px,2.6vw,36px); display: flex; flex-direction: column; gap: 12px; min-height: 300px; }
         .router-card__num { font-family: var(--font-display); font-weight: 800; color: var(--red); font-size: 13px; letter-spacing: .1em; }
         .router-card__q { font-family: var(--font-display); font-weight: 800; font-size: clamp(20px,1.9vw,26px); letter-spacing: -.01em; text-transform: uppercase; line-height: 1.05; margin: 0; }
@@ -73,7 +74,7 @@ export default function CompanyRouter({ variant = 'full', location }: { variant?
         .router-card__links { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px; }
         .router-card__alt { font-size: 13px; font-weight: 600; color: var(--text-muted-2); }
         .router-card__company { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint-2); margin-top: 8px; }
-        @media (max-width: 860px) { .router-grid { grid-template-columns: 1fr; } .router-card { min-height: 0; } }
+        @media (max-width: 640px) { .router-grid { grid-template-columns: 1fr; } .router-card { min-height: 0; } }
       `}} />
     </section>
   );

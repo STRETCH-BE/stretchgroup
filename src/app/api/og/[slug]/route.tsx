@@ -11,14 +11,16 @@ const KICKER: Record<string, Record<string, string>> = {
     stretch: 'Stretch ceilings & walls · Belgium',
     'stretch-sufit': 'PVC stretch-ceiling factory · Poland',
     're-sound': 'Circular acoustic panels · Belgium',
-    group: 'One group · Three companies',
+    'stretch-metal': 'Metal fabrication · Poland',
+    group: 'One group · Four companies',
     partOf: 'Part of STRETCH Group',
   },
   nl: {
     stretch: 'Spanplafonds & spanwanden · België',
     'stretch-sufit': 'Pvc-spanplafondfabriek · Polen',
     're-sound': 'Circulaire akoestische panelen · België',
-    group: 'Eén groep · Drie bedrijven',
+    'stretch-metal': 'Metaalbewerking · Polen',
+    group: 'Eén groep · Vier bedrijven',
     partOf: 'Deel van STRETCH Group',
   },
 };

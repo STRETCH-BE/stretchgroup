@@ -21,6 +21,7 @@ export const ABOUT_OPTIONS = [
   { value: 'stretch', key: 'stretch' },
   { value: 'stretch-sufit', key: 'stretchSufit' },
   { value: 're-sound', key: 'reSound' },
+  { value: 'stretch-metal', key: 'stretchMetal' },
   { value: 'careers', key: 'careers' },
 ] as const;
 

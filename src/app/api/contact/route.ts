@@ -13,7 +13,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const MAX_LEN = 5000;
-const ABOUT = new Set(['group', 'stretch', 'stretch-sufit', 're-sound', 'careers']);
+const ABOUT = new Set(['group', 'stretch', 'stretch-sufit', 're-sound', 'stretch-metal', 'careers']);
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /** Strings only (anything else → ''), C0 control characters dropped — line

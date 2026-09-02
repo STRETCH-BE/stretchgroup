@@ -26,10 +26,10 @@
     "homeAria": "STRETCH Group home"
   },
   "meta": {
-    "homeTitle": "STRETCH Group: plafonds, wanden en akoestiek uit België en Polen",
-    "homeDescription": "STRETCH Group verenigt STRETCH (spanplafonds, België), Stretch Sufit / Alto Design (pvc-fabriek, Polen) en Re-Sound (akoestiek). Vind het juiste bedrijf.",
+    "homeTitle": "STRETCH Group: plafonds, wanden, akoestiek en metaalbewerking uit België en Polen",
+    "homeDescription": "STRETCH Group: STRETCH (plafonds, BE), Stretch Sufit / Alto Design (pvc, PL), Re-Sound (akoestiek, BE) en Stretch Metal (metaal, PL). Vind het juiste bedrijf.",
     "companiesTitle": "De bedrijven | STRETCH Group",
-    "companiesDescription": "Drie bedrijven, één groep: STRETCH, Stretch Sufit / Alto Design en Re-Sound. Wat elk bedrijf doet en waar u terechtkunt voor plafonds, akoestiek of Polen.",
+    "companiesDescription": "Vier bedrijven, één groep: STRETCH, Stretch Sufit / Alto Design, Re-Sound en Stretch Metal. Wat elk doet en waar u moet zijn voor plafonds, akoestiek of metaal.",
     "stretchTitle": "STRETCH, spanplafonds en spanwanden in België | STRETCH Group",
     "stretchDescription": "Stretch Productions BV, Beveren-Waas (2018): naadloze polyester spanplafonds en spanwanden, koud gemonteerd, geplaatst op één dag. Ga naar stretchplafond.be.",
     "stretchSufitTitle": "Stretch Sufit / Alto Design, pvc-spanplafondfabriek in Polen | STRETCH Group",
@@ -47,7 +47,9 @@
     "termsTitle": "Gebruiksvoorwaarden | STRETCH Group",
     "termsDescription": "De voorwaarden voor het gebruik van stretchgroup.be, de bedrijfswebsite van STRETCH Group.",
     "notFoundTitle": "Pagina niet gevonden | STRETCH Group",
-    "notFoundDescription": "De pagina die u zoekt, werd niet gevonden."
+    "notFoundDescription": "De pagina die u zoekt, werd niet gevonden.",
+    "stretchMetalTitle": "Stretch Metal, metaalbewerking in Polen | STRETCH Group",
+    "stretchMetalDescription": "Stretch Metal, het metaalbewerkingsbedrijf van de groep in Polen (2026): prefab-elementen, grote projectstructuren, werk voor andere bedrijven. stretchmetal.pl"
   },
   "cookies": {
     "title": "We hechten waarde aan uw privacy",
@@ -90,6 +92,7 @@
       "stretch": "STRETCH (spanplafonds en spanwanden)",
       "stretchSufit": "Stretch Sufit / Alto Design (Polen)",
       "reSound": "Re-Sound (akoestische panelen)",
+      "stretchMetal": "Stretch Metal (metaalbewerking)",
       "careers": "Jobs of een spontane sollicitatie"
     },
     "required": "*",
@@ -108,7 +111,7 @@
     }
   },
   "footer": {
-    "tagline": "De groep achter STRETCH, Stretch Sufit / Alto Design en Re-Sound: plafonds, wanden en akoestiek, gemaakt in België en Polen.",
+    "tagline": "De groep achter STRETCH, Stretch Sufit / Alto Design, Re-Sound en Stretch Metal: plafonds, wanden, akoestiek en metaalbewerking, gemaakt in België en Polen.",
     "companiesHeading": "Bedrijven",
     "groupHeading": "Groep",
     "officesHeading": "Vestigingen",
@@ -122,7 +125,8 @@
       "reSound": "Re-Sound",
       "about": "Over de groep",
       "careers": "Jobs",
-      "contact": "Contact"
+      "contact": "Contact",
+      "stretchMetal": "Stretch Metal"
     }
   },
   "router": {
@@ -146,12 +150,17 @@
         "q": "Een offerte nodig in Polen?",
         "a": "Alto Design runt de pvc-spanplafondfabriek van de groep in Częstochowa; Stretch Sufit plaatst in 17 Poolse steden.",
         "cta": "Ga naar altodesign.pl"
+      },
+      "metal": {
+        "q": "Metaalbewerking nodig?",
+        "a": "Stretch Metal maakt in Polen de prefab-elementen en grote projectstructuren van de groep en neemt ook opdrachten van andere bedrijven aan.",
+        "cta": "Ga naar stretchmetal.pl"
       }
     }
   },
   "companies": {
     "eyebrow": "De bedrijven",
-    "title": "Drie bedrijven. Eén groep.",
+    "title": "Vier bedrijven. Eén groep.",
     "intro": "Elk bedrijf heeft zijn eigen merk, fabriek en website. De groep verbindt ze: gedeelde kennis, gedeelde markten, één standaard.",
     "stretch": {
       "name": "STRETCH",
@@ -194,6 +203,20 @@
         "Interior-panelen en het vrijstaande scherm Divide"
       ],
       "ctaBody": "Het gamma, de projecten en het contact voor akoestische oplossingen vindt u op re-sound.be."
+    },
+    "stretch-metal": {
+      "name": "Stretch Metal",
+      "kicker": "Metaalbewerking · Polen",
+      "oneLiner": "Het Poolse metaalbewerkingsbedrijf van de groep, in 2026 opgericht voor de eigen prefab-elementen en grote projectstructuren, en intussen ook actief voor andere bedrijven.",
+      "whatTitle": "Metaalbewerking, gegroeid uit eigen projecten.",
+      "description": "Stretch Metal ontstond uit noodzaak: de groep had metaalbewerking nodig voor haar eigen prefab-elementen en voor de grote structuren die haar projecten vragen. Naarmate de activiteit groeide, nam het atelier ook opdrachten van andere bedrijven aan, en in 2026 werd dat werk een bedrijf op zich: Stretch Metal, gevestigd in Polen.",
+      "bullets": [
+        "Metaalbewerking voor de prefab-elementen van de groep",
+        "Grote structuren voor projecten",
+        "Opdrachten voor andere bedrijven",
+        "Opgericht in 2026 in Polen"
+      ],
+      "ctaBody": "Mogelijkheden, projecten en contact voor metaalbewerking vindt u op stretchmetal.pl."
     }
   },
   "companyPage": {
@@ -224,7 +247,8 @@
       "cities": "Poolse steden",
       "projects": "Gerealiseerde projecten",
       "madeIn": "Gemaakt in",
-      "takeBack": "Terugnamebeleid"
+      "takeBack": "Terugnamebeleid",
+      "clients": "Werkt voor"
     },
     "factValues": {
       "stretch": {
@@ -242,15 +266,20 @@
         "origin": "2020",
         "madeIn": "België",
         "takeBack": "100 %"
+      },
+      "stretch-metal": {
+        "founded": "2026",
+        "origin": "Polen",
+        "clients": "Groep + extern"
       }
     }
   },
   "home": {
     "hero": {
-      "eyebrow": "Eén groep. Drie bedrijven.",
+      "eyebrow": "Eén groep. Vier bedrijven.",
       "title1": "STRETCH",
       "title2": "Group",
-      "statement": "Spanplafonds, spanwanden en akoestiek — gemaakt in België en Polen, verkocht in heel Europa en de VS.",
+      "statement": "Spanplafonds, spanwanden, akoestiek en metaalbewerking — gemaakt in België en Polen, verkocht in heel Europa en de VS.",
       "hint": "Kies een bedrijf",
       "indexAria": "De bedrijven van STRETCH Group",
       "slotLabel": "Logo of foto van {name}"
@@ -263,7 +292,7 @@
         "markets": "Actieve marktwebsites",
         "factory": "Eerste fabriek geopend"
       },
-      "note": "De cijfers komen uit de gegevens van deze site zelf: de drie bedrijven, de vier vestigingen en de marktwebsites die vandaag online zijn."
+      "note": "De cijfers komen uit de gegevens van deze site zelf: de vier bedrijven, de vier vestigingen en de marktwebsites die vandaag online zijn."
     },
     "markets": {
       "eyebrow": "Markten",
@@ -304,6 +333,10 @@
     "rollout": {
       "title": "Internationale uitrol van landendomeinen in meer dan twaalf markten.",
       "body": "STRETCH lanceert een landenwebsite per markt, van stretch.mt voor internationale bezoekers tot stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is en meer."
+    },
+    "stretchMetal": {
+      "title": "Stretch Metal wordt opgericht in Polen.",
+      "body": "De metaalbewerking die de groep nodig had voor haar eigen prefab-elementen en grote projectstructuren wordt een bedrijf op zich, dat ook voor andere bedrijven werkt."
     }
   },
   "countries": {
@@ -336,8 +369,8 @@
     "hero": {
       "eyebrow": "Over STRETCH Group",
       "titleA": "Eén groep,",
-      "titleB": "drie bedrijven.",
-      "lead": "STRETCH Group brengt een Belgische spanplafondfabrikant, een Poolse pvc-fabriek en een Belgisch bedrijf in circulaire akoestiek samen. Elk behoudt zijn eigen naam en website; de groep verbindt ze.",
+      "titleB": "vier bedrijven.",
+      "lead": "STRETCH Group brengt een Belgische spanplafondfabrikant, een Poolse pvc-fabriek, een Belgisch bedrijf in circulaire akoestiek en een Pools metaalbewerkingsbedrijf samen. Elk behoudt zijn eigen naam en website; de groep verbindt ze.",
       "imageLabel": "Groepsfoto"
     },
     "story": {
@@ -345,7 +378,7 @@
       "title": "Gegroeid vanuit het atelier.",
       "p1": "Het verhaal van de groep begint op de fabrieksvloer. In 2016 opende Alto Design een pvc-spanplafondfabriek in Częstochowa, Polen. In 2018 werd Stretch Productions BV opgericht in Beveren-Waas om naadloze polyester spanplafonds en spanwanden te ontwerpen en te plaatsen — koud gemonteerd, klaar op één dag.",
       "p2": "Re-Sound voegde akoestiek toe met een circulaire insteek: panelen en schermen, gemaakt in België uit gerecycleerde en duurzame materialen, vertrekkend van een garen gesponnen uit gerecycleerde jeans, met een terugnamebeleid zodat elk product de kringloop kan sluiten.",
-      "p3": "In 2024 trad Alto Design toe tot STRETCH Group en bracht het de fabriek en het plaatsingsmerk Stretch Sufit binnen in de groep. Vandaag delen de bedrijven kennis en markten, terwijl elk zijn eigen merk en website voert:"
+      "p3": "In 2024 trad Alto Design toe tot STRETCH Group en bracht het de fabriek en het plaatsingsmerk Stretch Sufit binnen in de groep. In 2026 werd de metaalbewerking die was begonnen voor de eigen prefab-elementen en projectstructuren van de groep een bedrijf op zich, Stretch Metal, dat ook voor andere bedrijven werkt. Vandaag delen de bedrijven kennis en markten, terwijl elk zijn eigen merk en website voert:"
     },
     "offices": {
       "eyebrow": "Waar u ons vindt",
@@ -361,7 +394,7 @@
     "eyebrow": "Jobs",
     "titleA": "Werk mee",
     "titleB": "in de groep.",
-    "lead": "Drie bedrijven, twee landen, één standaard. Of u nu plafonds plaatst, een productielijn runt, akoestiek ontwerpt of de boekhouding doet: hier is uw werk zichtbaar.",
+    "lead": "Vier bedrijven, twee landen, één standaard. Of u nu plafonds plaatst, een productielijn runt, metaal bewerkt, akoestiek ontwerpt of de boekhouding doet: hier is uw werk zichtbaar.",
     "body1": "STRETCH Group is een productiegroep met bedrijven in België en Polen. Elke sollicitatie wordt door de groep gelezen en doorgegeven aan het bedrijf waar ze past.",
     "body2": "Openstaande vacatures verschijnen op deze pagina zodra er zijn. Past er vandaag niets? Stuur dan een spontane sollicitatie; we houden ze bij.",
     "imageLabel": "Foto jobs",
@@ -489,7 +522,7 @@
         {
           "h": "Intellectuele eigendom",
           "p": [
-            "Alle inhoud op deze site — met inbegrip van teksten, grafische elementen, logo’s en de namen en merken STRETCH Group, STRETCH, Stretch Sufit, Alto Design en Re-Sound — is eigendom van of in licentie gegeven aan de groep en haar bedrijven en wordt beschermd door het intellectuele-eigendomsrecht. U mag ze niet kopiëren, reproduceren of hergebruiken zonder voorafgaande schriftelijke toestemming, behalve voor zover de wet dat toelaat."
+            "Alle inhoud op deze site — met inbegrip van teksten, grafische elementen, logo’s en de namen en merken STRETCH Group, STRETCH, Stretch Sufit, Alto Design, Re-Sound en Stretch Metal — is eigendom van of in licentie gegeven aan de groep en haar bedrijven en wordt beschermd door het intellectuele-eigendomsrecht. U mag ze niet kopiëren, reproduceren of hergebruiken zonder voorafgaande schriftelijke toestemming, behalve voor zover de wet dat toelaat."
           ]
         },
         {

@@ -1,4 +1,4 @@
-// Companies overview (/companies): the three companies + the router.
+// Companies overview (/companies): the group's companies + the router.
 import type { Metadata } from 'next';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { isValidLocale, type Locale } from '@/i18n/config';

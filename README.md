@@ -172,7 +172,7 @@ docs/DESIGN-PLAN.md         # Palette roles, type scale, wireframe, hero concept
 - **Styling.** `styled-jsx` + the token-driven `globals.css`. No Tailwind. Hard edges (`--radius: 0`), `--red: #e00000` for AA contrast.
 - **Images.** `Placeholder` in every logo / photo slot until real assets are supplied — never a stock photo, never a generated logo.
 - **Outbound links.** Every link that leaves the domain goes through `ExternalLink` (tracked `outbound_company_click`, `rel="noopener"`).
-- **Structured data.** One `Organization` for the group with `subOrganization` entries for the three companies (each carrying its own site as `@id`/`url`), the HQ `LocalBusiness`, the offices, `WebSite`, `BreadcrumbList`. No ratings, prices or dates the brief did not verify.
+- **Structured data.** One `Organization` for the group with `subOrganization` entries for the four companies (each carrying its own site as `@id`/`url`), the HQ `LocalBusiness`, the offices, `WebSite`, `BreadcrumbList`. No ratings, prices or dates the brief did not verify.
 - **Consent.** Custom banner → `localStorage`; Google Consent Mode v2 defaults to denied; Clarity loads only after analytics consent.
 
 ---

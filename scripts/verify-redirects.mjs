@@ -73,6 +73,7 @@ const ALLOWED_HOSTS = new Set([
   'stretch.mt',
   'altodesign.pl',
   're-sound.be',
+  'stretchmetal.pl',
 ]);
 
 // Localized homes (Layer 4 targets): a junk path under a live locale prefix
