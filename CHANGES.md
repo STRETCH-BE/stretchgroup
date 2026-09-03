@@ -12,6 +12,29 @@
   domains (stretchgroup.be + the old multistore domains) still have to be
   added there — see README → DNS cutover checklist.
 
+## 2026-09-03 (4) — First production deployment on Vercel
+
+- `main` created from the build branch at `4ed8b1d` (identical history);
+  from now on work is pushed straight to `main`.
+- Vercel project **stretchgroup-website** (team STRETCH,
+  `prj_xNLAXNLlCCOsJheEN8679p0kZWtC`) is linked to `STRETCH-BE/stretchgroup`.
+  Production deployment `dpl_ELNJPS43Ukxk8dSS3H2kpNm1A4Gd` from `4ed8b1d` is
+  READY at https://stretchgroup-website.vercel.app (Node 24.x, region iad1).
+  Checked through Vercel: `/`, `/over-ons/` → About, `/nl/companies/stretch-metal`,
+  `/robots.txt`, `/api/rest/products` → home, all 200.
+- A second team project, **stretchgroup** (`prj_1zGnHF2pRDApzmGzk9SUQX0g0XoJ`,
+  created by the team on 2 Sep), is linked to the same repository: every push
+  now builds twice, and that project's production still points at the very
+  first commit (`9ce727e`) while its previews are current. Keep one project;
+  if it is `stretchgroup`, set its production branch to `main` and redeploy,
+  then delete `stretchgroup-website` (or the other way round).
+- Router and company cards realigned at four-up width (buttons share one row,
+  reserved slots for the international-site line and the legal-entity line).
+- Still ahead of the domain switch: Settings → Domains for stretchgroup.be,
+  www and the five multistore domains, DNS, `npm run verify:redirects`
+  against production, a lead-delivery method, analytics IDs, the fifteen
+  [TO CONFIRM] items and legal review.
+
 ## 2026-09-02 (3) — Stretch Metal is the fourth company
 
 The team confirmed what stretchmetal.pl is: the group's Polish metal
