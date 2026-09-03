@@ -41,7 +41,7 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
                   {t(`${c.slug}.kicker`)}
                 </div>
                 <NameTag className="cg-card__name">{t(`${c.slug}.name`)}</NameTag>
-                {c.legalName && <div className="cg-card__legal">{c.legalName}</div>}
+                <div className="cg-card__legal">{c.legalName || '\u00a0'}</div>
                 <p className="cg-card__text">{t(`${c.slug}.oneLiner`)}</p>
                 <div className="cg-card__links">
                   <Link href={`/companies/${c.slug}`} className="btn btn--ghost btn--sm">
@@ -63,14 +63,14 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
         .cg-card { background: #fff; display: flex; flex-direction: column; }
         .cg-card__logo { border-bottom: 1px solid var(--border); }
         .cg-card__body { padding: clamp(22px,2.4vw,32px); display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; }
-        .cg-card__kicker { display: flex; align-items: center; gap: 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint-2); }
+        .cg-card__kicker { display: flex; align-items: flex-start; gap: 10px; font-size: 11.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint-2); line-height: 1.5; min-height: 3em; }
         .cg-card__num { color: var(--red); }
-        .cg-card__name { font-family: var(--font-display); font-weight: 900; font-size: clamp(24px,2.2vw,32px); letter-spacing: -.02em; text-transform: uppercase; line-height: 1; margin: 4px 0 0; }
-        .cg-card__legal { font-size: 12.5px; color: var(--text-faint); }
+        .cg-card__name { font-family: var(--font-display); font-weight: 900; font-size: clamp(24px,2.2vw,32px); letter-spacing: -.02em; text-transform: uppercase; line-height: 1; margin: 4px 0 0; min-height: 2em; }
+        .cg-card__legal { font-size: 12.5px; color: var(--text-faint); min-height: 1.4em; }
         .cg-card__text { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin: 6px 0 0; flex: 1 1 auto; }
         .cg-card__links { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
         .cg-card__site { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; font-weight: 600; color: var(--red); }
-        @media (max-width: 640px) { .cg-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .cg-grid { grid-template-columns: 1fr; } .cg-card__kicker, .cg-card__name { min-height: 0; } }
       `}} />
     </section>
   );

@@ -49,14 +49,18 @@ export default function CompanyRouter({ variant = 'full', location }: { variant?
               <h3 className="router-card__q">{t(`items.${item.key}.q`)}</h3>
               <p className="router-card__a">{t(`items.${item.key}.a`)}</p>
               <div className="router-card__links">
-                <ExternalLink href={item.href} company={item.company} location={location} className="btn btn--dark">
-                  {t(`items.${item.key}.cta`)} <ArrowUpRight size={15} aria-hidden />
+                {/* Visible label = the domain (never wraps at four-up width);
+                    the accessible name keeps the verb: "Go to stretchplafond.be". */}
+                <ExternalLink href={item.href} company={item.company} location={location} className="btn btn--dark router-card__btn" ariaLabel={t(`items.${item.key}.cta`)}>
+                  <span>{item.label}</span> <ArrowUpRight size={15} aria-hidden />
                 </ExternalLink>
-                {item.alt && (
-                  <ExternalLink href={item.alt.href} company={item.company} location={`${location}_alt`} className="lnk router-card__alt">
-                    {t(`items.${item.key}.altCta`)}
-                  </ExternalLink>
-                )}
+                <div className="router-card__alt-slot">
+                  {item.alt && (
+                    <ExternalLink href={item.alt.href} company={item.company} location={`${location}_alt`} className="lnk router-card__alt">
+                      {t(`items.${item.key}.altCta`)}
+                    </ExternalLink>
+                  )}
+                </div>
               </div>
               {company && <div className="router-card__company">{company.name}</div>}
             </div>
@@ -68,10 +72,13 @@ export default function CompanyRouter({ variant = 'full', location }: { variant?
         .router-grid { grid-template-columns: repeat(4, 1fr); }
         @media (max-width: 1100px) { .router-grid { grid-template-columns: repeat(2, 1fr); } }
         .router-card { background: #fff; padding: clamp(24px,2.6vw,36px); display: flex; flex-direction: column; gap: 12px; min-height: 300px; }
+        .router-card__q { min-height: 3.15em; }
         .router-card__num { font-family: var(--font-display); font-weight: 800; color: var(--red); font-size: 13px; letter-spacing: .1em; }
         .router-card__q { font-family: var(--font-display); font-weight: 800; font-size: clamp(20px,1.9vw,26px); letter-spacing: -.01em; text-transform: uppercase; line-height: 1.05; margin: 0; }
         .router-card__a { font-size: 14.5px; line-height: 1.6; color: var(--text-muted); margin: 0; flex: 1 1 auto; }
-        .router-card__links { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px; }
+        .router-card__links { display: flex; flex-direction: column; align-items: stretch; gap: 10px; margin-top: auto; }
+        .router-card__btn { width: 100%; justify-content: space-between; white-space: nowrap; }
+        .router-card__alt-slot { min-height: 22px; }
         .router-card__alt { font-size: 13px; font-weight: 600; color: var(--text-muted-2); }
         .router-card__company { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint-2); margin-top: 8px; }
         @media (max-width: 640px) { .router-grid { grid-template-columns: 1fr; } .router-card { min-height: 0; } }
