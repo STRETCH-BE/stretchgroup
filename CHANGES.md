@@ -1,3 +1,17 @@
+## 2026-09-03 — Card alignment + Vercel project
+
+- Router cards: the button now shows the domain only (no wrapping at four-up
+  width), spans the card and sits on one row in every card; the
+  "International site" line has a reserved slot everywhere. Company cards
+  reserve two lines for kicker and name and one for the legal entity, so
+  descriptions and buttons align across all four.
+- Vercel project **stretchgroup-website** created in team STRETCH, linked to
+  STRETCH-BE/stretchgroup (production branch = the repository's default
+  branch). The integration token used here cannot read the new project, so
+  the deployment state has to be checked in the Vercel dashboard. The custom
+  domains (stretchgroup.be + the old multistore domains) still have to be
+  added there — see README → DNS cutover checklist.
+
 ## 2026-09-02 (3) — Stretch Metal is the fourth company
 
 The team confirmed what stretchmetal.pl is: the group's Polish metal
