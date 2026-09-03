@@ -93,7 +93,7 @@ Every on-site chain must also end in canonical form — https, apex host (no `ww
 
 ## Deploying to Vercel
 
-1. The repository is linked to the Vercel project **`stretchgroup-website`** in team **STRETCH** (created 3 Sep 2026 from this session; production URL `https://stretchgroup-website.vercel.app`). If the Git connection shows as missing in *Project → Settings → Git*, connect `STRETCH-BE/stretchgroup` there; the production branch is the repository's default branch. The Next.js preset is detected automatically; no build-command changes.
+1. The repository is linked to the Vercel project **`stretchgroup-website`** in team **STRETCH** (created 3 Sep 2026 from this session; production URL `https://stretchgroup-website.vercel.app`). If the Git connection shows as missing in *Project → Settings → Git*, connect `STRETCH-BE/stretchgroup` there and set the production branch to `main` (created 3 Sep 2026 from the build branch; `claude/stretch-group-website-108ixk` holds the same history). The Next.js preset is detected automatically; no build-command changes.
 2. Set environment variables in **Project → Settings → Environment Variables** (at minimum a lead-delivery method — `LEAD_WEBHOOK_URL` is the one-line option — plus `NEXT_PUBLIC_GA_ID` / `NEXT_PUBLIC_CLARITY_ID`).
 3. Deploy. Every push produces a preview URL.
 4. **Gate 1:** `npm run verify:redirects -- --base https://<preview>.vercel.app --bypass <secret>` must be green (Project → Settings → Deployment Protection → Protection Bypass for Automation).
