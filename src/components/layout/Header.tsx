@@ -1,6 +1,6 @@
 'use client';
 
-// Sticky site header: black utility strip (group descriptor · the three
+// Sticky site header: black utility strip (group descriptor · the four
 // company sites · phone · language) + a white nav row with four links and
 // the contact CTA. No mega menu, no portal link — the group site is small.
 import { Link, usePathname } from '@/i18n/navigation';
@@ -39,7 +39,7 @@ export default function Header() {
             <span>{th('strip')}</span>
           </div>
           <div className="only-desktop util-strip__links" style={{ display: 'flex', alignItems: 'center', gap: 22, fontSize: 11.5, letterSpacing: '.12em', textTransform: 'uppercase', fontWeight: 600, whiteSpace: 'nowrap' }}>
-            {/* The persistent router, in its most compact form: the three
+            {/* The persistent router, in its most compact form: the four
                 company sites, one click away on every page. */}
             {companies.map((c) => (
               <ExternalLink key={c.slug} href={c.url} company={c.slug} location="header_utility" className="lnk" style={{ color: 'rgba(255,255,255,.8)', display: 'inline-block', padding: '12px 0' }}>

@@ -135,7 +135,8 @@ export const companies: Company[] = [
     slug: 'stretch-sufit',
     name: 'Stretch Sufit',
     legalName: 'Alto Design Sp. z o.o.',
-    founded: 2016,
+    // The brief verified "PVC factory since 2016" (the `factorySince` fact
+    // below), not the company's founding year — so no `founded`/foundingDate.
     memberSince: 2024,
     country: 'PL',
     city: 'Częstochowa',

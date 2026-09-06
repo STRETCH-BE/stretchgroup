@@ -1,5 +1,5 @@
 // Company detail pages (/companies/stretch, /companies/stretch-sufit,
-// /companies/re-sound). Statically generated for the three slugs only;
+// /companies/re-sound). Statically generated for the four slugs only;
 // anything else is caught by the middleware fallback long before this.
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';

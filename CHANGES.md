@@ -1,3 +1,30 @@
+## 2026-09-06 (7) — Review round: copy trimmed to the founder's words
+
+An adversarial review (four lenses, each finding re-verified) of entry (5)
+found paraphrase that said more than the founder did. All removed, both
+languages: the 2021 entry's "lesson … shapes the move to Poland" (no such
+link was stated), the COVID entry's "market stalls / people, machines and
+markets / bigger than it went in", the automation entry's "faster, more
+precise" (he said safer), "one dealer network" as a present fact in the
+companies intro (it is the 2027 goal), "made in Belgium and Poland since
+2018" in the footer, "base for / gateway to Eastern Europe" (he said it
+opened the market), "strong boost" (he said boosted), present tense on the
+cost ratio (the Belgian unit is gone), "opens in Vienna" for 2022 (the city
+comes from today's office list, not the account), plural "colleagues" in
+2019 and automation "from the start" (he dated it 2019), the "Founded 2018"
+tile now reads "STRETCH founded", Re-Sound "joins" → "the group acquires".
+Also: the contact meta description and the privacy policy named three
+companies; the hero no longer preloads a logo that is display:none on
+mobile and no longer computes an unused label (`home.hero.slotLabel`
+removed from both files, 325/325 keys); the numbers tile reads the founding
+company's year instead of a positional timeline entry; Alto Design's
+unverified `founded: 2016` (JSON-LD foundingDate) is dropped — "factory
+since 2016" stays as the verified fact; Dutch idiom fixed ("vanaf dag één",
+"sterker aanwezig", "het werkgebied uitbreiden", "die sinds 2016
+produceert", "Het bedrijf waaruit STRETCH Group ontstond"); stale "three
+companies" comments corrected. Item 16 gains (d) the founder's name and
+(e) the acquiring entity.
+
 ## 2026-09-06 (6) — Entity name confirmed: Stretch Productions BV
 
 The founder confirmed the legal name. The founding entries now name it:
@@ -9,7 +36,7 @@ is closed; (b) and (c) stay open.
 
 - **Logos.** The official logo pack (ten PNG banners) landed. The eight used
   variants live in `public/images/logos/` under their original names; the
-  three "black-bg" duplicates were not committed. `logos` in
+  two "black-bg" duplicates were not committed. `logos` in
   `src/lib/site-config.ts` maps each company to its light-background and
   dark-background variant plus intrinsic size, and the new
   `src/components/ui/CompanyLogo.tsx` renders them through next/image inside a
@@ -339,7 +366,12 @@ but the explicit map is only as good as the inventory:
     name~~ — *confirmed 6 Sep: Stretch Productions BV (entry (6))*; (b) whether "roughly a third of the Belgian production cost"
     and the 2021 PVC unit being "financially too heavy and later stopped"
     may stay on a public site; (c) the Spa-Francorchamps reference may need
-    the client's consent to be named. → `messages/*.json` keys listed in (5).
+    the client's consent to be named; (d) the founder's name is published
+    (JSON-LD Person node, meta descriptions, story, timeline, llms.txt) —
+    confirm it stays, or drop `founder` on `companies[0]`; (e) which entity
+    did the buying — the site says "STRETCH bought Alto Design" (the
+    founder's telling) and "the group acquired Re-Sound". → `messages/*.json`
+    keys listed in (5) and `public/llms.txt` (History; The companies).
 14. **Lead delivery:** set `LEAD_WEBHOOK_URL` to the existing Power Automate
     flow into leads@stretchgroup.be (fastest), or the four `MS_*` Graph
     variables. Until then messages are console-logged only. → markers in
@@ -350,8 +382,9 @@ but the explicit map is only as good as the inventory:
 - [ ] Resolve the open `[TO CONFIRM]` items above (1–3, 7–16).
 - [ ] Legal review of `/privacy` and `/terms` (EN + NL); remove the review note
       (`legal.reviewNote`) once approved.
-- [ ] Supply logo assets (group + 3 companies) and photography; wire them into
-      the `Placeholder` slots (`src` prop) — no other code changes needed.
+- [ ] Supply the group logo and photography; wire photos into the remaining
+  `Placeholder` slots (`src` prop). Company logos are in place (entry (5),
+  `CompanyLogo`, `public/images/logos`).
 - [ ] Native-speaker read of `messages/nl.json` (written as Belgian Dutch,
       formal "u").
 - [ ] Close the Layer-1 gap (GSC + Magento URL Rewrites export) and re-run the

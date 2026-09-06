@@ -8,6 +8,8 @@ carries the group's schema.org identity. It sells nothing.
 
 ## What makes this a *group* site, not a corporate template
 
+> Written for three companies (2 Sep 2026). Stretch Metal became the fourth the same day (CHANGES.md (3)); every "three" below now reads four, and the company logos arrived on 6 Sep (CHANGES.md (5)).
+
 1. **The three companies are the content.** The home hero is an index of the
    companies, not a slogan over a stock photo. Every page ends in an outbound
    link to a company site — the group site routes, it doesn't sell.

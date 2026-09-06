@@ -57,11 +57,13 @@ export default function Hero() {
         </div>
 
         {/* Logo slot — swaps with the active row. Decorative: the row text
-            carries the meaning, so the logos render with an empty alt. */}
+            carries the meaning, so the logos render with an empty alt. Not
+            `priority`: the slot is display:none below 900px, and on desktop
+            the in-viewport layers load on first layout anyway. */}
         <div className="hero-slot hero-in" style={{ animationDelay: '200ms' }} aria-hidden="true">
           {companies.map((c, i) => (
             <div key={c.slug} className="hero-slot__layer" style={{ opacity: active === i ? 1 : 0 }}>
-              <CompanyLogo slug={c.slug} alt={t('slotLabel', { name: c.name })} tone="dark" decorative pad={0.12} maxWidth={420} sizes="420px" priority={i === 0} />
+              <CompanyLogo slug={c.slug} tone="dark" decorative pad={0.12} maxWidth={420} sizes="420px" />
             </div>
           ))}
           <div className="hero-slot__caption">

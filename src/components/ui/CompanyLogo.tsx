@@ -8,8 +8,8 @@ import { logos, type CompanySlug } from '@/lib/site-config';
 
 type CompanyLogoProps = {
   slug: CompanySlug;
-  /** Alt text (e.g. "STRETCH logo"); ignored when `decorative`. */
-  alt: string;
+  /** Alt text (e.g. "STRETCH logo"). Required unless `decorative`. */
+  alt?: string;
   tone?: 'light' | 'dark';
   /** Frame aspect ratio, e.g. "16/7". Omit to fill the parent's height. */
   ratio?: string;
@@ -57,7 +57,7 @@ export default function CompanyLogo({
     >
       <Image
         src={src}
-        alt={decorative ? '' : alt}
+        alt={decorative ? '' : alt ?? ''}
         width={asset.width}
         height={asset.height}
         sizes={sizes}

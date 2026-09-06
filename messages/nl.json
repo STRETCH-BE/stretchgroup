@@ -37,11 +37,11 @@
     "reSoundTitle": "Re-Sound, circulaire akoestische panelen uit België | STRETCH Group",
     "reSoundDescription": "Re-Sound maakt in België circulaire akoestische panelen en schermen uit gerecycleerde en duurzame materialen, met terugnamebeleid. Sinds 2025 in STRETCH Group.",
     "aboutTitle": "Over STRETCH Group: verhaal, tijdlijn en vestigingen",
-    "aboutDescription": "Hoe STRETCH Group groeide: in 2018 opgericht door Michael Nicasens in België, Alto Design in Polen gekocht in 2024, Re-Sound overgenomen in 2025, Stretch Metal geopend in 2026.",
+    "aboutDescription": "Hoe STRETCH Group groeide: STRETCH in 2018 opgericht door Michael Nicasens in België, Alto Design in Polen gekocht in 2024, Re-Sound overgenomen eind 2025, Stretch Metal geopend in 2026.",
     "careersTitle": "Werken bij STRETCH Group",
     "careersDescription": "Werk bij STRETCH Group of bij een van de bedrijven in België en Polen. Stuur een spontane sollicitatie naar de groep — we lezen ze allemaal.",
     "contactTitle": "Contact STRETCH Group in Beveren-Waas, België",
-    "contactDescription": "Bereik STRETCH Group per telefoon, e-mail of WhatsApp, of contacteer STRETCH, Alto Design en Re-Sound rechtstreeks. Hoofdzetel in Beveren-Waas, België.",
+    "contactDescription": "Bereik STRETCH Group per telefoon, e-mail of WhatsApp, of contacteer STRETCH, Alto Design, Re-Sound en Stretch Metal rechtstreeks. Hoofdzetel in Beveren-Waas, België.",
     "privacyTitle": "Privacybeleid | STRETCH Group",
     "privacyDescription": "Hoe STRETCH Group persoonsgegevens verzamelt, gebruikt en beschermt die via stretchgroup.be worden doorgegeven, conform de AVG (GDPR).",
     "termsTitle": "Gebruiksvoorwaarden | STRETCH Group",
@@ -111,7 +111,7 @@
     }
   },
   "footer": {
-    "tagline": "De groep achter STRETCH, Stretch Sufit / Alto Design, Re-Sound en Stretch Metal: spanplafonds, spanwanden, akoestiek en metaal, gemaakt in België en Polen sinds 2018.",
+    "tagline": "De groep achter STRETCH, Stretch Sufit / Alto Design, Re-Sound en Stretch Metal: spanplafonds, spanwanden, akoestiek en metaal, gemaakt in België en Polen.",
     "companiesHeading": "Bedrijven",
     "groupHeading": "Groep",
     "officesHeading": "Vestigingen",
@@ -161,7 +161,7 @@
   "companies": {
     "eyebrow": "De bedrijven",
     "title": "Vier bedrijven. Eén groep.",
-    "intro": "Elk bedrijf heeft zijn eigen merk, productie en website. De groep verbindt ze: gedeelde kennis, één dealernetwerk, één standaard.",
+    "intro": "Elk bedrijf heeft zijn eigen merk, productie en website. De groep verbindt ze: gedeelde kennis en één standaard.",
     "stretch": {
       "name": "STRETCH",
       "kicker": "Spanplafonds en spanwanden · België",
@@ -173,20 +173,21 @@
         "Koud gemonteerd, geplaatst op één dag",
         "Akoestische, verlichte en bedrukte opties",
         "In eigen huis geproduceerd op een eigen geautomatiseerde snijlijn",
-        "Verkocht via een dealernetwerk: stretchplafond.be (BE) · stretch.mt (internationaal)"
+        "Verkocht via een dealernetwerk",
+        "België: stretchplafond.be · internationaal: stretch.mt"
       ],
       "ctaBody": "Producten, projecten, prijzen en offertes vindt u op de website van STRETCH."
     },
     "stretch-sufit": {
       "name": "Stretch Sufit",
       "kicker": "Pvc-spanplafondfabriek · Polen",
-      "oneLiner": "Pvc-spanplafondfabriek in Częstochowa, Polen, die produceert sinds 2016 — in 2024 overgenomen door STRETCH als basis van de groep voor Oost-Europa.",
+      "oneLiner": "Pvc-spanplafondfabriek in Częstochowa, Polen, die sinds 2016 produceert — in 2024 overgenomen door STRETCH, wat de Oost-Europese markt opende.",
       "whatTitle": "De pvc-fabriek van de groep.",
-      "description": "Alto Design Sp. z o.o. produceert sinds 2016 pvc-spanplafonds in Częstochowa, naadloos tot 6,50 m. STRETCH kocht de fabriek in 2024: ze produceert tegen ongeveer een derde van de Belgische productiekost, gaf de groep een stevige boost en opende de Oost-Europese markt. Het consumentenmerk Stretch Sufit plaatst spanplafonds in 17 Poolse steden en realiseerde al meer dan 4.000 projecten.",
+      "description": "Alto Design Sp. z o.o. produceert sinds 2016 pvc-spanplafonds in Częstochowa, naadloos tot 6,50 m. STRETCH kocht de fabriek in 2024: ze produceerde tegen ongeveer een derde van de Belgische productiekost, gaf STRETCH een boost en opende de Oost-Europese markt. Het consumentenmerk Stretch Sufit plaatst spanplafonds in 17 Poolse steden en realiseerde al meer dan 4.000 projecten.",
       "bullets": [
         "Pvc-spanplafondfabriek in Częstochowa sinds 2016",
         "Naadloos pvc tot 6,50 m",
-        "In 2024 overgenomen door STRETCH — de toegangspoort van de groep tot Oost-Europa",
+        "In 2024 overgenomen door STRETCH — opende de Oost-Europese markt",
         "Stretch Sufit: plaatsing in 17 Poolse steden",
         "Meer dan 4.000 gerealiseerde projecten"
       ],
@@ -277,7 +278,7 @@
         "clients": "Groep + extern"
       }
     },
-    "foundingCompany": "Oprichtend bedrijf van STRETCH Group"
+    "foundingCompany": "Het bedrijf waaruit STRETCH Group ontstond"
   },
   "home": {
     "hero": {
@@ -286,8 +287,7 @@
       "title2": "Group",
       "statement": "Spanplafonds, spanwanden, akoestiek en metaalbewerking — gemaakt in België en Polen, verkocht in heel Europa en de VS.",
       "hint": "Kies een bedrijf",
-      "indexAria": "De bedrijven van STRETCH Group",
-      "slotLabel": "Logo of foto van {name}"
+      "indexAria": "De bedrijven van STRETCH Group"
     },
     "numbers": {
       "eyebrow": "De groep in cijfers",
@@ -295,7 +295,7 @@
         "companies": "Bedrijven",
         "offices": "Vestigingen",
         "markets": "Actieve marktwebsites",
-        "founded": "Opgericht"
+        "founded": "STRETCH opgericht"
       },
       "note": "De cijfers komen uit de gegevens van deze site zelf: de vier bedrijven, de vier vestigingen, de marktwebsites die vandaag online zijn en het jaar waarin STRETCH werd opgericht."
     },
@@ -322,30 +322,30 @@
   "timeline": {
     "founded": {
       "title": "Michael Nicasens richt Stretch Productions BV op in Beveren-Waas.",
-      "body": "Het doel van STRETCH van dag één: een spanplafondmerk dat zijn eigen systeem produceert en het via een wereldwijd dealernetwerk promoot en verkoopt — zodat bestaande interieurzaken een product met échte marge kunnen toevoegen. Eind dat jaar komt de eerste verkoopmedewerker erbij."
+      "body": "Het doel van STRETCH vanaf dag één: een spanplafondmerk dat zijn eigen systeem produceert en het via een wereldwijd dealernetwerk promoot en verkoopt — zodat bestaande interieurzaken een product met échte marge kunnen toevoegen. Eind dat jaar komt de eerste verkoopmedewerker erbij."
     },
     "automation": {
-      "title": "Eerste administratieve en magazijnmedewerkers, en een zware investering in automatisering.",
-      "body": "STRETCH bouwt een eigen rolverwerkingsmachine die elk spanplafond automatisch snijdt — sneller, preciezer en vooral veiliger werk."
+      "title": "Eerste administratieve en magazijnmedewerker, en een zware investering in automatisering.",
+      "body": "STRETCH bouwt een eigen rolverwerkingsmachine die elk spanplafond automatisch snijdt en het werk veiliger maakt."
     },
     "covid": {
       "title": "COVID slaat toe. STRETCH blijft investeren en groeien.",
-      "body": "Terwijl de markt stilvalt, blijft het bedrijf investeren in mensen, machines en markten, en komt het groter uit de pandemie dan het erin ging."
+      "body": "Ook tijdens de pandemie blijft het bedrijf investeren en groeien."
     },
     "pvcBelgium": {
       "title": "Een geautomatiseerde pvc-productie-eenheid opent in België.",
-      "body": "De eenheid blijkt financieel te zwaar en wordt later stopgezet. De les — produceer pvc waar het competitief is — bepaalt drie jaar later de stap naar Polen."
+      "body": "De eenheid blijkt financieel te zwaar en wordt later stopgezet."
     },
     "austria": {
-      "title": "Het Oostenrijkse verkoopkantoor opent in Wenen.",
+      "title": "Het Oostenrijkse verkoopkantoor opent.",
       "body": "Een moeilijke start in een nieuwe markt, die vandaag zijn vruchten afwerpt."
     },
     "altoDesign": {
       "title": "STRETCH koopt Alto Design, een pvc-spanplafondfabriek in Polen.",
-      "body": "Alto Design, dat sinds 2016 in Częstochowa produceert tegen ongeveer een derde van de Belgische productiekost, geeft STRETCH een stevige boost en opent de Oost-Europese markt. Het plaatsingsmerk Stretch Sufit komt mee."
+      "body": "Alto Design, dat sinds 2016 in Częstochowa produceert tegen ongeveer een derde van de Belgische productiekost, geeft STRETCH een boost en opent de Oost-Europese markt. Het plaatsingsmerk Stretch Sufit komt mee."
     },
     "reSound": {
-      "title": "Re-Sound, Belgische producent van akoestische panelen, treedt toe tot de groep.",
+      "title": "De groep neemt Re-Sound over, een Belgische producent van akoestische panelen.",
       "body": "Eind 2025 overgenomen, verbreedt Re-Sound het gamma van de groep van spanplafonds en spanwanden naar circulaire akoestische panelen."
     },
     "stretchMetal": {
@@ -354,7 +354,7 @@
     },
     "outlook": {
       "title": "De synergieën van vier bedrijven, via één dealernetwerk.",
-      "body": "Het bestaande dealernetwerk inzetten om alle vier de bedrijven samen naar de markt te brengen, dichter aanwezig zijn in de markten die de groep vandaag al bedient, en van daaruit de voetafdruk vergroten."
+      "body": "Het bestaande dealernetwerk inzetten om alle vier de bedrijven samen naar de markt te brengen, sterker aanwezig zijn in de markten die de groep vandaag al bedient, en van daaruit het werkgebied uitbreiden."
     }
   },
   "countries": {
@@ -394,10 +394,10 @@
     "story": {
       "eyebrow": "Ons verhaal",
       "title": "Van één bedrijf naar vier.",
-      "p1": "STRETCH Group is gegroeid uit één bedrijf. In 2018 richtte Michael Nicasens Stretch Productions BV — STRETCH — op in Beveren-Waas, met een helder doel: een spanplafondmerk bouwen dat zijn eigen systeem produceert en het via een wereldwijd dealernetwerk promoot en verkoopt — zodat bestaande interieurzaken een product met échte marge kunnen toevoegen. Eind dat jaar kwam de eerste verkoopmedewerker erbij; in 2019 volgden de eerste administratieve en magazijnmedewerkers.",
-      "p2": "Van bij het begin investeerde het bedrijf zwaar in automatisering en bouwde het een eigen rolverwerkingsmachine die elk spanplafond automatisch snijdt en het werk veiliger maakt. Toen COVID in 2020 toesloeg, bleef STRETCH investeren en groeien. Een Belgische pvc-productie-eenheid, geopend in 2021, bleek financieel te zwaar en werd later stopgezet; het Oostenrijkse verkoopkantoor, geopend in 2022, kende een moeilijke start en werpt vandaag zijn vruchten af.",
-      "p3": "In 2024 kocht STRETCH Alto Design, een pvc-spanplafondfabriek in Częstochowa, Polen, die produceert tegen ongeveer een derde van de Belgische kost. Dat gaf STRETCH een stevige boost en opende de Oost-Europese markt. Eind 2025 trad Re-Sound, een Belgische producent van akoestische panelen, toe om het gamma te verbreden naar akoestiek. In 2026 opende de groep haar eigen metaalatelier, Stretch Metal: structuren in alle soorten metaal, van de metalen plafonds op Spa-Francorchamps tot balustrades, hallenstructuren, generatorpanelen en inox keukenelementen.",
-      "p4": "Het doel voor 2027 is de synergieën van de vier bedrijven te benutten via het bestaande dealernetwerk: dichter aanwezig zijn in de markten die de groep vandaag al bedient, en van daaruit de voetafdruk vergroten. Elk bedrijf behoudt zijn eigen merk en website:"
+      "p1": "STRETCH Group is gegroeid uit één bedrijf. In 2018 richtte Michael Nicasens Stretch Productions BV — STRETCH — op in Beveren-Waas, met een helder doel: een spanplafondmerk bouwen dat zijn eigen systeem produceert en het via een wereldwijd dealernetwerk promoot en verkoopt — zodat bestaande interieurzaken een product met échte marge kunnen toevoegen. Eind dat jaar kwam de eerste verkoopmedewerker erbij; in 2019 volgde de eerste administratieve en magazijnmedewerker.",
+      "p2": "In 2019 investeerde het bedrijf zwaar in automatisering en bouwde het een eigen rolverwerkingsmachine die elk spanplafond automatisch snijdt en het werk veiliger maakt. Toen COVID in 2020 toesloeg, bleef STRETCH investeren en groeien. Een Belgische pvc-productie-eenheid, geopend in 2021, bleek financieel te zwaar en werd later stopgezet; het Oostenrijkse verkoopkantoor, geopend in 2022, kende een moeilijke start en werpt vandaag zijn vruchten af.",
+      "p3": "In 2024 kocht STRETCH Alto Design, een pvc-spanplafondfabriek in Częstochowa, Polen, die produceerde tegen ongeveer een derde van de Belgische kost. Dat gaf STRETCH een boost en opende de Oost-Europese markt. Eind 2025 nam de groep Re-Sound over, een Belgische producent van akoestische panelen, om het gamma te verbreden naar akoestiek. In 2026 opende de groep haar eigen metaalatelier, Stretch Metal: structuren in alle soorten metaal, van de metalen plafonds op Spa-Francorchamps tot balustrades, hallenstructuren, generatorpanelen en inox keukenelementen.",
+      "p4": "Het doel voor 2027 is de synergieën van de vier bedrijven te benutten via het bestaande dealernetwerk: sterker aanwezig zijn in de markten die de groep vandaag al bedient, en van daaruit het werkgebied uitbreiden. Elk bedrijf behoudt zijn eigen merk en website:"
     },
     "offices": {
       "eyebrow": "Waar u ons vindt",
@@ -480,7 +480,7 @@
         {
           "h": "Waarvoor we ze gebruiken",
           "p": [
-            "We gebruiken de gegevens die u doorgeeft om uw vraag te beantwoorden en om ze door te sturen naar het bedrijf van de groep dat u kan helpen (STRETCH, Stretch Sufit / Alto Design of Re-Sound). Deze verwerking is gebaseerd op uw aanvraag en op ons gerechtvaardigd belang om erop te antwoorden.",
+            "We gebruiken de gegevens die u doorgeeft om uw vraag te beantwoorden en om ze door te sturen naar het bedrijf van de groep dat u kan helpen (STRETCH, Stretch Sufit / Alto Design, Re-Sound of Stretch Metal). Deze verwerking is gebaseerd op uw aanvraag en op ons gerechtvaardigd belang om erop te antwoorden.",
             "Wanneer u toestemming gaf, gebruiken we analysetechnologieën om te begrijpen hoe de site wordt gebruikt en om ze te verbeteren. U kunt die toestemming op elk moment intrekken."
           ]
         },

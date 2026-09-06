@@ -1,4 +1,4 @@
-// "Find the right company" — the persistent router. `full` renders the three
+// "Find the right company" — the persistent router. `full` renders the four
 // question cards (home); `compact` renders one quiet row (footer). Every link
 // is OUTBOUND: the group site routes, it doesn't sell.
 import { useTranslations } from 'next-intl';
