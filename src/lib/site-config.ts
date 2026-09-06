@@ -112,8 +112,7 @@ export const companies: Company[] = [
     founded: 2018,
     // Founder + founding-company role: from the founder's account (6 Sep
     // 2026). The group grew out of this company — no `memberSince`, it IS
-    // the origin. [TO CONFIRM] the founder calls the entity "Stretch BV";
-    // the verified legal name stays "Stretch Productions BV" until confirmed.
+    // the origin. Entity name confirmed by the founder: Stretch Productions BV.
     founder: 'Michael Nicasens',
     founding: true,
     country: 'BE',

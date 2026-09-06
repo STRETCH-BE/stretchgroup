@@ -1,3 +1,10 @@
+## 2026-09-06 (6) — Entity name confirmed: Stretch Productions BV
+
+The founder confirmed the legal name. The founding entries now name it:
+`timeline.founded.title` and `aboutPage.story.p1` in both languages, the
+llms.txt history line, and the code comment on `companies[0]`. Item 16 (a)
+is closed; (b) and (c) stay open.
+
 ## 2026-09-06 (5) — Company logos, hero sizing, the group's history as the founder tells it
 
 - **Logos.** The official logo pack (ten PNG banners) landed. The eight used
@@ -298,8 +305,8 @@ but the explicit map is only as good as the inventory:
    `site-config.ts`.
 4. ~~**STRETCH's relationship framing**~~ — *resolved 6 Sep: STRETCH is the
    company the group grew out of, founded 2018 by Michael Nicasens
-   (`founding: true`, `founder`). Open: the founder writes "Stretch BV";
-   the verified legal name "Stretch Productions BV" is kept — see 16.*
+   (`founding: true`, `founder`). Entity name confirmed 6 Sep: Stretch
+   Productions BV (entry (6)).*
 5. ~~**Re-Sound 2020 timeline entry**~~ — *resolved 6 Sep: entry removed; the
    2020 recycled-jeans origin stays as a company fact on /companies/re-sound.*
 6. ~~**2025–26 domain rollout**~~ — *resolved 6 Sep: entry removed from the
@@ -328,9 +335,8 @@ but the explicit map is only as good as the inventory:
     supplied). Still [TO CONFIRM]: legal entity name, city and address,
     e-mail and phone, and whether it also belongs in the offices list.
     → `companies[3]` in `src/lib/site-config.ts`.
-16. **Founder's account, wording to confirm** (entry (5)): (a) the entity
-    name — "Stretch BV" in the account vs the verified "Stretch Productions
-    BV" (kept); (b) whether "roughly a third of the Belgian production cost"
+16. **Founder's account, wording to confirm** (entry (5)): (a) ~~the entity
+    name~~ — *confirmed 6 Sep: Stretch Productions BV (entry (6))*; (b) whether "roughly a third of the Belgian production cost"
     and the 2021 PVC unit being "financially too heavy and later stopped"
     may stay on a public site; (c) the Spa-Francorchamps reference may need
     the client's consent to be named. → `messages/*.json` keys listed in (5).
