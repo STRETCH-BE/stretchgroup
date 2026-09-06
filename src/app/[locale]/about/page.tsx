@@ -70,6 +70,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
               <p>{t('story.p1')}</p>
               <p>{t('story.p2')}</p>
               <p>{t('story.p3')}</p>
+              <p>{t('story.p4')}</p>
               <ul>
                 {companies.map((c) => (
                   <li key={c.slug}>

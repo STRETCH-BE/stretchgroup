@@ -1,6 +1,6 @@
 // Group numbers — VERIFIED facts only, derived from site-config so the tiles
 // can never drift from the data: number of companies, offices, live market
-// websites, and the year the first factory opened.
+// websites, and the year the founding company started (timeline[0]).
 import { useTranslations } from 'next-intl';
 import { companies, offices, liveMarkets, timeline } from '@/lib/site-config';
 import Eyebrow from '@/components/ui/Eyebrow';
@@ -11,7 +11,7 @@ export default function GroupNumbers() {
     { key: 'companies', value: String(companies.length) },
     { key: 'offices', value: String(offices.length) },
     { key: 'markets', value: String(liveMarkets.length) },
-    { key: 'factory', value: timeline[0].year },
+    { key: 'founded', value: timeline[0].year },
   ];
 
   return (

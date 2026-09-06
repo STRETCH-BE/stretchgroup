@@ -1,6 +1,6 @@
 # STRETCH Group — Corporate Website
 
-Corporate group website for **STRETCH Group**, deployed on **stretchgroup.be** (replacing the legacy Magento shop on that domain). It presents the group and its three member companies — STRETCH, Stretch Sufit / Alto Design and Re-Sound — routes each visitor to the right company website in one click, and carries the group's schema.org identity (`https://stretchgroup.be/#organization`, the entity the product site's `parentOrganization` points at). It is a holding site: **no products, no prices, no portal**.
+Corporate group website for **STRETCH Group**, deployed on **stretchgroup.be** (replacing the legacy Magento shop on that domain). It presents the group and its four member companies — STRETCH, Stretch Sufit / Alto Design, Re-Sound and Stretch Metal — routes each visitor to the right company website in one click, and carries the group's schema.org identity (`https://stretchgroup.be/#organization`, the entity the product site's `parentOrganization` points at). It is a holding site: **no products, no prices, no portal**.
 
 Built with Next.js 14 (App Router), TypeScript and `next-intl`, on the STRETCH design system inherited 1:1 from the product site (`STRETCH-BE/stretch_website`, cloned read-only into `reference/`). Deployed on Vercel.
 
@@ -122,7 +122,7 @@ For each of `stretchgroup.fr`, `stretchgroup.de`, `stretchgroup.net`, `stretchgr
 
 - [ ] Send one message through `/contact` and confirm it arrives at `LEAD_DESTINATION`.
 - [ ] Accept cookies and confirm GA4 / Clarity fire; reject and confirm they do not.
-- [ ] Replace every `Placeholder` slot with the real logo and photography (search for `Placeholder` and `logoSlot`).
+- [ ] Replace every remaining `Placeholder` photo slot with real photography (search for `Placeholder`, `imageSlot`, `imageLabel`); company logos are in place, the group wordmark is still text.
 - [ ] Resolve every `[TO CONFIRM]` in `CHANGES.md`; have legal review `/privacy` and `/terms`.
 - [ ] Run Lighthouse on `/`, `/companies/stretch` and `/contact` (targets Perf ≥ 90 / A11y ≥ 95 / Best Practices ≥ 95 / SEO 100).
 
@@ -170,7 +170,7 @@ docs/DESIGN-PLAN.md         # Palette roles, type scale, wireframe, hero concept
 - **Facts live in one place.** `src/lib/site-config.ts` holds every verified fact (companies, offices, markets, timeline, contact). Copy lives in `messages/*.json`. Nothing is invented; open items are marked `[TO CONFIRM]` in code and listed in `CHANGES.md`.
 - **Internationalisation.** Path-prefixed on one domain: `en` unprefixed (x-default), `nl` at `/nl`. `fr` / `de` / `pl` are declared `pending` in `src/i18n/config.ts` — enabling one is a one-line flip plus a message file. Locale detection is off (deterministic URLs). Always import `Link` from `@/i18n/navigation`, never `next/link`.
 - **Styling.** `styled-jsx` + the token-driven `globals.css`. No Tailwind. Hard edges (`--radius: 0`), `--red: #e00000` for AA contrast.
-- **Images.** `Placeholder` in every logo / photo slot until real assets are supplied — never a stock photo, never a generated logo.
+- **Images.** Official company logos via `CompanyLogo` (`public/images/logos`); `Placeholder` in every photo slot until real photography is supplied — never a stock photo, never a generated logo.
 - **Outbound links.** Every link that leaves the domain goes through `ExternalLink` (tracked `outbound_company_click`, `rel="noopener"`).
 - **Structured data.** One `Organization` for the group with `subOrganization` entries for the four companies (each carrying its own site as `@id`/`url`), the HQ `LocalBusiness`, the offices, `WebSite`, `BreadcrumbList`. No ratings, prices or dates the brief did not verify.
 - **Consent.** Custom banner → `localStorage`; Google Consent Mode v2 defaults to denied; Clarity loads only after analytics consent.

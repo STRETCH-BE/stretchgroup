@@ -1,9 +1,9 @@
 'use client';
 
 // HOME HERO — "The Index" (docs/DESIGN-PLAN.md). A full-black opening: the
-// group wordmark at display size, a two-line statement and the three
+// group wordmark at display size, a two-line statement and the four
 // companies as a numbered list of real links. Hovering or focusing a row
-// swaps the single image/logo slot on the right. ONE orchestrated entrance
+// swaps the logo slot on the right (official logos, dark variants). ONE orchestrated entrance
 // (wordmark → statement → rows, ≈600 ms total); under prefers-reduced-motion
 // the global rule zeroes every animation so it renders in its final state.
 import { useState } from 'react';
@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { companies } from '@/lib/site-config';
-import Placeholder from '@/components/ui/Placeholder';
+import CompanyLogo from '@/components/ui/CompanyLogo';
 
 export default function Hero() {
   const t = useTranslations('home.hero');
@@ -56,12 +56,12 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Image / logo slot — swaps with the active row. Decorative: the row
-            text carries the meaning. */}
+        {/* Logo slot — swaps with the active row. Decorative: the row text
+            carries the meaning, so the logos render with an empty alt. */}
         <div className="hero-slot hero-in" style={{ animationDelay: '200ms' }} aria-hidden="true">
           {companies.map((c, i) => (
             <div key={c.slug} className="hero-slot__layer" style={{ opacity: active === i ? 1 : 0 }}>
-              <Placeholder label={t('slotLabel', { name: c.name })} decorative style={{ background: 'repeating-linear-gradient(135deg, #222, #222 12px, #1a1a1a 12px, #1a1a1a 24px)', color: '#a8a49d' }} />
+              <CompanyLogo slug={c.slug} alt={t('slotLabel', { name: c.name })} tone="dark" decorative pad={0.12} maxWidth={420} sizes="420px" priority={i === 0} />
             </div>
           ))}
           <div className="hero-slot__caption">
@@ -73,8 +73,10 @@ export default function Hero() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .hero { background: var(--black); color: #fff; overflow: hidden; }
+        /* minmax(0, …) so the display-size wordmark's min-content width can
+           never squeeze the logo column (it did: the slot collapsed to ~100px). */
         .hero-grid {
-          display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px,4vw,64px); align-items: stretch;
+          display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: clamp(28px,4vw,64px); align-items: stretch;
           min-height: min(calc(100vh - var(--header-h) - 42px), 860px);
           padding-top: clamp(56px,8vw,110px); padding-bottom: clamp(48px,6vw,90px);
         }
@@ -83,7 +85,7 @@ export default function Hero() {
         .hero-in { animation: hero-in .6s cubic-bezier(.2,.7,.2,1) both; }
         .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 clamp(18px,2.4vw,28px); font-size: 12.5px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #fff; }
         .hero-eyebrow__rule { width: 34px; height: 2px; background: var(--red); flex-shrink: 0; display: inline-block; }
-        .hero-title { margin: 0; max-width: 12ch; }
+        .hero-title { margin: 0; max-width: 12ch; font-size: clamp(48px, 7.4vw, 120px); }
         .hero-statement { font-size: clamp(16px,1.7vw,20px); line-height: 1.5; color: var(--on-dark-soft); max-width: 44ch; margin: clamp(20px,2.6vw,30px) 0 clamp(28px,3.6vw,44px); }
         .hero-hint { font-size: 11.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--on-dark-faint); margin: 0 0 6px; }
         .hero-index { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-dark); }
@@ -104,9 +106,9 @@ export default function Hero() {
         .hero-row { grid-template-columns: 2.4rem 1fr auto 20px; }
         .hero-row__kicker { grid-column: 1 / 3; grid-row: 2; text-align: left; max-width: none; }
         .hero-slot { position: relative; min-height: 420px; border: 1px solid #333; background: #141414; }
-        .hero-slot__layer { position: absolute; inset: 0; transition: opacity .35s ease; }
+        .hero-slot__layer { position: absolute; inset: 0 0 64px; transition: opacity .35s ease; }
         .hero-slot__layer > * { width: 100%; height: 100%; }
-        .hero-slot__caption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 14px; align-items: baseline; padding: 18px 22px; background: rgba(10,10,10,.82); font-size: 13.5px; line-height: 1.5; color: var(--on-dark-soft); border-top: 1px solid var(--line-dark); }
+        .hero-slot__caption { position: absolute; left: 0; right: 0; bottom: 0; min-height: 64px; display: flex; gap: 14px; align-items: baseline; padding: 18px 22px; background: rgba(10,10,10,.82); font-size: 13.5px; line-height: 1.5; color: var(--on-dark-soft); border-top: 1px solid var(--line-dark); }
         .hero-slot__num { font-family: var(--font-display); font-weight: 800; font-size: 13px; color: var(--red-bright); letter-spacing: .1em; }
         @media (max-width: 900px) {
           .hero-grid { grid-template-columns: 1fr; min-height: 0; }

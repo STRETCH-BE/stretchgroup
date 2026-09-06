@@ -31,13 +31,13 @@
     "companiesTitle": "The companies | STRETCH Group",
     "companiesDescription": "Four companies, one group: STRETCH, Stretch Sufit / Alto Design, Re-Sound and Stretch Metal. What each does and where to go for ceilings, acoustics or metal.",
     "stretchTitle": "STRETCH, stretch ceilings and walls in Belgium | STRETCH Group",
-    "stretchDescription": "Stretch Productions BV, Beveren-Waas (2018): seamless polyester stretch ceilings and walls, cold-mounted, installed in one day. Visit stretchplafond.be.",
+    "stretchDescription": "Stretch Productions BV, founded in 2018 by Michael Nicasens in Beveren-Waas: seamless polyester stretch ceilings and walls, cold-mounted, installed in one day. Visit stretchplafond.be.",
     "stretchSufitTitle": "Stretch Sufit / Alto Design, PVC stretch-ceiling factory in Poland | STRETCH Group",
-    "stretchSufitDescription": "Alto Design Sp. z o.o., Częstochowa: PVC stretch-ceiling factory since 2016, seamless to 6.50 m, in STRETCH Group since 2024. Stretch Sufit: 17 cities.",
+    "stretchSufitDescription": "Alto Design Sp. z o.o., Częstochowa: PVC stretch-ceiling factory since 2016, seamless to 6.50 m, bought by STRETCH in 2024. Stretch Sufit installs in 17 cities.",
     "reSoundTitle": "Re-Sound, circular acoustic panels from Belgium | STRETCH Group",
-    "reSoundDescription": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials, with a full take-back policy. Visit re-sound.be.",
+    "reSoundDescription": "Re-Sound makes circular acoustic panels and screens in Belgium from recycled and sustainable materials, with a full take-back policy. In STRETCH Group since 2025.",
     "aboutTitle": "About STRETCH Group: story, timeline and offices",
-    "aboutDescription": "How STRETCH Group grew: a PVC factory in Poland (2016), Stretch Productions BV in Belgium (2018), Re-Sound, and Alto Design joining in 2024. Four offices.",
+    "aboutDescription": "How STRETCH Group grew: founded by Michael Nicasens in Belgium in 2018, Alto Design in Poland bought in 2024, Re-Sound acquired in 2025, Stretch Metal opened in 2026.",
     "careersTitle": "Careers at STRETCH Group",
     "careersDescription": "Work at STRETCH Group or one of its companies in Belgium and Poland. Send an open application to the group — we read every one.",
     "contactTitle": "Contact STRETCH Group in Beveren-Waas, Belgium",
@@ -49,7 +49,7 @@
     "notFoundTitle": "Page not found | STRETCH Group",
     "notFoundDescription": "The page you are looking for could not be found.",
     "stretchMetalTitle": "Stretch Metal, metal fabrication in Poland | STRETCH Group",
-    "stretchMetalDescription": "Stretch Metal, the group’s metal fabrication company in Poland (2026): prefab elements, large project structures and jobs for other companies. stretchmetal.pl"
+    "stretchMetalDescription": "Stretch Metal, the group’s own metal workshop (2026): metal ceilings, balustrades, hall structures, generator panels and stainless-steel kitchen elements. stretchmetal.pl"
   },
   "cookies": {
     "title": "We value your privacy",
@@ -111,7 +111,7 @@
     }
   },
   "footer": {
-    "tagline": "The group behind STRETCH, Stretch Sufit / Alto Design, Re-Sound and Stretch Metal: ceilings, walls, acoustics and metal fabrication, made in Belgium and Poland.",
+    "tagline": "The group behind STRETCH, Stretch Sufit / Alto Design, Re-Sound and Stretch Metal: stretch ceilings, walls, acoustics and metal, made in Belgium and Poland since 2018.",
     "companiesHeading": "Companies",
     "groupHeading": "Group",
     "officesHeading": "Offices",
@@ -137,7 +137,7 @@
     "items": {
       "ceiling": {
         "q": "Looking for a stretch ceiling?",
-        "a": "STRETCH designs, makes and installs seamless stretch ceilings and walls in Belgium — a new ceiling in one day.",
+        "a": "STRETCH, the group’s founding company, produces its own stretch-ceiling system in Belgium and sells it through a dealer network — a new ceiling in one day.",
         "cta": "Go to stretchplafond.be",
         "altCta": "International site: stretch.mt"
       },
@@ -148,12 +148,12 @@
       },
       "poland": {
         "q": "Need a quote in Poland?",
-        "a": "Alto Design runs the group's PVC stretch-ceiling factory in Częstochowa; Stretch Sufit installs in 17 Polish cities.",
+        "a": "Alto Design, bought by STRETCH in 2024, runs the group’s PVC stretch-ceiling factory in Częstochowa; Stretch Sufit installs in 17 Polish cities.",
         "cta": "Go to altodesign.pl"
       },
       "metal": {
         "q": "Need metal fabrication?",
-        "a": "Stretch Metal fabricates the group’s prefab elements and large project structures in Poland, and takes on jobs for other companies.",
+        "a": "Stretch Metal, the group’s own metal workshop, builds structures in every kind of metal: metal ceilings, balustrades, hall structures, generator panels and stainless-steel kitchen elements.",
         "cta": "Go to stretchmetal.pl"
       }
     }
@@ -161,30 +161,32 @@
   "companies": {
     "eyebrow": "The companies",
     "title": "Four companies. One group.",
-    "intro": "Each company runs its own brand, factory and website. The group connects them: shared know-how, shared markets, one standard.",
+    "intro": "Each company runs its own brand, production and website. The group connects them: shared know-how, one dealer network, one standard.",
     "stretch": {
       "name": "STRETCH",
       "kicker": "Stretch ceilings and walls · Belgium",
-      "oneLiner": "Belgian manufacturer of seamless polyester stretch ceilings and walls, cold-mounted and installed in one day.",
+      "oneLiner": "The company the group grew out of: Belgian maker of seamless polyester stretch ceilings and walls, produced in-house, sold through dealers and installed in one day.",
       "whatTitle": "A new ceiling in one day.",
-      "description": "STRETCH designs and makes seamless stretch ceilings and walls in Beveren-Waas, Belgium. The polyester membrane is mounted cold and installed in a single day, with acoustic, lighting and printed options. The company trades as Stretch Productions BV, founded in 2018, and serves Belgium from stretchplafond.be and international markets from stretch.mt.",
+      "description": "STRETCH designs and makes seamless stretch ceilings and walls in Beveren-Waas, Belgium. The polyester membrane is mounted cold and installed in a single day, with acoustic, lighting and printed options. Michael Nicasens founded the company in 2018 (Stretch Productions BV) with one goal: a stretch-ceiling brand that produces its own system and promotes and sells it through a worldwide dealer network, so that existing interior businesses can add a product with real margin. Production is heavily automated — STRETCH built its own roll-handling machine that cuts every ceiling automatically. Belgium is served from stretchplafond.be, international markets from stretch.mt.",
       "bullets": [
         "Seamless polyester stretch ceilings and walls",
         "Cold-mounted, installed in one day",
         "Acoustic, lighting and printed options",
-        "Belgium: stretchplafond.be · international: stretch.mt"
+        "Produced in-house on its own automated cutting line",
+        "Sold through a dealer network: stretchplafond.be (BE) · stretch.mt (international)"
       ],
       "ctaBody": "Products, projects, prices and quotes live on the STRETCH website."
     },
     "stretch-sufit": {
       "name": "Stretch Sufit",
       "kicker": "PVC stretch-ceiling factory · Poland",
-      "oneLiner": "Alto Design’s PVC stretch-ceiling factory in Częstochowa, Poland, since 2016 — part of STRETCH Group since 2024.",
+      "oneLiner": "PVC stretch-ceiling factory in Częstochowa, Poland, producing since 2016 — bought by STRETCH in 2024 as the group’s base for Eastern Europe.",
       "whatTitle": "The group’s PVC factory.",
-      "description": "Alto Design Sp. z o.o. has produced PVC stretch ceilings in Częstochowa since 2016, seamless up to 6.50 m. The company joined STRETCH Group in 2024. Its consumer installation brand, Stretch Sufit, is active in 17 Polish cities and has completed more than 4,000 projects.",
+      "description": "Alto Design Sp. z o.o. has produced PVC stretch ceilings in Częstochowa since 2016, seamless up to 6.50 m. STRETCH bought the factory in 2024: it produces at roughly a third of the Belgian production cost, gave the group a strong boost and opened the Eastern European market. Its consumer installation brand, Stretch Sufit, is active in 17 Polish cities and has completed more than 4,000 projects.",
       "bullets": [
         "PVC stretch-ceiling factory in Częstochowa since 2016",
         "Seamless PVC up to 6.50 m",
+        "Bought by STRETCH in 2024 — the group’s gateway to Eastern Europe",
         "Stretch Sufit: installation in 17 Polish cities",
         "More than 4,000 completed projects"
       ],
@@ -193,28 +195,30 @@
     "re-sound": {
       "name": "Re-Sound",
       "kicker": "Circular acoustics · Belgium",
-      "oneLiner": "Belgian maker of circular acoustic panels and screens from recycled and sustainable materials, with a full take-back policy.",
+      "oneLiner": "Belgian producer of circular acoustic panels and screens from recycled and sustainable materials — part of STRETCH Group since the end of 2025.",
       "whatTitle": "Acoustics that close the loop.",
-      "description": "Re-Sound makes acoustic panels and screens in Belgium from recycled and sustainable materials. It started in 2020 with yarn spun from recycled jeans. Every product can be returned at the end of its life and made into new panels. The range includes Interior panels and the Divide freestanding screen. Re-Sound was founded by Aaron Thierens.",
+      "description": "Re-Sound makes acoustic panels and screens in Belgium from recycled and sustainable materials. It started in 2020 with yarn spun from recycled jeans. Every product can be returned at the end of its life and made into new panels. The range includes Interior panels and the Divide freestanding screen. Founded by Aaron Thierens, Re-Sound was acquired by STRETCH Group at the end of 2025 to broaden the group’s range into acoustic panels.",
       "bullets": [
         "Acoustic panels and screens made in Belgium",
         "Recycled and sustainable materials, starting from recycled jeans yarn in 2020",
         "Full take-back policy: close the loop",
-        "Interior panels and the Divide freestanding screen"
+        "Interior panels and the Divide freestanding screen",
+        "Part of STRETCH Group since the end of 2025"
       ],
       "ctaBody": "The range, projects and contact for acoustic solutions live on re-sound.be."
     },
     "stretch-metal": {
       "name": "Stretch Metal",
       "kicker": "Metal fabrication · Poland",
-      "oneLiner": "The group’s Polish metal fabrication company, created in 2026 for its own prefab elements and large project structures, now also working for other companies.",
-      "whatTitle": "Metal fabrication, grown from our own projects.",
-      "description": "Stretch Metal started out of necessity: the group needed metal fabrication for its own prefab elements and for the large structures its projects require. As the business scaled, the workshop began taking on jobs for other companies as well, and in 2026 that work became a company of its own: Stretch Metal, based in Poland.",
+      "oneLiner": "The group’s own metal workshop, opened in 2026: structures in every kind of metal, from metal ceilings and balustrades to hall structures and stainless-steel kitchen elements.",
+      "whatTitle": "Every kind of metal, every kind of project.",
+      "description": "Stretch Metal started out of necessity: the group needed metal fabrication for its own prefab elements and for the large structures its projects require. As that work scaled it took on jobs for other companies too, and in 2026 the group opened its own metal workshop under the Stretch Metal name. It builds structures in every kind of metal for every kind of project — the metal ceilings at Spa-Francorchamps, balustrades, hall structures, generator panels and stainless-steel kitchen elements.",
       "bullets": [
-        "Metal fabrication for the group’s prefab elements",
-        "Large structures for projects",
-        "Fabrication jobs for other companies",
-        "Created in 2026 in Poland"
+        "Metal ceilings, including at Spa-Francorchamps",
+        "Balustrades and hall structures",
+        "Generator panels and stainless-steel kitchen elements",
+        "Prefab elements for the group, fabrication jobs for other companies",
+        "Own workshop, opened in 2026"
       ],
       "ctaBody": "Capabilities, projects and contact for fabrication work live on stretchmetal.pl."
     }
@@ -272,7 +276,8 @@
         "origin": "Poland",
         "clients": "Group + external"
       }
-    }
+    },
+    "foundingCompany": "Founding company of STRETCH Group"
   },
   "home": {
     "hero": {
@@ -290,9 +295,9 @@
         "companies": "Companies",
         "offices": "Offices",
         "markets": "Live market websites",
-        "factory": "First factory opened"
+        "founded": "Founded"
       },
-      "note": "Counts are taken from this site’s own data: the four companies, the four offices and the market websites that are live today."
+      "note": "Counts are taken from this site’s own data: the four companies, the four offices, the market websites that are live today and the year STRETCH was founded."
     },
     "markets": {
       "eyebrow": "Markets",
@@ -304,7 +309,8 @@
     "timeline": {
       "eyebrow": "Timeline",
       "title": "How the group grew.",
-      "cta": "Read the full story"
+      "cta": "Read the full story",
+      "outlook": "Goal"
     },
     "contactBand": {
       "title": "Talk to the group.",
@@ -314,29 +320,41 @@
     }
   },
   "timeline": {
-    "altoFactory": {
-      "title": "Alto Design opens a PVC stretch-ceiling factory in Częstochowa, Poland.",
-      "body": "The factory produces seamless PVC stretch ceilings up to 6.50 m wide and later becomes the group’s PVC production base."
+    "founded": {
+      "title": "Michael Nicasens founds STRETCH in Beveren-Waas, Belgium.",
+      "body": "The goal from day one: a stretch-ceiling brand that produces its own system and promotes and sells it through a worldwide dealer network — creating margin for existing interior businesses. At the end of the year the first sales employee joins."
     },
-    "stretchFounded": {
-      "title": "Stretch Productions BV is founded in Beveren-Waas, Belgium.",
-      "body": "STRETCH starts making seamless polyester stretch ceilings and walls — cold-mounted, installed in one day."
+    "automation": {
+      "title": "First admin and warehouse staff, and a heavy investment in automation.",
+      "body": "STRETCH builds its own roll-handling machine, which cuts every stretch ceiling automatically — faster, more precise and, above all, safer work."
     },
-    "reSoundOrigin": {
-      "title": "Re-Sound’s origin: acoustic panels from recycled jeans yarn.",
-      "body": "The circular acoustics company starts from a yarn spun out of recycled jeans and builds a take-back policy into every product."
+    "covid": {
+      "title": "COVID hits. STRETCH keeps investing and growing.",
+      "body": "While the market stalls, the company keeps putting money into people, machines and markets, and comes out of the pandemic bigger than it went in."
     },
-    "altoJoins": {
-      "title": "Alto Design joins STRETCH Group.",
-      "body": "The Polish factory and its Stretch Sufit installation brand become part of the group."
+    "pvcBelgium": {
+      "title": "An automation-led PVC production unit opens in Belgium.",
+      "body": "The unit proves financially too heavy and is later stopped. The lesson — produce PVC where it is competitive — shapes the move to Poland three years later."
     },
-    "rollout": {
-      "title": "International domain rollout across more than twelve markets.",
-      "body": "STRETCH launches a country website per market, from stretch.mt for international visitors to stretchplafond.be, stretchdecken.de, stretch-sufit.pl, stretch.is and more."
+    "austria": {
+      "title": "The Austrian sales office opens in Vienna.",
+      "body": "A tough start in a new market that is paying off today."
+    },
+    "altoDesign": {
+      "title": "STRETCH buys Alto Design, a PVC stretch-ceiling factory in Poland.",
+      "body": "Alto Design, producing in Częstochowa since 2016 at roughly a third of the Belgian production cost, gives STRETCH a strong boost and opens the Eastern European market. Its installation brand Stretch Sufit comes with it."
+    },
+    "reSound": {
+      "title": "Re-Sound, a Belgian producer of acoustic panels, joins the group.",
+      "body": "Acquired at the end of 2025, Re-Sound broadens the group’s range from stretch ceilings and walls into circular acoustic panels."
     },
     "stretchMetal": {
-      "title": "Stretch Metal is created in Poland.",
-      "body": "The metal fabrication the group needed for its own prefab elements and large project structures becomes a company of its own, working for other companies as well."
+      "title": "Stretch Metal: the group opens its own metal workshop.",
+      "body": "Structures in every kind of metal for every kind of project: metal ceilings at Spa-Francorchamps, balustrades, hall structures, generator panels and stainless-steel kitchen elements."
+    },
+    "outlook": {
+      "title": "The synergies of four companies, through one dealer network.",
+      "body": "Use the existing dealer network to bring all four companies to market together, become more densely present in the markets the group already serves, and grow the footprint from there."
     }
   },
   "countries": {
@@ -370,19 +388,20 @@
       "eyebrow": "About STRETCH Group",
       "titleA": "One group,",
       "titleB": "four companies.",
-      "lead": "STRETCH Group brings together a Belgian stretch-ceiling manufacturer, a Polish PVC factory, a Belgian circular-acoustics company and a Polish metal fabrication company. Each keeps its own name and website; the group connects them.",
+      "lead": "STRETCH Group grew out of one Belgian stretch-ceiling company into four: a stretch-ceiling maker in Belgium, a PVC factory in Poland, a circular-acoustics producer in Belgium and a metal workshop. Each keeps its own name and website; the group connects them.",
       "imageLabel": "Group photo"
     },
     "story": {
       "eyebrow": "Our story",
-      "title": "Built from the workshop up.",
-      "p1": "The group’s story starts on the factory floor. In 2016 Alto Design opened a PVC stretch-ceiling factory in Częstochowa, Poland. In 2018 Stretch Productions BV was founded in Beveren-Waas, Belgium, to design and install seamless polyester stretch ceilings and walls — cold-mounted, finished in a day.",
-      "p2": "Re-Sound added acoustics with a circular twist: panels and screens made in Belgium from recycled and sustainable materials, starting from a yarn spun out of recycled jeans, with a take-back policy so every product can close the loop.",
-      "p3": "In 2024 Alto Design joined STRETCH Group, bringing the factory and the Stretch Sufit installation brand into the group. In 2026 the metal fabrication that had started for the group’s own prefab elements and project structures became a company of its own, Stretch Metal, which also works for other companies. Today the companies share know-how and markets while each runs its own brand and website:"
+      "title": "From one company to four.",
+      "p1": "STRETCH Group grew out of one company. In 2018 Michael Nicasens founded STRETCH in Beveren-Waas, Belgium, with a clear goal: build a stretch-ceiling brand that produces its own system and promotes and sells it through a worldwide dealer network — so that existing interior businesses can add a product with real margin. The first sales employee joined at the end of that year; the first admin and warehouse colleagues followed in 2019.",
+      "p2": "From the start the company invested heavily in automation, building its own roll-handling machine that cuts every stretch ceiling automatically and makes the work safer. When COVID hit in 2020, STRETCH kept investing and growing. A Belgian PVC production unit, opened in 2021, proved financially too heavy and was later stopped; the Austrian sales office, opened in 2022, had a tough start and is paying off today.",
+      "p3": "In 2024 STRETCH bought Alto Design, a PVC stretch-ceiling factory in Częstochowa, Poland, producing at roughly a third of the Belgian cost. It gave STRETCH a strong boost and opened the Eastern European market. At the end of 2025 Re-Sound, a Belgian producer of acoustic panels, joined to broaden the range into acoustics. In 2026 the group opened its own metal workshop, Stretch Metal: structures in every kind of metal, from the metal ceilings at Spa-Francorchamps to balustrades, hall structures, generator panels and stainless-steel kitchen elements.",
+      "p4": "The goal for 2027 is to use the synergies of the four companies through the existing dealer network: become more densely present in the markets the group already serves, and grow the footprint from there. Each company keeps its own brand and website:"
     },
     "offices": {
       "eyebrow": "Where we are",
-      "title": "Four offices, two factories’ worth of know-how."
+      "title": "Four offices, production in Belgium and Poland."
     },
     "cta": {
       "title": "Working with the group?",

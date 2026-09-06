@@ -1,3 +1,63 @@
+## 2026-09-06 (5) — Company logos, hero sizing, the group's history as the founder tells it
+
+- **Logos.** The official logo pack (ten PNG banners) landed. The eight used
+  variants live in `public/images/logos/` under their original names; the
+  three "black-bg" duplicates were not committed. `logos` in
+  `src/lib/site-config.ts` maps each company to its light-background and
+  dark-background variant plus intrinsic size, and the new
+  `src/components/ui/CompanyLogo.tsx` renders them through next/image inside a
+  padded frame. Every logo slot now shows the real logo: the home hero
+  (dark variants, decorative), the company cards on home + /companies and the
+  company-page hero (light variants, alt "<name> logo"). Photo slots and the
+  group wordmark are unchanged (no group logo or photography supplied yet).
+- **Hero sizing.** The right-hand slot had collapsed to ~100 px because the
+  display-size "STRETCH" wordmark's min-content width won the grid
+  negotiation. The grid now uses `minmax(0, 1.15fr) minmax(300px, .85fr)`
+  and the hero title is capped at `clamp(48px, 7.4vw, 120px)`; the caption
+  has a reserved 64 px band under the logo layer.
+- **History rewritten** from the founder's account (Michael Nicasens,
+  6 Sep 2026). Facts used, in order: STRETCH founded 2018 in Beveren-Waas to
+  produce its own stretch-ceiling system and sell it through a worldwide
+  dealer network (margin for existing interior businesses); first sales
+  employee end 2018; first admin + warehouse staff and heavy automation in
+  2019, incl. an in-house roll-handling machine that cuts every ceiling
+  automatically (safer work); COVID 2020, kept investing; 2021 Belgian PVC
+  production unit (automation-led), financially too heavy, later stopped;
+  2022 Austrian sales office (tough start, paying off today); 2024 Alto
+  Design bought (produces at ~1/3 of the Belgian cost, boost, Eastern
+  Europe); end 2025 Re-Sound acquired (acoustic panels); 2026 own metal
+  workshop Stretch Metal (metal ceilings at Spa-Francorchamps, balustrades,
+  hall structures, generator panels, stainless-steel kitchen elements);
+  2027 goal: synergies of the four companies through the dealer network,
+  denser presence in existing markets, then a larger footprint.
+  Where it landed:
+  - `timeline` in site-config is now nine entries (2018 → 2027 goal); the
+    home strip shows the six flagged `teaser`, /about shows all nine. The
+    2027 entry is flagged `outlook` and rendered with a "Goal" label so a
+    plan is never read as a fact. The old 2016 / 2020 / 2025–26 entries
+    (and their two [TO CONFIRM] framings) are gone.
+  - About story: four paragraphs (p1–p4) + new title; hero lead; offices
+    title ("production in Belgium and Poland" instead of "two factories").
+  - Company copy: STRETCH gets founder, goal, dealer network and automation;
+    Alto Design "bought by STRETCH in 2024", Eastern Europe; Re-Sound
+    "acquired end 2025" (`memberSince: 2025`); Stretch Metal "own metal
+    workshop, 2026" with the reference work above (new `whatTitle`).
+  - Router cards, meta descriptions, footer tagline, group numbers tile
+    ("Founded 2018" replaces "First factory opened 2016"), `llms.txt`
+    (new History section), `brand.description`.
+  - JSON-LD: STRETCH's node now carries `founder` Michael Nicasens; the
+    membership block on /companies/stretch says "Founding company of STRETCH
+    Group" (`founding: true`) instead of "Part of … since".
+  - Dutch copy rewritten alongside (326/326 keys in both files).
+- Sitemap `lastmod` bumped to 2026-09-06 for /, /companies, the four
+  company pages and /about.
+- **Published as given — please confirm they may stay public** (item 16
+  below): "roughly a third of the Belgian production cost" (2024) and the
+  2021 PVC unit "proved financially too heavy and was later stopped". Both
+  are in the founder's account; both are easy to soften in
+  `messages/*.json` (`timeline.altoDesign`, `timeline.pvcBelgium`,
+  `aboutPage.story.p2/p3`, `companies.stretch-sufit.description`).
+
 ## 2026-09-03 — Card alignment + Vercel project
 
 - Router cards: the button now shows the domain only (no wrapping at four-up
@@ -32,7 +92,7 @@
   reserved slots for the international-site line and the legal-entity line).
 - Still ahead of the domain switch: Settings → Domains for stretchgroup.be,
   www and the five multistore domains, DNS, `npm run verify:redirects`
-  against production, a lead-delivery method, analytics IDs, the fifteen
+  against production, a lead-delivery method, analytics IDs, the open
   [TO CONFIRM] items and legal review.
 
 ## 2026-09-02 (3) — Stretch Metal is the fourth company
@@ -225,16 +285,19 @@ but the explicit map is only as good as the inventory:
 2. **Phone numbers to display:** the mobile/WhatsApp line +32 474 52 20 90 is
    shown; the legacy office line +32 3 284 68 18 from the old site is kept in
    `contact.legacyOfficePhone` and rendered nowhere.
-3. **Re-Sound:** legal entity name, address, the exact wording of its
-   relationship to the group and since when, and its brand accent colour (pull
-   from the real logo). Its page shows country only, no address, no
-   "since" year. → `companies[2]` in `site-config.ts`.
-4. **STRETCH's relationship framing** (founding company? member since?). No
-   `memberSince` is claimed. → `companies[0]`.
-5. **Re-Sound 2020 timeline entry** — exact framing ("origin: recycled jeans
-   yarn, 2020" is what the brief verified). → `timeline[2]`, `messages` key
-   `timeline.reSoundOrigin`.
-6. **2025–26 domain rollout** — year framing. → `timeline[4]`, `timeline.rollout`.
+3. **Re-Sound:** legal entity name and address. *(Resolved 6 Sep: acquired by
+   the group at the end of 2025 → `memberSince: 2025`; accent colour can now
+   be taken from the supplied logo — navy #1a2b5c-ish, not yet applied.)* Its
+   page still shows country only, no address. → `companies[2]` in
+   `site-config.ts`.
+4. ~~**STRETCH's relationship framing**~~ — *resolved 6 Sep: STRETCH is the
+   company the group grew out of, founded 2018 by Michael Nicasens
+   (`founding: true`, `founder`). Open: the founder writes "Stretch BV";
+   the verified legal name "Stretch Productions BV" is kept — see 16.*
+5. ~~**Re-Sound 2020 timeline entry**~~ — *resolved 6 Sep: entry removed; the
+   2020 recycled-jeans origin stays as a company fact on /companies/re-sound.*
+6. ~~**2025–26 domain rollout**~~ — *resolved 6 Sep: entry removed from the
+   timeline (not part of the founder's account).*
 7. **STRETCH Media:** the product site's "Powered by STRETCH Media" credit is
    kept as a footer line; it is NOT emitted as an organisation. Confirm whether
    it should be listed as a group entity.
@@ -251,14 +314,20 @@ but the explicit map is only as good as the inventory:
     "no advertised roles" state and the open-application path.
 12. **Favicons** are the product site's mark (shared identity assumed). Replace
     if the group gets its own mark. → marker in `src/app/[locale]/layout.tsx`.
-13. **Group logo + company logos + photography** — every slot is a
-    `Placeholder` (search `Placeholder`, `logoSlot`, `imageSlot`, `imageLabel`).
+13. **Group logo + photography** — company logos are in place since (5);
+    the group itself still renders as a text `Wordmark`, and every photo slot
+    is a `Placeholder` (search `Placeholder`, `imageSlot`, `imageLabel`).
 15. **Stretch Metal** (stretchmetal.pl) — confirmed by the team as the group's
-    Polish metal fabrication company, created in 2026 (see entry (3) above).
-    Still [TO CONFIRM]: legal entity name, city and address, e-mail and phone,
-    exact brand casing and logo, whether it also belongs in the offices list,
-    and whether "prefab elements" should name the products. → `companies[3]`
-    in `src/lib/site-config.ts`.
+    own metal workshop, opened in 2026 (entries (3) and (5) above; logo
+    supplied). Still [TO CONFIRM]: legal entity name, city and address,
+    e-mail and phone, and whether it also belongs in the offices list.
+    → `companies[3]` in `src/lib/site-config.ts`.
+16. **Founder's account, wording to confirm** (entry (5)): (a) the entity
+    name — "Stretch BV" in the account vs the verified "Stretch Productions
+    BV" (kept); (b) whether "roughly a third of the Belgian production cost"
+    and the 2021 PVC unit being "financially too heavy and later stopped"
+    may stay on a public site; (c) the Spa-Francorchamps reference may need
+    the client's consent to be named. → `messages/*.json` keys listed in (5).
 14. **Lead delivery:** set `LEAD_WEBHOOK_URL` to the existing Power Automate
     flow into leads@stretchgroup.be (fastest), or the four `MS_*` Graph
     variables. Until then messages are console-logged only. → markers in
@@ -266,7 +335,7 @@ but the explicit map is only as good as the inventory:
 
 ### Pre-launch content checklist
 
-- [ ] Resolve the 15 `[TO CONFIRM]` items above.
+- [ ] Resolve the open `[TO CONFIRM]` items above (1–3, 7–16).
 - [ ] Legal review of `/privacy` and `/terms` (EN + NL); remove the review note
       (`legal.reviewNote`) once approved.
 - [ ] Supply logo assets (group + 3 companies) and photography; wire them into

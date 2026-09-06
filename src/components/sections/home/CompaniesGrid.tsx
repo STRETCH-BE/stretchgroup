@@ -1,4 +1,4 @@
-// The group's companies as cards: logo slot, kicker, name, legal entity,
+// The group's companies as cards: logo, kicker, name, legal entity,
 // one-liner, a link to the detail page and the company's own site. Used on
 // the home page and as the body of /companies.
 import { useTranslations } from 'next-intl';
@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { companies } from '@/lib/site-config';
 import Eyebrow from '@/components/ui/Eyebrow';
-import Placeholder from '@/components/ui/Placeholder';
+import CompanyLogo from '@/components/ui/CompanyLogo';
 import ExternalLink from '@/components/ui/ExternalLink';
 
 export default function CompaniesGrid({ num = '02', heading = true, location }: { num?: string; heading?: boolean; location: string }) {
@@ -33,7 +33,7 @@ export default function CompaniesGrid({ num = '02', heading = true, location }: 
           {companies.map((c, i) => (
             <article key={c.slug} className="cg-card">
               <div className="cg-card__logo">
-                <Placeholder label={tp('logoSlot', { name: c.name })} light ratio="16/9" />
+                <CompanyLogo slug={c.slug} alt={tp('logoSlot', { name: c.name })} ratio="16/7" pad={0.12} sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 300px" />
               </div>
               <div className="cg-card__body">
                 <div className="cg-card__kicker">

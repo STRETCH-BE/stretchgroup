@@ -1,18 +1,19 @@
-// Timeline — the group's dated milestones. `teaser` (home) shows years +
-// titles in a horizontal strip with a link to /about; the full variant
-// (about) adds the body copy. Every entry maps to a verified fact in
-// site-config; entries marked `confirm` carry neutral wording pending
-// confirmation (CHANGES.md).
+// Timeline — the group's history as its founder tells it (site-config
+// `timeline`, CHANGES.md (5)). `teaser` (home) shows the entries flagged
+// `teaser` as a strip of years + titles with a link to /about; the full
+// variant (about) shows every entry with its body. The `outlook` entry is
+// the stated goal and is labelled as such.
 import { useTranslations } from 'next-intl';
 import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
-import { timeline } from '@/lib/site-config';
+import { timeline, teaserTimeline } from '@/lib/site-config';
 import Eyebrow from '@/components/ui/Eyebrow';
 
 export default function Timeline({ variant = 'full', num = '05' }: { variant?: 'teaser' | 'full'; num?: string }) {
   const t = useTranslations('home.timeline');
   const te = useTranslations('timeline');
   const teaser = variant === 'teaser';
+  const entries = teaser ? teaserTimeline : timeline;
 
   return (
     <section className="section--surface" id="timeline" aria-labelledby="timeline-title">
@@ -30,12 +31,13 @@ export default function Timeline({ variant = 'full', num = '05' }: { variant?: '
         </div>
 
         <ol className={`tl ${teaser ? 'tl--teaser' : 'tl--full'}`} role="list">
-          {timeline.map((e, i) => (
-            <li key={e.key} className="tl__item">
+          {entries.map((e, i) => (
+            <li key={e.key} className={`tl__item${e.outlook ? ' tl__item--outlook' : ''}`}>
               <div className="tl__year">
                 {e.year}
-                {i < timeline.length - 1 && <span className="tl__line" aria-hidden />}
+                {i < entries.length - 1 && <span className="tl__line" aria-hidden />}
               </div>
+              {e.outlook && <div className="tl__flag">{t('outlook')}</div>}
               <div className="tl__title">{te(`${e.key}.title`)}</div>
               {!teaser && <p className="tl__body">{te(`${e.key}.body`)}</p>}
             </li>
@@ -45,11 +47,15 @@ export default function Timeline({ variant = 'full', num = '05' }: { variant?: '
 
       <style dangerouslySetInnerHTML={{ __html: `
         .tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-        .tl--teaser { grid-template-columns: repeat(6, 1fr); }
+        .tl--teaser { grid-template-columns: repeat(${teaserTimeline.length}, 1fr); }
         .tl--full { grid-template-columns: 1fr; }
         .tl__item { background: #fff; padding: clamp(20px,2.2vw,30px); position: relative; }
         .tl--full .tl__item { display: grid; grid-template-columns: 140px 1fr; gap: 8px clamp(20px,3vw,48px); align-items: start; }
         .tl--full .tl__body { grid-column: 2; }
+        .tl__flag { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+        .tl--full .tl__flag { grid-column: 2; }
+        .tl__item--outlook { background: var(--surface); }
+        .tl__item--outlook .tl__year { color: var(--text-faint-2); }
         .tl__year { font-family: var(--font-display); font-weight: 900; font-size: clamp(22px,2.2vw,30px); letter-spacing: -.02em; color: var(--red); line-height: 1; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
         .tl--full .tl__year { margin-bottom: 0; grid-row: 1 / span 2; }
         .tl__line { flex: 1 1 auto; height: 2px; background: var(--border-2); }
@@ -57,6 +63,7 @@ export default function Timeline({ variant = 'full', num = '05' }: { variant?: '
         .tl__title { font-family: var(--font-display); font-weight: 800; font-size: 15.5px; letter-spacing: -.01em; line-height: 1.3; }
         .tl__body { font-size: 14.5px; line-height: 1.65; color: var(--text-muted); margin: 8px 0 0; max-width: 62ch; }
         @media (max-width: 1000px) { .tl--teaser { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 640px) { .tl--full .tl__flag { grid-column: 1; } }
         @media (max-width: 640px) { .tl--teaser { grid-template-columns: 1fr; } .tl--full .tl__item { grid-template-columns: 1fr; } .tl--full .tl__year { grid-row: auto; margin-bottom: 8px; } .tl--full .tl__body { grid-column: 1; } }
       `}} />
     </section>

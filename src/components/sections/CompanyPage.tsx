@@ -8,6 +8,7 @@ import { Link } from '@/i18n/navigation';
 import { companies, type Company } from '@/lib/site-config';
 import Eyebrow from '@/components/ui/Eyebrow';
 import Placeholder from '@/components/ui/Placeholder';
+import CompanyLogo from '@/components/ui/CompanyLogo';
 import ExternalLink from '@/components/ui/ExternalLink';
 
 export default async function CompanyPage({ company: c }: { company: Company }) {
@@ -39,8 +40,8 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
               )}
             </div>
           </div>
-          <div>
-            <Placeholder label={tp('logoSlot', { name: c.name })} light ratio="4/3" />
+          <div className="cp-logo">
+            <CompanyLogo slug={c.slug} alt={tp('logoSlot', { name: c.name })} ratio="16/10" pad={0.12} maxWidth={440} sizes="(max-width: 860px) 90vw, 440px" priority />
           </div>
         </div>
       </section>
@@ -90,7 +91,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
           <div style={{ background: '#fff', padding: 'clamp(22px,2.4vw,32px)' }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--text-faint-2)', marginBottom: 12 }}>{tp('membership')}</div>
             <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 19, letterSpacing: '-.01em', marginBottom: 8 }}>
-              {c.memberSince ? tp('partOfSince', { year: c.memberSince }) : tp('partOf')}
+              {c.founding ? tp('foundingCompany') : c.memberSince ? tp('partOfSince', { year: c.memberSince }) : tp('partOf')}
             </div>
             {c.legalName ? (
               <div style={{ fontSize: 14, color: 'var(--text-muted)' }}>{tp('legal')}: {c.legalName}</div>
@@ -167,6 +168,7 @@ export default async function CompanyPage({ company: c }: { company: Company }) 
 
       <style dangerouslySetInnerHTML={{ __html: `
         .cp-hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px,4vw,64px); align-items: center; }
+        .cp-logo { background: var(--surface); border: 1px solid var(--border); }
         .cp-facts { grid-template-columns: repeat(${Math.max(c.facts.length, 2)}, 1fr); }
         .cp-what { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px,4vw,64px); align-items: start; }
         .cp-contact { grid-template-columns: 1fr 1fr; }

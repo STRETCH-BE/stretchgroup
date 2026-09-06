@@ -1,9 +1,10 @@
 // ============================================================================
 // SITE CONFIG — single source of truth for group data (GROUP EDITION).
 //
-// Every fact below comes from the verified brief (2 Sep 2026). Nothing is
-// invented: anything the brief did not verify is marked [TO CONFIRM] here
-// and listed in CHANGES.md. Anything that varies by deploy (URLs, IDs) reads
+// Every fact below comes from the verified brief (2 Sep 2026) or from the
+// founder's own account of the group's history (6 Sep 2026, CHANGES.md (5)).
+// Nothing is invented: anything neither source verified is marked
+// [TO CONFIRM] here and listed in CHANGES.md. Anything that varies by deploy (URLs, IDs) reads
 // from env; everything brand-stable lives here.
 // ============================================================================
 
@@ -25,7 +26,7 @@ export const brand = {
   domain: 'stretchgroup.be',
   // Drafted group-level line — not a verified fact, plain description only.
   description:
-    'STRETCH Group unites four companies in ceilings, walls, acoustics and metal fabrication: STRETCH (Belgian stretch ceilings and walls), Stretch Sufit / Alto Design (PVC stretch-ceiling factory in Poland), Re-Sound (circular acoustic panels made in Belgium) and Stretch Metal (metal fabrication in Poland).',
+    'STRETCH Group grew out of STRETCH, the Belgian stretch-ceiling brand Michael Nicasens founded in 2018, and today unites four companies: STRETCH (stretch ceilings and walls, Belgium), Stretch Sufit / Alto Design (PVC stretch-ceiling factory in Poland, bought in 2024), Re-Sound (circular acoustic panels made in Belgium, acquired end 2025) and Stretch Metal (the group\'s own metal workshop, opened in 2026).',
   // The product site carries a "Powered by STRETCH Media" credit.
   // [TO CONFIRM] whether STRETCH Media is listed as a group entity — until
   // then the credit is kept as a footer line only, not as an organisation.
@@ -62,14 +63,14 @@ export const contact = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// COMPANIES — the three member companies. Copy (what they do) lives in the
+// COMPANIES — the four member companies. Copy (what they do) lives in the
 // message files under `companies.<slug>`; only facts live here.
 // ---------------------------------------------------------------------------
 export type CompanySlug = 'stretch' | 'stretch-sufit' | 're-sound' | 'stretch-metal';
 
 export type Company = {
   slug: CompanySlug;
-  /** Display name (the wordmark's text until the real logo asset arrives). */
+  /** Display name (also the logo's alt-text subject). */
   name: string;
   /** Registered company name — empty when [TO CONFIRM]. */
   legalName: string;
@@ -77,6 +78,9 @@ export type Company = {
   founded?: number;
   /** Year the company joined the group — undefined when [TO CONFIRM]. */
   memberSince?: number;
+  /** The company the group grew out of (rendered as "founding company"
+   *  instead of "part of the group since"). */
+  founding?: boolean;
   /** Named founder (only where verified). */
   founder?: string;
   country: string; // ISO 3166-1 alpha-2
@@ -106,8 +110,12 @@ export const companies: Company[] = [
     name: 'STRETCH',
     legalName: 'Stretch Productions BV',
     founded: 2018,
-    // [TO CONFIRM] framing of STRETCH's relationship to the group (founding
-    // company? since when?) — no `memberSince` claimed until confirmed.
+    // Founder + founding-company role: from the founder's account (6 Sep
+    // 2026). The group grew out of this company — no `memberSince`, it IS
+    // the origin. [TO CONFIRM] the founder calls the entity "Stretch BV";
+    // the verified legal name stays "Stretch Productions BV" until confirmed.
+    founder: 'Michael Nicasens',
+    founding: true,
     country: 'BE',
     city: 'Beveren-Waas',
     addressLines: ['Gentseweg 309 A3 (Beverpark)', '9120 Beveren-Waas'],
@@ -148,9 +156,11 @@ export const companies: Company[] = [
   {
     slug: 're-sound',
     name: 'Re-Sound',
-    // [TO CONFIRM] legal entity name, address, relationship wording + since when.
+    // Acquired by the group at the end of 2025 (founder's account, 6 Sep 2026).
+    // [TO CONFIRM] legal entity name and address.
     legalName: '',
     founder: 'Aaron Thierens',
+    memberSince: 2025,
     country: 'BE',
     city: '', // [TO CONFIRM]
     addressLines: [],
@@ -164,13 +174,15 @@ export const companies: Company[] = [
   },
   {
     slug: 'stretch-metal',
-    // Facts from the team (2 Sep 2026): the group's Polish metal fabrication
-    // company. It started out of necessity for the group's own prefab
-    // elements and the big structures its projects need; as the business
-    // scaled it took on jobs from other companies too, and in 2026 that work
-    // became Stretch Metal.
-    // [TO CONFIRM] legal entity, city/address, e-mail, phone, exact brand
-    // casing and logo — the site is unreachable from the build environment.
+    // Facts from the team (2 + 6 Sep 2026): the group's own metal workshop,
+    // opened in 2026 in Poland (stretchmetal.pl). It started out of necessity
+    // for the group's own prefab elements and the big structures its projects
+    // need; as the business scaled it took on jobs from other companies too.
+    // Reference work named by the founder: metal ceilings at Spa-Francorchamps,
+    // balustrades, hall structures, generator panels, stainless-steel kitchen
+    // elements.
+    // [TO CONFIRM] legal entity, city/address, e-mail, phone — the site is
+    // unreachable from the build environment.
     name: 'Stretch Metal',
     legalName: '',
     founded: 2026,
@@ -193,6 +205,21 @@ export function getCompany(slug: string): Company | undefined {
 }
 
 export const companySlugs = companies.map((c) => c.slug);
+
+// ---------------------------------------------------------------------------
+// LOGOS — the official company logo files (supplied 6 Sep 2026, kept under
+// public/images/logos with their original names). Every logo is a wide
+// transparent banner; `onLight` is the variant for light backgrounds,
+// `onDark` the one for dark. Intrinsic pixel size feeds next/image.
+// ---------------------------------------------------------------------------
+export type CompanyLogoAsset = { onLight: string; onDark: string; width: number; height: number };
+
+export const logos: Record<CompanySlug, CompanyLogoAsset> = {
+  stretch: { onLight: '/images/logos/stretch-logo.png', onDark: '/images/logos/stretch-logo-white.png', width: 3386, height: 555 },
+  'stretch-sufit': { onLight: '/images/logos/stretchsufit-logo-dark.png', onDark: '/images/logos/stretchsufit-logo.png', width: 2803, height: 551 },
+  're-sound': { onLight: '/images/logos/re-sound-logo.png', onDark: '/images/logos/re-sound-logo-white.png', width: 4478, height: 603 },
+  'stretch-metal': { onLight: '/images/logos/stretchmetal-logo-dark.png', onDark: '/images/logos/stretchmetal-logo.png', width: 5400, height: 555 },
+};
 
 // ---------------------------------------------------------------------------
 // MARKETS — live domain portfolio. Same live/pending discipline as the
@@ -292,19 +319,26 @@ export const offices: Office[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// TIMELINE — each entry links to a verified fact above. Copy is in messages
-// (`timeline.<key>`); `confirm` marks the two entries whose framing is open.
+// TIMELINE — the group's history as told by its founder (6 Sep 2026; see
+// CHANGES.md (5)). Copy is in messages (`timeline.<key>`). `teaser` marks
+// the entries the home page strip shows; the About page shows them all.
+// `outlook` marks the forward-looking goal (rendered as a goal, not a fact).
 // ---------------------------------------------------------------------------
-export type TimelineEntry = { year: string; key: string; company?: CompanySlug; confirm?: boolean };
+export type TimelineEntry = { year: string; key: string; company?: CompanySlug; teaser?: boolean; outlook?: boolean };
 
 export const timeline: TimelineEntry[] = [
-  { year: '2016', key: 'altoFactory', company: 'stretch-sufit' },
-  { year: '2018', key: 'stretchFounded', company: 'stretch' },
-  { year: '2020', key: 'reSoundOrigin', company: 're-sound', confirm: true }, // [TO CONFIRM] exact framing
-  { year: '2024', key: 'altoJoins', company: 'stretch-sufit' },
-  { year: '2025–26', key: 'rollout', company: 'stretch', confirm: true }, // [TO CONFIRM] year framing
-  { year: '2026', key: 'stretchMetal', company: 'stretch-metal' },
+  { year: '2018', key: 'founded', company: 'stretch', teaser: true },
+  { year: '2019', key: 'automation', company: 'stretch', teaser: true },
+  { year: '2020', key: 'covid', company: 'stretch' },
+  { year: '2021', key: 'pvcBelgium', company: 'stretch' },
+  { year: '2022', key: 'austria', company: 'stretch', teaser: true },
+  { year: '2024', key: 'altoDesign', company: 'stretch-sufit', teaser: true },
+  { year: '2025', key: 'reSound', company: 're-sound', teaser: true },
+  { year: '2026', key: 'stretchMetal', company: 'stretch-metal', teaser: true },
+  { year: '2027', key: 'outlook', outlook: true },
 ];
+
+export const teaserTimeline = timeline.filter((e) => e.teaser);
 
 // Social handles: only Telegram is public today (same as the product site).
 export const social: { label: string; url: string }[] = [
@@ -389,13 +423,13 @@ export const knownRoutePrefixes: readonly string[] = [];
 // Sitemap <lastmod> — the date each page's content last genuinely changed.
 // Bump an entry when you materially change that page.
 export const staticRouteDates: Record<string, string> = {
-  '/': '2026-09-02',
-  '/companies': '2026-09-02',
-  '/companies/stretch': '2026-09-02',
-  '/companies/stretch-sufit': '2026-09-02',
-  '/companies/re-sound': '2026-09-02',
-  '/companies/stretch-metal': '2026-09-02',
-  '/about': '2026-09-02',
+  '/': '2026-09-06',
+  '/companies': '2026-09-06',
+  '/companies/stretch': '2026-09-06',
+  '/companies/stretch-sufit': '2026-09-06',
+  '/companies/re-sound': '2026-09-06',
+  '/companies/stretch-metal': '2026-09-06',
+  '/about': '2026-09-06',
   '/careers': '2026-09-02',
   '/contact': '2026-09-02',
   '/privacy': '2026-09-02',
