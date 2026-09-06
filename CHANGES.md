@@ -51,6 +51,12 @@
   - Dutch copy rewritten alongside (326/326 keys in both files).
 - Sitemap `lastmod` bumped to 2026-09-06 for /, /companies, the four
   company pages and /about.
+- **Production branch, observed:** the push of this change to `main` built a
+  preview only; the production build came from the build branch, because
+  Vercel deploys production from the GitHub *default* branch and that is
+  still `claude/stretch-group-website-108ixk`. Both branches carry the same
+  commits for now. Fix: make `main` the GitHub default branch (or set the
+  Vercel production branch to `main`) — README → Deploy.
 - **Published as given — please confirm they may stay public** (item 16
   below): "roughly a third of the Belgian production cost" (2024) and the
   2021 PVC unit "proved financially too heavy and was later stopped". Both
